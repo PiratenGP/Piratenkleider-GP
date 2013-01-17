@@ -3,6 +3,7 @@ Piratenkleider
 =================================================
 
 Version 2.15 von Wolfgang Wiese (xwolf), 13. Januar 2013
+bearbeitet von @stoppegp für die @Piraten_GP
 
 
 DOWNLOADS
