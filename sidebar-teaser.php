@@ -9,86 +9,126 @@
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
    
-         $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
-         $cat = $options['slider-catid'];
-	 global $thisCat;
-	 if (isset($thisCat)) {
-	     $cat = $thisCat;
-	 }
-         if (!isset($cat) ) $cat = 1;         
-         $numberarticle = $options['slider-numberarticle'];
-         if (!isset($numberarticle) )  $numberarticle =3;   
+    if (!isset($options['slider-modus'])) 
+		$options['slider-modus'] = $defaultoptions['slider-modus'];       
+		
+	if ($options['slider-modus'] == 0) {
+	
+			 $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
+			 $cat = $options['slider-catid'];
+		 global $thisCat;
+		 if (isset($thisCat)) {
+			 $cat = $thisCat;
+		 }
+			 if (!isset($cat) ) $cat = 1;         
+			 $numberarticle = $options['slider-numberarticle'];
+			 if (!isset($numberarticle) )  $numberarticle =3;   
 
-         if (!isset($options['teaser-subtitle'])) 
-            $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
-	 
-	 global $thisCatName;
-	 
-          if (!isset($options['teaser-title-maxlength'])) 
-            $options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];        
-          if (!isset($options['teaser-title-words'])) 
-            $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
-           if (!isset($options['teaser-type'])) 
-            $options['teaser-type'] = $defaultoptions['teaser-type'];
-	   
-	$subtitle =  $options['teaser-subtitle'];
-        if (isset($thisCatName)) {
-	    $subtitle = $thisCatName;
-	}
+			 if (!isset($options['teaser-subtitle'])) 
+				$options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
+		 
+		 global $thisCatName;
+		 
+			  if (!isset($options['teaser-title-maxlength'])) 
+				$options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];        
+			  if (!isset($options['teaser-title-words'])) 
+				$options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
+			   if (!isset($options['teaser-type'])) 
+				$options['teaser-type'] = $defaultoptions['teaser-type'];
+		   
+		$subtitle =  $options['teaser-subtitle'];
+			if (isset($thisCatName)) {
+			$subtitle = $thisCatName;
+		}
 
-        query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
-        ?>
-        <div class="flexslider">
-            <h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
-            <ul class="slides">
-        <?php 
-        if ( have_posts() ) while ( have_posts() ) : the_post();
-            echo "<li class='slide'>";
-            if ($options['teaser-type'] == 'big') {
-                 echo '<div class="bigslider">';
-                if (has_post_thumbnail()) {           
-                 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']));
-                } else {
-                    if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
-                    } else {
-                        $randombild = array_rand($defaultbilder_liste,2);
-                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
-                    }
-                }
-                echo '<div class="caption"><p class="bebas">'.$subtitle.'</p>';
-                echo "<h3><a href=";
-                the_permalink();
-                echo ">";
-                echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
-                echo "</a></h3></div>";        
-                echo "</div>";    
-            } else {
-                echo '<div class="textslider">';
-                if (has_post_thumbnail()) {           
-                    the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']));                
-               } else {
-                    if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
-                    } else {
-                        $randombild = array_rand($defaultbilder_liste,2);
-                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">'; 
-                    }
-                }              
-                echo "<h3><a href=";
-                the_permalink();
-                echo ">";
-                the_title();
-                echo '</a></h3><div class="teaser-excerpt">';
-                echo get_piratenkleider_custom_excerpt();
-                echo "</div></div>";          
-            }
-            
-            echo "</li>";
-        endwhile;
-        echo "</ul>";
-        echo "</div>";
-        wp_reset_query(); 
+			query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
+			?>
+			<div class="flexslider">
+				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
+				<ul class="slides">
+			<?php 
+			if ( have_posts() ) while ( have_posts() ) : the_post();
+				echo "<li class='slide'>";
+				if ($options['teaser-type'] == 'big') {
+					 echo '<div class="bigslider">';
+					if (has_post_thumbnail()) {           
+					 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']));
+					} else {
+						if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
+							echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
+						} else {
+							$randombild = array_rand($defaultbilder_liste,2);
+							echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
+						}
+					}
+					echo '<div class="caption"><p class="bebas">'.$subtitle.'</p>';
+					echo "<h3><a href=";
+					the_permalink();
+					echo ">";
+					echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
+					echo "</a></h3></div>";        
+					echo "</div>";    
+				} else {
+					echo '<div class="textslider">';
+					if (has_post_thumbnail()) {           
+						the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']));                
+				   } else {
+						if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {
+							echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
+						} else {
+							$randombild = array_rand($defaultbilder_liste,2);
+							echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">'; 
+						}
+					}              
+					echo "<h3><a href=";
+					the_permalink();
+					echo ">";
+					the_title();
+					echo '</a></h3><div class="teaser-excerpt">';
+					echo get_piratenkleider_custom_excerpt();
+					echo "</div></div>";          
+				}
+				
+				echo "</li>";
+			endwhile;
+			echo "</ul>";
+			echo "</div>";
+			wp_reset_query(); 
+			
+		} elseif ($options['slider-modus'] == 1) {
+			?>
+			<div class="flexslider">
+				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
+				<ul class="slides">
+			<?
+			
+		$gpteaser = get_option( 'piratenkleider_theme_defaultbilder'); 
+			
+		  if ((isset($gpteaser['gpmodus-altadressen'])) && (strlen(trim($gpteaser['gpmodus-altadressen']))>2)) {                  
+				$alturls = preg_split("/[\n\r]+/", $gpteaser['gpmodus-altadressen']);
+				if (is_array( $alturls )) {
+					foreach ( $alturls  as $current) {
+						list($thisurl,$thistitel,$thisweb) = explode("|", $current);
+						$thisurl = esc_url( $thisurl );
+						$thisweb = esc_url ($thisweb);
+						
+						echo "<li class='slide'>";
+						echo '<div class="bigslider">';
+						echo '<img src="'.$thisurl.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
+						$subtitle =  $options['teaser-subtitle'];
+						echo '<div class="caption"><p class="bebas">'.$subtitle.'</p>';
+						echo "<h3><a href=\"{$options['teaser-gplink']}\">";
+						echo $options['teaser-title'];
+						echo "</a></h3></div>";        
+						echo "</div>"; 
+						echo "</li>";
+					}
+				}
+			}
+			?>
+			</ul></div>
+			<?
+		}
     } ?>
 </div>
 <div class="second-teaser-widget-area">

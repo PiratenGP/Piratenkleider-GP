@@ -40,6 +40,7 @@ $defaultoptions = array(
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
     'login_errors'		    => 1,
     'slider-aktiv'                  => 1,
+	'slider-modus'                  => 0,
     'aktiv-defaultseitenbild'       => 0,
     'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
@@ -75,6 +76,7 @@ $defaultoptions = array(
     'teaser_maxlength'              => 300,
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
+	'teaser-title'               => __( 'Willkommen bei den Piraten', 'piratenkleider' ),
     'teaser-title-words'            => 7,
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
@@ -288,6 +290,7 @@ $defaultplakate_liste = array(
 	),    
         
 );
+
 /* 
  * Default Links for Topmenu , can be overwritten bei widget  
  */
@@ -969,7 +972,16 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-aktiv'],
                   'parent'  => 'sliderpars'
               ),
-               
+			  
+               'slider-modus' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Modus', 'piratenkleider' ),
+                  'label'   => __( 'Welcher Modus soll verwendet werden?.', 'piratenkleider' ),
+                  'liste'   => array(0=> 'Artikelbilder', 1=> 'GP-Modus'),
+				  'default' => $defaultoptions['slider-modus'],
+                   'parent'  => 'sliderpars'
+              ), 
+              
               'slider-catid' => array(
                   'type'    => 'select',
                   'title'   => __( 'Kategorie', 'piratenkleider' ),
@@ -1030,6 +1042,18 @@ $setoptions = array(
                   'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
                   'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-subtitle'],
+              ),  
+             'teaser-title' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Haupt-Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Nur im GP-Modus.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title'],
+              ),  
+             'teaser-gplink' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Link f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Nur im GP-Modus.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-gplink'],
               ),  
              'teaser-title-maxlength' => array(
                   'type'    => 'number',

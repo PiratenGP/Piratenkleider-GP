@@ -477,6 +477,11 @@ function theme_defaultbilder_do_page() {
                                 
                                  </p>      
                               </label>
+							  
+                                <h3><?php _e( 'Slider-Bilder f&uuml;r den GP-Modus:', 'piratenkleider' ); ?></h3>
+                                
+                                <textarea id="piratenkleider_theme_defaultbilder[gpmodus-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php echo esc_textarea( $options['gpmodus-altadressen'] ); ?></textarea>
+				<label class="description" for="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php _e( 'Adressen der GP-Modus-Bilder', 'piratenkleider' ); ?></label>
 
                                       
                       <table>
@@ -606,6 +611,8 @@ function theme_defaultbilder_validate( $input ) {
         $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
         $input['plakate-url'] = wp_filter_nohtml_kses( $input['plakate-url'] );        
         $input['plakate-title'] = wp_filter_nohtml_kses( $input['plakate-title'] );  
+		
+		$input['gpmodus-altadressen'] = wp_filter_post_kses( $input['gpmodus-altadressen'] );
         
         $input['src-default-symbolbild-404'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-404'] ); 
         $input['src-default-symbolbild-archive'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-archive'] );
