@@ -1536,11 +1536,15 @@ display: inline-block;
   position: relative;
   float: left;
   width: 100%;
-  margin-bottom: 18px; }
+  margin-bottom: -5px; }
   .post .post-title h1 {
     line-height: 24px; 
   }
 
+.post .cal-datum {
+	font-size: 0.85em;
+}
+  
 .post .post-info {
   float: left;
   position: relative;
@@ -1600,7 +1604,7 @@ display: inline-block;
     .post .post-info .cal-icon .year {
       font-size: 10px; }
     .post .post-entry {
-    padding-top: 10px; 
+    padding-top: 5px; 
     }
 
 .post .post-meta {
@@ -1749,7 +1753,7 @@ img.wp-smiley {
   margin-bottom: 0px; }
 
 .single .post-title {
-  margin-bottom: 40px; }
+  margin-bottom: -5px; }
 .single .post-entry p {
   margin-bottom: 20px; }
 

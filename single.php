@@ -45,11 +45,9 @@
             ?>
           </div> 
           <?php } ?>                       
-            <div class="cal-icon">
-              <span class="day"><?php the_time('j.'); ?></span>
-              <span class="month"><?php the_time('m.'); ?></span>
-              <span class="year"><?php the_time('Y'); ?></span>
-            </div>
+              </div>
+			  <div class="cal-datum">
+			  Vom <?php the_time('j. F Y'); ?>, <?php the_time('H:i'); ?> Uhr
           </div>
             
           
