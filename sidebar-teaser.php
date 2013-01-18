@@ -116,9 +116,9 @@
 						echo '<div class="bigslider">';
 						echo '<img src="'.$thisurl.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
 						$subtitle =  $options['teaser-subtitle'];
-						echo '<div class="caption"><p class="bebas">'.$subtitle.'</p>';
+						echo '<div class="caption"><p class="bebas">'.do_shortcode($subtitle).'</p>';
 						echo "<h3><a href=\"{$options['teaser-gplink']}\">";
-						echo $options['teaser-title'];
+						echo do_shortcode($options['teaser-title']);
 						echo "</a></h3></div>";        
 						echo "</div>"; 
 						echo "</li>";
