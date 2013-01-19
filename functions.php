@@ -10,6 +10,8 @@
 
 require( get_template_directory() . '/inc/constants.php' );
 
+add_filter('widget_text', 'do_shortcode');
+
 $options = get_option( 'piratenkleider_theme_options' );
 if (!isset($options['anonymize-user'])) 
             $options['anonymize-user'] = $defaultoptions['anonymize-user'];
