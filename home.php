@@ -84,7 +84,8 @@
          
         </div>
         <div class="post-entry">
-        <?php echo get_piratenkleider_custom_excerpt(); ?>         
+        <?php //echo get_piratenkleider_custom_excerpt(); ?>         
+		<?php the_content(); ?>
         </div>
       </div>
 
