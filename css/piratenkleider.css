@@ -184,7 +184,7 @@ p {
 blockquote {
   margin: 18px;
   padding: 0 0 0 18px;
-  text-indent: 18px;
+  text-indent: 0px;
   border-left: 2px solid #eeeeee; 
 }
   blockquote p {
