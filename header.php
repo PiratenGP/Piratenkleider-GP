@@ -209,6 +209,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
                     <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
          
 			<div class="sticker">
+
                             <div class="skin">   
                                <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>                             
                                <ul>
@@ -229,7 +230,13 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
                             </div>                                                                                            
 			</div>
                             
-                    <?php   } ?>
+                    <?php   } else { ?>
+			<div class="sticker">
+						<?php if ( !function_exists('dynamic_sidebar') ||
+								   !dynamic_sidebar('sidebar-widget-area-header') ) : ?>
+						<?php endif; ?>
+			</div>
+					<?php } ?>
 		</div>
 	</div>
 

@@ -6,8 +6,19 @@
 
 
 function piratenkleider_widgets_init() {
+		// Header-Sidebar
+        register_sidebar( array(
+                'name' => __( 'Header-Sidebar (Rechts oben)', 'piratenkleider' ),
+                'id' => 'sidebar-widget-area-header',
+                'description' => __( 'Dieser Bereich befindet sich rechts oben auf der Seite.', 'piratenkleider' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
+        ) );
 
-       // Sidebar
+
+       // Sidebar	   
         register_sidebar( array(
                 'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
                 'id' => 'sidebar-widget-area',
