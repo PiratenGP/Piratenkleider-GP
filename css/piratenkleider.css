@@ -141,6 +141,15 @@ h2 {
   line-height: 22px;
 }
 
+.likeh2 {
+  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px; 
+  margin-bottom: 9px;
+  font-weight: normal; 
+  font-size: 22.8px;
+  line-height: 22px;
+}
+
 h3 {
   font-size: 20px; 
 }
