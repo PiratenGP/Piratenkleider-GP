@@ -188,6 +188,8 @@ html[xmlns] .slides {
     color: white;
     display: inline-block;
     padding: 0 5px; 
+	padding-top: 3px;
+	padding-bottom: 1px;
     z-index: 99;
 }
 .first-teaser-widget-area .slide .bigslider  {
