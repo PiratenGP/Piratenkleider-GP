@@ -1136,13 +1136,11 @@ display: inline-block;
 }
 .content ol li {
       margin-bottom: 5px;
+	  margin-top: 5px;
       list-style: decimal; 
 }
 .content ol li ul li {
       list-style: circle;
-}
-.content ol li ol li {
-      list-style: lower-alpha;
 }
 .content .startpage-widget-area ul li, 
 .content .startpage-widget-area ol li {
