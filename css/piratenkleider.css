@@ -1909,7 +1909,7 @@ img.wp-smiley {
 
 .content-aside a {
   color: black;
-  padding: 0 2px; 
+  padding: 0; 
 }
 .content-aside a:hover {
     color: #000;
