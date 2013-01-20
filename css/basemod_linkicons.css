@@ -100,7 +100,8 @@
 
     .content-primary a.extern {
         background: url("../images/links/extern.gif") center left no-repeat;
-        padding-left: 13px;
+		background-position: 1px;
+        padding-left: 12px;
     }
 
     .content-primary a[href *= "lqfb.piratenpartei.de"] {
