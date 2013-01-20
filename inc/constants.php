@@ -65,6 +65,7 @@ $defaultoptions = array(
     'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'                    => 1,
+	'zeige_thismenuonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
     'feed_twitter_numberarticle'            => 3,
@@ -783,9 +784,16 @@ $setoptions = array(
               ),
               'zeige_subpagesonly' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Hierachische Struktur', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet.', 'piratenkleider' ),
+                  'title'   => __( 'Seiten-Struktur', 'piratenkleider' ),
+                  'label'   => __( 'Menü nach Seiten anstatt nach Menüs anordnen.', 'piratenkleider' ),
                   'default' => $defaultoptions['zeige_subpagesonly'],
+                  'parent'  => 'seitenmenu',
+              ),
+              'zeige_thismenuonly' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Nur aktuelles Menü', 'piratenkleider' ),
+                  'label'   => __( 'Nur die Seiten der aktuell aktiven Menüs anzeigen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_thismenuonly'],
                   'parent'  => 'seitenmenu',
               ),
               'zeige_sidebarpagemenu' => array(

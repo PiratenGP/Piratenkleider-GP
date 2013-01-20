@@ -593,7 +593,7 @@ if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :
 /*
  * Anzeige des Sidebar-Menus
  */
-function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
+function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 , $zeige_thismenuonly=1 ){
   global $post;
   $sidelinks = '';
     if ($zeige_sidebarpagemenu==1) {   
@@ -621,11 +621,19 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
         } else {
 
             if ( has_nav_menu( 'primary' ) ) {
+				echo '<div class="menuonlythis">';
                 wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-            } else { 
-                echo '<ul class="menu">';   
-                    wp_page_menu( ); 
-                echo '</ul>';                        
+				echo '</div>';
+            } else {
+				if ($zeige_thismenuonly==1) {
+					echo '<div class="menuonlythis">';
+				}
+				echo '<ul class="menu">';   
+					wp_page_menu( ); 
+				echo '</ul>'; 
+				if ($zeige_thismenuonly==1) {
+					echo '</div>';
+				}
             } 
         }
     }

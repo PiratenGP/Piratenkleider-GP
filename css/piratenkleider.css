@@ -1997,6 +1997,8 @@ img.wp-smiley {
     margin: 0; }
 .content-aside ul.menu li {
     margin-bottom: 0; }
+.content-aside .menuonlythis ul li {
+    display: none; }
 .content-aside ul.menu li a {
     display: inline-block;
     background: white;
