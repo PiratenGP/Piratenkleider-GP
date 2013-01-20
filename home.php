@@ -13,7 +13,9 @@
   <div class="row">
     <div class="content-primary">
       <div class="skin">
-
+		<?php if(function_exists('announcer')) { 
+			announcer();
+		} ?>
           <h1 class="skip"><?php _e("Aktuelle Artikel", 'piratenkleider'); ?></h1>
           
       <?php
