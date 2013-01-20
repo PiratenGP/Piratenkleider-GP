@@ -83,6 +83,7 @@ $defaultoptions = array(
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
+	'aktiv-disablepagecomments'		=> 0,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
     'disclaimer_post'               => '',
     'twitter_cache_lifetime'        => 14400,
@@ -1249,6 +1250,12 @@ $setoptions = array(
                   'title'   => __( 'Antwortlinks auf Kommentare', 'piratenkleider' ),
                   'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-commentreplylink'],
+              ),
+              'aktiv-disablepagecomments' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kommentare auf Seiten deaktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Normalerweise werden auch Kommentare auf Seiten erlaubt. Dies kann hier deaktiviert werden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-disablepagecomments'],
               ),
               'comments_disclaimer'  => array(
                   'type'    => 'text',

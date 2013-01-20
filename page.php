@@ -3,7 +3,8 @@ global $defaultoptions;
 $options = get_option( 'piratenkleider_theme_options' );
 if (!isset($options['aktiv-defaultseitenbild'])) 
             $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
-
+if (!isset($options['aktiv-disablepagecomments'])) 
+            $options['aktiv-disablepagecomments'] = $defaultoptions['aktiv-disablepagecomments'];
 ?>
 
 <div class="section content" id="main-content">
@@ -33,11 +34,12 @@ if (!isset($options['aktiv-defaultseitenbild']))
         
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
-          
-        <div class="post-comments" id="comments">
-          <?php comments_template( '', true ); ?>
-        </div>
-          
+        
+		<?php if ($options['aktiv-disablepagecomments'] != 1) { ?>
+			<div class="post-comments" id="comments">
+			  <?php comments_template( '', true ); ?>
+			</div>
+        <?php } ?> 
           
         <?php wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'piratenkleider' ), 'after' => '' ) ); ?>                    
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
