@@ -1,9 +1,33 @@
+﻿Piratenkleider-GP
+=================================================
+Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
+
+Version 1.0, 20.01.2013
+
+Autor: @stoppegp
+Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
+
+Github: https://github.com/PiratenGP/Piratenkleider
+
+basierend auf Version 2.15 von xwolf
+
+Features:
+- Mehr Beiträge über die ganze Breite auf der Startseite möglich
+- "GP-Modus" für den Slider (feste Texte und Links für mehrere Bilder)
+- Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben
+- Sidebar "oben rechts" hinzugefügt
+- keine Hinweistexte in der Newsletter-Box
+- Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
+- Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
+- kleinere Anpassungen im Style
+
+
+
 Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
 Version 2.15 von Wolfgang Wiese (xwolf), 13. Januar 2013
-bearbeitet von @stoppegp für die @Piraten_GP
 
 
 DOWNLOADS
