@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.0, 20.01.2013
+Version 1.1, 20.01.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -20,6 +20,11 @@ Features:
 - Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
 - Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
 - kleinere Anpassungen im Style
+- Unterstützung der Plugins "Announcer"
+
+Changelog:
+= 20.01.2013 - v1.1 =
+-- Unterstützung für Plugin "Announcer" hinzugefügt.
 
 
 
