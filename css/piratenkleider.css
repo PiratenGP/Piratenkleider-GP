@@ -1107,7 +1107,7 @@ display: inline-block;
 }
 
 .content p, .content form {
-    margin-bottom: 18px; }
+    margin-bottom: 10px; }
 .content img {
     margin: 0 10px 10px 0; 
 }
@@ -1116,7 +1116,7 @@ display: inline-block;
     margin: 10px auto;
 }
 .content ul {
-    margin: 0 0 18px 25px;
+    margin: 0 0 10px 25px;
 }
 .content ul li {
       margin-bottom: 5px;
@@ -1538,6 +1538,7 @@ display: inline-block;
 
 .post .cal-datum {
 	font-size: 0.85em;
+	margin-bottom: 10px;
 }
   
 .post .post-info {
@@ -1748,7 +1749,7 @@ img.wp-smiley {
 .single .post-title {
   margin-bottom: -5px; }
 .single .post-entry p {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .entry-date, 
 .meta-prep {
