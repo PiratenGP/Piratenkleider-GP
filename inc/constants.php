@@ -800,7 +800,7 @@ $setoptions = array(
               'zeige_thismenuonly' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Nur aktuelles Menü', 'piratenkleider' ),
-                  'label'   => __( 'Nur die Seiten der aktuell aktiven Menüs anzeigen.', 'piratenkleider' ),
+                  'label'   => __( 'Nur die Seiten der aktuell aktiven Hauptmenüs anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['zeige_thismenuonly'],
                   'parent'  => 'seitenmenu',
               ),          
