@@ -1963,7 +1963,7 @@ img.wp-smiley {
 .content-aside ul.menu li.current_page_ancestor .children .children,
 .content-aside ul.menu li.current-menu-item .sub-menu .sub-menu, 
 .content-aside ul.menu li.current-menu-ancestor .sub-menu .sub-menu {
-    display: none; }
+    display: block; }
 .content-aside ul.menu li.current_page_item > .children, 
 .content-aside ul.menu li.current_page_ancestor > .children,
 .content-aside ul.menu li.current-menu-item > .sub-menu, 
