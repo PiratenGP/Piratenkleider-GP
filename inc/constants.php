@@ -64,7 +64,7 @@ $defaultoptions = array(
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
-    'zeige_subpagesonly'                    => 1,
+    'zeige_subpagesonly'                    => 0,
 	'zeige_thismenuonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
@@ -782,12 +782,20 @@ $setoptions = array(
                   'type'    => 'section',
                   'title'   => __( 'Seitenmenu', 'piratenkleider' ),
               ),
-              'zeige_subpagesonly' => array(
+              'zeige_sidebarpagemenu' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Seiten-Struktur', 'piratenkleider' ),
-                  'label'   => __( 'Menü nach Seiten anstatt nach Menüs anordnen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_subpagesonly'],
+                  'title'   => __( 'Offene Struktur', 'piratenkleider' ),
+                  'label'   => __( 'Men&uuml; in der Sidebar anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_sidebarpagemenu'],
                   'parent'  => 'seitenmenu',
+              ),
+               'zeige_subpagesonly' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Menu-Sortierung', 'piratenkleider' ),
+                  'label'   => __( 'Seitenmenü nach Seiten oder nach Menüs sortieren.', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_subpagesonly'],
+                  'liste'  => array( 0 => "Menüs", 1 => "Seiten" ),
+                  'parent'  => 'teaserlink1',
               ),
               'zeige_thismenuonly' => array(
                   'type'    => 'bool',
@@ -795,15 +803,7 @@ $setoptions = array(
                   'label'   => __( 'Nur die Seiten der aktuell aktiven Menüs anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['zeige_thismenuonly'],
                   'parent'  => 'seitenmenu',
-              ),
-              'zeige_sidebarpagemenu' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Offene Struktur', 'piratenkleider' ),
-                  'label'   => __( 'Men&uuml; mit allen Seiten in der Sidebar anzeigen, auch wenn diese nicht dem Hauptmenu zugeordnet und gegliedert sind', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_sidebarpagemenu'],
-                  'parent'  => 'seitenmenu',
-              ),
-              
+              ),          
               'newsletter' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
