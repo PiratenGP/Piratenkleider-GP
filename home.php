@@ -161,10 +161,10 @@
                                 <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 <span class="date"><?php the_time('d.m.Y') ?></span></li>
                             <?php endforeach; ?>
-							<?php if (trim($options['aktiv-startseite-alteartikel-link']) != "") { ?>
-								<li class="alleartikellink"><a href="<?php echo $options['aktiv-startseite-alteartikel-link']; ?>"><?php  _e("Alle Artikel", 'piratenkleider'); ?></a></li>
-							<?php } ?>
                             </ul>
+							<?php if (trim($options['aktiv-startseite-alteartikel-link']) != "") { ?>
+								<a class="all-articles" href="<?php echo $options['aktiv-startseite-alteartikel-link']; ?>"><?php  _e("Alle Artikel &rarr;", 'piratenkleider'); ?></a>
+							<?php } ?>
                         </div>              
                     <?php 
                       }
