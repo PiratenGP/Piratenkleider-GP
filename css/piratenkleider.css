@@ -1850,6 +1850,9 @@ img.wp-smiley {
 .first-startpage-widget-area li:focus span.date {
     opacity: 1;
   }
+.first-startpage-widget-area .old-articles ul li{
+	padding-bottom: 5px;
+}
 .first-startpage-widget-area a.all-articles {
     padding: 5px 10px;
     overflow: visible;

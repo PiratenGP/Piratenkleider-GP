@@ -154,7 +154,7 @@
                  if ($options['aktiv-startseite-alteartikel']==1) {                  
                     $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries"); 
                     if ((isset($postslist)) && (count($postslist)>0)) { ?>
-                        <div class="widget alteartikel">
+                        <div class="widget old-articles">
                             <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
                             <ul>
                             <?php foreach ($postslist as $post) : setup_postdata($post); ?>
