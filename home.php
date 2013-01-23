@@ -145,6 +145,8 @@
                      $options['aktiv-startseite-alteartikel'] = $defaultoptions['aktiv-startseite-alteartikel'];
                  if (!isset($options['aktiv-startseite-alteartikel-num'])) 
                      $options['aktiv-startseite-alteartikel-num'] = $defaultoptions['aktiv-startseite-alteartikel-num'];
+                 if (!isset($options['aktiv-startseite-alteartikel-link'])) 
+                     $options['aktiv-startseite-alteartikel-link'] = $defaultoptions['aktiv-startseite-alteartikel-link'];
                  if (!isset($options['aktiv-startseite-kategorien'])) 
                      $options['aktiv-startseite-kategorien'] = $defaultoptions['aktiv-startseite-kategorien'];
                  $numold = $options['aktiv-startseite-alteartikel-num'];
@@ -152,13 +154,16 @@
                  if ($options['aktiv-startseite-alteartikel']==1) {                  
                     $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries"); 
                     if ((isset($postslist)) && (count($postslist)>0)) { ?>
-                        <div class="widget">
+                        <div class="widget alteartikel">
                             <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
                             <ul>
                             <?php foreach ($postslist as $post) : setup_postdata($post); ?>
                                 <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 <span class="date"><?php the_time('d.m.Y') ?></span></li>
                             <?php endforeach; ?>
+							<?php if (trim($options['aktiv-startseite-alteartikel-link']) != "") { ?>
+								<li class="alleartikellink"><a href="<?php echo $options['aktiv-startseite-alteartikel-link']; ?>"><?php  _e("Alle Artikel", 'piratenkleider'); ?></a></li>
+							<?php } ?>
                             </ul>
                         </div>              
                     <?php 
