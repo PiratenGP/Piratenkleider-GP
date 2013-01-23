@@ -60,6 +60,7 @@ $defaultoptions = array(
     'aktiv-startseite-tags'                 => 1,
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
+	'aktiv-startseite-alteartikel-link'      => '',
     'aktiv-images-instead-date'             => 0,
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
@@ -960,6 +961,12 @@ $setoptions = array(
                   'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
               ), 
+			  'aktiv-startseite-alteartikel-link' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Link zu allen Artikeln', 'piratenkleider' ),
+                  'label'   => __( 'Wenn leer wird kein Link angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-alteartikel-link'],
+              ), 		  
               'aktiv-images-instead-date' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Thumbnails anstelle Datum', 'piratenkleider' ),
