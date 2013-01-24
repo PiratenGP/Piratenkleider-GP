@@ -62,10 +62,10 @@
                 
             <h2>Postanschrift</h2>
             <address>
-                <?php echo $kontaktinfos['posttitel']?><br> 
-                <?php echo $kontaktinfos['postperson']?><br> 
-                <?php echo $kontaktinfos['poststrasse']?><br> 
-                <?php echo $kontaktinfos['poststadt']?><br>                 
+                <?php echo $kontaktinfos['posttitel']?><br />
+                <?php if (trim($kontaktinfos['postperson']) != "") echo $kontaktinfos['postperson']."<br />"; ?> 
+                <?php echo $kontaktinfos['poststrasse']?><br />
+                <?php echo $kontaktinfos['poststadt']?><br />                
             </address>                  
            <?php } ?>
            <?php if ((isset($kontaktinfos['kontaktemail'])) && (strlen(trim($kontaktinfos['kontaktemail']))>1)) { ?>
@@ -84,10 +84,10 @@
                   && (isset($kontaktinfos['ladungstadt'])) && (strlen(trim($kontaktinfos['ladungstadt']))>1)) { ?>  
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $kontaktinfos['ladungtitel']?><br> 
-                <?php echo $kontaktinfos['ladungperson']?><br> 
-                <?php echo $kontaktinfos['ladungstrasse']?><br> 
-                <?php echo $kontaktinfos['ladungstadt']?><br>                 
+                <?php echo $kontaktinfos['ladungtitel']?><br />
+                <?php if (trim($kontaktinfos['ladungperson']) != "") echo $kontaktinfos['ladungperson']."<br />"; ?>
+                <?php echo $kontaktinfos['ladungstrasse']?><br />
+                <?php echo $kontaktinfos['ladungstadt']?><br />                
             </address>  
             
           <?php } else { 
@@ -96,10 +96,10 @@
                   && (isset($kontaktinfos['poststadt'])) && (strlen(trim($kontaktinfos['poststadt']))>1) ) { ?>
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $kontaktinfos['posttitel']?><br> 
-                <?php echo $kontaktinfos['postperson']?><br> 
-                <?php echo $kontaktinfos['poststrasse']?><br> 
-                <?php echo $kontaktinfos['poststadt']?><br>                 
+                <?php echo $kontaktinfos['posttitel']?><br />
+                <?php if (trim($kontaktinfos['postperson']) != "") echo $kontaktinfos['postperson']."<br />"; ?> 
+                <?php echo $kontaktinfos['poststrasse']?><br />
+                <?php echo $kontaktinfos['poststadt']?><br />                
             </address>              
                <?php } ?>
          <?php } ?>
