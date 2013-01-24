@@ -98,12 +98,10 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
 <h2>Auskunftsrecht</h2>
 <p>Sie haben jederzeit das Recht auf Auskunft &uuml;ber die bez&uuml;glich Ihrer Person 
     gespeicherten Daten, deren Herkunft und Empf&auml;nger sowie den Zweck der 
-    Speicherung. Auskunft &uuml;ber die gespeicherten Daten gibt Ihnen die 
-    Piratenpartei Deutschland. Wenden Sie sich dazu bitte an
+    Speicherung. Wenden Sie sich dazu bitte an
     <?php if ( (isset($kontaktinfos['dsbemail'])) && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
         echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
         if ((isset($kontaktinfos['dsbperson'])) && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
-            echo 'den/die Datenschutzbeauftrage/n ';
             echo $kontaktinfos['dsbperson'];
         } else {
             echo 'bundesbeauftragter@piraten-dsb.de';
@@ -128,11 +126,10 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     Wenn Sie Fragen haben, die Ihnen diese Datenschutzerkl&auml;rung nicht 
     beantworten konnte oder wenn Sie zu einem Punkt vertiefte Informationen 
     w&uuml;nschen, wenden Sie sich bitte jederzeit an die Piraten. Sie k&ouml;nnen ihre
-    Fragen und Anregungen im Forum oder an 
+    Fragen und Anregungen an 
     <?php if ((isset($kontaktinfos['dsbemail']))  && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
         echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
         if ((isset($kontaktinfos['dsbperson']))  && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
-            echo 'den/die Datenschutzbeauftrage/n ';
             echo $kontaktinfos['dsbperson'];
         } else {
             echo 'bundesbeauftragter@piraten-dsb.de';
