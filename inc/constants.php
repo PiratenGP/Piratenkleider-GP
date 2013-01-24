@@ -6,7 +6,7 @@
  
 
 $defaultoptions = array(
-    'js-version'                    => '2.14',
+    'js-version'                    => '2.15',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
@@ -382,7 +382,7 @@ $default_toplink_liste = array(
              __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
              __('USA', 'piratenkleider' ) => 'http://pirate-party.us/',             
              __('Vereinigtes K&ouml;nigreich', 'piratenkleider') => 'http://pirateparty.org.uk/', 
-             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://belpirat.blog.tut.by/',            
+             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://pirates.by/',            
              __('Zypern', 'piratenkleider' ) => 'http://www.piratepartycyprus.com/',
 
          )
@@ -437,13 +437,13 @@ $default_toplink_liste = array(
              '<span class="flagicon-uy"></span> '.__('Uruguay', 'piratenkleider') => 'http://partidopirata.org.uy/',
              '<span class="flagicon-us"></span> '.__('USA', 'piratenkleider') => 'http://pirate-party.us/',             
              '<span class="flagicon-uk"></span> '.__('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/',              
-             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://belpirat.blog.tut.by/',
+             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://pirates.by/',
              '<span class="flagicon-cy"></span> '.__('Zypern', 'piratenkleider') => 'http://www.piratepartycyprus.com/',
 
 
          )
      ), 
-     'Baden-W&uuml;rttemberg' => array(
+     'Baden-Wuerttemberg' => array(
          'title' => 'Piratenpartei Landesverband Baden-W&uuml;rttemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
@@ -550,6 +550,7 @@ $default_toplink_liste = array(
             '<abbr title="Kreisverband">KV</abbr> Osnabr&uuml;ck' => 'http://www.piraten-osnabrueck.de',   
             '<abbr title="Stadtverband">SV</abbr> Oldenburg' => 'http://www.piratenpartei-oldenburg.de/',   
             '<abbr title="Kreisverband">KV</abbr> Oldenburg Land' => 'http://www.piratenpartei-landkreis-oldenburg.de/',   
+            '<abbr title="Kreisverband">KV</abbr> Osterholz' => 'http://www.piraten-ohz.de/', 	    
             '<abbr title="Kreisverband">KV</abbr> Osterode' => 'http://www.piratenpartei-osterode.de/',   
             '<abbr title="Kreisverband">KV</abbr> Peine' => 'http://wiki.piratenpartei.de/NDS:Kreisverband_Peine',   
             '<abbr title="Kreisverband">KV</abbr> Stade' => 'http://www.piraten-stade.de/',   
@@ -673,7 +674,9 @@ $defaultplakate_textsymbolliste = array(
  } 
  $categories=get_categories(array('orderby' => 'name','order' => 'ASC'));
  foreach($categories as $category) {
-     $currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
+     if (!is_wp_error( $category )) {
+	$currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
+     }
  }        
         
 
