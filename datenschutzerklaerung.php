@@ -116,6 +116,12 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     
 </p>
 
+<?php
+	if (isset($kontaktinfos['datenschutz'])) {
+		echo $kontaktinfos['datenschutz'];
+	}
+?>
+
 <h2>Weitere Informationen</h2>
 <p>Ihr Vertrauen ist uns wichtig. Daher werden wir Ihnen jederzeit Rede und 
     Antwort bez&uuml;glich der Verarbeitung Ihrer personenbezogenen Daten stehen. 

@@ -845,6 +845,30 @@ function theme_kontaktinfos_do_page() {
 			</td>
 		       </tr>
                        
+                       <tr valign="top"><th scope="row"><?php _e( 'Datenschutz', 'piratenkleider' ); ?></th>
+			<td>
+				<p><?php _e( 'Zus&auml;tzliche Angaben f&uuml;r die Datenschutz-Seite:', 'piratenkleider' ); ?>
+                                </p>
+				<p>
+				<textarea id="piratenkleider_theme_kontaktinfos[datenschutz]" class="regular-text" cols="130" rows="10" name="piratenkleider_theme_kontaktinfos[datenschutz]"><?php echo esc_attr( $options['datenschutz'] ); ?></textarea>
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[datenschutz]">
+                                        <?php _e( 'HTML erlaubt.', 'piratenkleider' ); ?>                                     
+                                    </label>
+				</p> 
+                                 <table>                                
+
+				    <tr valign="top"><th scope="row"><?php _e( 'Link zur Datenschutzerkl&auml;rung im Impressum', 'piratenkleider' ); ?></th>
+					<td>
+					    <input id="piratenkleider_theme_kontaktinfos[dselink]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[dselink]" value="<?php echo esc_attr( $options['dselink'] ); ?>" />
+					    <label class="description" for="piratenkleider_theme_kontaktinfos[dselink]">
+						<?php _e( 'Wenn leer wird kein Link angezeigt. ', 'piratenkleider' ); ?>                                     
+					    </label>
+					</td>					
+				    </tr>
+				</table>
+			</td>
+		       </tr>
+		       
                        <tr valign="top"><th scope="row"><?php _e( 'Spendenformulare', 'piratenkleider' ); ?></th>
 			<td>
 				<p><?php _e( 'Optionale Angaben f&uuml;r Spendenformulare, die mit dem Seiten-Template "Spenden" erstellt werden.', 'piratenkleider' ); ?>

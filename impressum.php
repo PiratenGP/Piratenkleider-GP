@@ -266,6 +266,11 @@ Kontaktdaten durch Dritte zur &Uuml;bersendung von nicht ausdr&uuml;cklich angef
 Werbung und Informationsmaterialien wird hiermit ausdr&uuml;cklich widersprochen. 
 Die Betreiber der Seiten behalten sich ausdr&uuml;cklich rechtliche Schritte im Falle 
 der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+<?php
+	if (isset($kontaktinfos['dselink']) && $kontaktinfos['dselink'] != "") {
+		echo '<p><ul><li><a href="'.$kontaktinfos['dselink'].'">Datenschutzerkl&auml;rung</a></li></ul></p>';
+	}
+?>
 
       </div>
     </div>
