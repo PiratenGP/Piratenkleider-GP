@@ -222,7 +222,8 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     
    
     <ul>
-        <li><a class="extern" href="http://www.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
+                <li><a class="extern" href="http://www.stoppe-gp.de">Martin Stoppler</a> (Piratenkleider-GP)</li>
+	<li><a class="extern" href="http://www.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
         <li><a class="extern" href="http://www.korbinian-polk.de">Korbinian Polk</a> (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
     </ul>
         
