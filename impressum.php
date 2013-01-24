@@ -104,8 +104,15 @@
                <?php } ?>
          <?php } ?>
           
+         <?php if ((isset($kontaktinfos['hosting'])) && (strlen(trim($kontaktinfos['hosting']))>1)) { ?>  
+			<h2>Hosting</h2>
+			<p><?php echo $kontaktinfos['hosting']; ?></p>
+		 <?php } ?>
             
-            
+         <?php if ((isset($kontaktinfos['freitext'])) && (strlen(trim($kontaktinfos['freitext']))>1)) { ?>  
+			<?php echo $kontaktinfos['freitext']; ?>
+		 <?php } ?>
+			
             <h2>Rechtsvorschriften</h2>
 <ul>
 <li><a href="http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>

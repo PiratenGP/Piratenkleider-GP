@@ -701,6 +701,25 @@ function theme_kontaktinfos_do_page() {
                                     </label>
                                 </td>					
                             </tr>
+                            <tr valign="top"><th scope="row"><?php _e( 'Hosting', 'piratenkleider' ); ?></th>
+                                <td>
+                                    <textarea id="piratenkleider_theme_kontaktinfos[hosting]" cols="90" rows="3" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[hosting]"><?php echo esc_attr( $options['hosting'] ); ?></textarea>
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[hosting]">
+                                        <?php _e( 'Informationen &uuml;ber den Hoster der Website. HTML erlaubt.', 'piratenkleider' ); ?><br>
+                                        
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row"><?php _e( 'Freitext', 'piratenkleider' ); ?></th>
+                                <td>
+                                    <textarea id="piratenkleider_theme_kontaktinfos[freitext]" cols="90" rows="3" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[freitext]"><?php echo esc_attr( $options['freitext'] ); ?></textarea>
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[freitext]">
+                                        <?php _e( 'Platz f&uuml;r Freitext. Wird &uuml;ber dem Block "Rechtsvorschriften" angezeigt.', 'piratenkleider' ); ?><br>
+										<?php _e( 'HTML erlaubt. &Uuml;berschriften mit &lt;h2&gt;Text&lt;/h2&gt;.', 'piratenkleider' ); ?><br>
+                                        
+                                    </label>
+                                </td>					
+                            </tr>
                             </table>
 			</td>
 		       </tr>
