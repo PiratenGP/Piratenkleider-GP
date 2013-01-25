@@ -20,7 +20,7 @@ Features:
 - Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
 - Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
 - kleinere Anpassungen im Style
-- Unterstützung der Plugins "Announcer"
+- Unterstützung des Plugins "Announcer" (Als Klasse 'sticky' angeben)
 - Link zu "Allen Artikeln" unter den älteren Artikeln aktiverbar
 - Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
 
