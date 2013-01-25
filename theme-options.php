@@ -853,12 +853,12 @@ function theme_kontaktinfos_do_page() {
 
                        <tr valign="top"><th scope="row"><?php _e( 'Urheberrecht', 'piratenkleider' ); ?></th>
 			<td>
-				<p><?php _e( 'Zus&auml;tzliche Angaben f&uuml;r den Abschnitt "Verwendete Werke und Lizenzen innerhalb dieses Webauftritts":', 'piratenkleider' ); ?>
+				<p><?php _e( 'Zus&auml;tzliche Angaben f&uuml;r den Abschnitt "Verwendete Werke und Lizenzen innerhalb dieses Webauftritts"', 'piratenkleider' ); ?>
                                 </p>
 				<p>
 				<textarea id="piratenkleider_theme_kontaktinfos[lizenzen]" class="regular-text" cols="130" rows="10" name="piratenkleider_theme_kontaktinfos[lizenzen]"><?php echo esc_attr( $options['lizenzen'] ); ?></textarea>
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[lizenzen]">
-                                        <?php _e( 'Eine Angabe pro Zeile. HTML erlaubt. ', 'piratenkleider' ); ?>                                     
+                                        <?php _e( 'Eine Angabe pro Zeile! ', 'piratenkleider' ); ?>                                     
                                     </label>
 				</p> 
 			</td>
