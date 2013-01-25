@@ -58,10 +58,10 @@ if (!isset($options['aktiv-disablepagecomments']))
   
             if (!isset($options['zeige_sidebarpagemenu'])) 
             $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-			
-            if (!isset($options['zeige_thismenuonly'])) 
-            $options['zeige_thismenuonly'] = $defaultoptions['zeige_thismenuonly'];
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['zeige_thismenuonly']);
+ 
+			if (!isset($options['seitenmenu_mode'])) 
+            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
+            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
         
 
              if ( get_post_meta($post->ID, 'right_column', true) )
