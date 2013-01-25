@@ -3047,10 +3047,3 @@ background: none repeat scroll 0 0 #EEEEEE;
     color: black; 
     padding: 0.2em;
 }
-
-/* Announcer Plugin */
-#announcer_box {
-	background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed !important;
-	border-radius: 7px;
-	box-shadow: 4px 4px 5px #888;
-}
