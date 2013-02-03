@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.2.5, 26.01.2013
+Version 1.2.6, 26.01.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -23,8 +23,14 @@ Features:
 - Unterstützung des Plugins "Announcer" (Als Klasse 'sticky' angeben)
 - Link zu "Allen Artikeln" unter den älteren Artikeln aktiverbar
 - Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
+- Newlsetter: Box aus den Einstellungen entfernt
+- Newsletter-Widget: Info-Texte ausblendbar
 
 Changelog:
+= 03.02.2013 - v1.2.6 =
+-- Newsletter-Widget: Info-Texte ausblendbar
+-- Newlsetter: Box aus den Einstellungen entfernt
+-- Neueste Änderungen von xwolf übernommen
 = 26.01.2013 - v1.2.5 =
 -- Update auf Version 2.15.2 von xwolf
 -- Annoucner-Style verändert
