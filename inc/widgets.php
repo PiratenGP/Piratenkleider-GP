@@ -164,6 +164,7 @@ class Newsletter_Widget extends WP_Widget {
                 $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance['title'] );
+		$showinfos = $instance['showinfos'];
 
 		echo $before_widget;				
                     
@@ -173,12 +174,23 @@ class Newsletter_Widget extends WP_Widget {
                  ?> 
                  
                         <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
-                                <label for="email-newsletter"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
+                                <?php
+									if ($showinfos == 1) {
+								?>
+										<label for="email-newsletter"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
+								<?php
+									}
+								?>
                                 <input type="text" name="email-newsletter" id="email-newsletter" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
                                        onfocus="if(this.value=='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>';">
                                 <input type="submit" name="email-button" value="<?php _e("anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
-                                <p><?php _e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider'); ?>
-                                </p>
+                                <?php
+									if ($showinfos == 1) {
+								?>
+									<p><?php _e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider'); ?></p>
+								<?php
+									}
+								?>
                         </form>           
                 </div>
                 <?php 
@@ -205,6 +217,11 @@ class Newsletter_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = strip_tags( $new_instance['title'] );
+		if (is_numeric($new_instance['showinfos'])) {
+			$instance['showinfos'] = $new_instance['showinfos'];
+		} else {
+			$instance['showinfos'] = 0;
+		}
 
 		return $instance;
 	}
@@ -219,11 +236,17 @@ class Newsletter_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		} else {
 			$title = __( 'Newsletter', 'piratenkleider' );
-		}		
-                $options = get_option( 'piratenkleider_theme_options' );
+		}	
+		if ( isset( $instance[ 'showinfos' ] ) ) {
+			$showinfos = $instance[ 'showinfos' ];
+		} else {
+			$showinfos = 1;
+		}	
+		
+         $options = get_option( 'piratenkleider_theme_options' );
 		 if (!isset($options['url-newsletteranmeldung'])) {
                      $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
-   
+				 
                  if (empty($options['url-newsletteranmeldung'])) {                                      
                    echo '<p>';
                     _e("Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben Sie diese Adresse zun&auml;chst bei den Theme-Optionen an.", 'piratenkleider'); 
@@ -232,6 +255,10 @@ class Newsletter_Widget extends WP_Widget {
                      <p>
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Titel:', 'piratenkleider' ); ?></label> 
                     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+                    </p>
+					<p>
+                    <input id="<?php echo $this->get_field_id( 'showinfos' ); ?>" name="<?php echo $this->get_field_name( 'showinfos' ); ?>" type="checkbox" <? echo ($showinfos == 1) ? "checked=\"checked\"" : ""; ?> value="1" />
+					<label for="<?php echo $this->get_field_id( 'showinfos' ); ?>"><?php _e( 'Info-Texte anzeigen', 'piratenkleider' ); ?></label> 
                     </p>
                  <?php
                  }
