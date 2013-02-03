@@ -51,7 +51,6 @@ $defaultoptions = array(
     'slider-animationDuration'      => 600,
     'defaultwerbesticker'           => 1,
     'aktiv-autoren'                 => 1,
-    'newsletter'                    => 1,
     'alle-socialmediabuttons'               => 1,
     'aktiv-circleplayer'                    => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
@@ -823,12 +822,6 @@ $setoptions = array(
                   'default' => $defaultoptions['zeige_sidebarpagemenu'],
                   'parent'  => 'seitenmenu',
               ),          
-              'newsletter' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Newsletter', 'piratenkleider' ),
-                  'label'   => __( 'Eingabemaske f&uuml;r den Eintrag in ein Newsletter (Mailingliste) anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['newsletter'],
-              ),
               'slider-defaultwerbeplakate' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Plakatslider', 'piratenkleider' ),
