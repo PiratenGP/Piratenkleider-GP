@@ -3051,3 +3051,7 @@ background: none repeat scroll 0 0 #EEEEEE;
     color: black; 
     padding: 0.2em;
 }
+
+.more-link {
+	content: "Weiterlesen →";
+}
