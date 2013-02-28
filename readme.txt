@@ -77,7 +77,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.15.3 von Wolfgang Wiese (xwolf), 26. Februar 2013
+Version 2.15.4 von Wolfgang Wiese (xwolf), 28. Februar 2013
 
 
 DOWNLOADS
@@ -99,6 +99,7 @@ AUTOREN / ENTWICKLER
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
    Mit Hilfe und Unterstützung von:      
+     - Martin Stoppler, http://www.stoppe-gp.de/
      - Andre Sendowski, http://www.iphone-notes.de/
      - Heiko Philippski, http://www.phindie.de/
      - Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
@@ -107,8 +108,7 @@ AUTOREN / ENTWICKLER
      - Ralph Hinterleitner, rcs@deixis.at
      - Jan Schejbal, http://janschejbal.wordpress.com/
      - Marc Schieferdecker,  http://thegeek.de 
-     - Benjamin Stöcker, http://freiheitsworte.de
-     - Martin Stoppler, http://www.stoppe-gp.de/
+     - Benjamin Stöcker, http://freiheitsworte.de     
      - le Grand, http://www.lenz-online.org 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
@@ -128,8 +128,16 @@ AUTOREN / ENTWICKLER
 VORVERSION
 
 Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk.  
-Das alte Original von korbinian kann auf Github gefunden werden: 
+Das alte Original von @korbinian kann auf Github gefunden werden: 
  https://github.com/korbinian/Piratenkleider
+
+PIRATENKLEIDER-GP
+
+Martin Stoppler (http://www.stoppe-gp.de/) pflegt einen Branch von
+Piratenkleider 2.x mit eigenen weiteren Modifikationen. Wesentliche
+Funktionen seines Branches werden regelmässig mit diesen Zweig
+gemergt:
+ https://github.com/PiratenGP/Piratenkleider-GP
 
 
 
@@ -527,5 +535,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     gezeigt werden (per Default aktiv). 
     Als Slider werden dabei dann die letzten Artikel der Kategorie angezeigt.
     Über das Backend kann wieder  (Takelage einstellen->Sonstiges) kann 
+    alternativ wieder die Listenansicht angezeigt werden.
 
 16. Farbcodes für Ungarn und USA eingebaut.
+
