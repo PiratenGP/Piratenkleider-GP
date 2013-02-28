@@ -248,6 +248,6 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 		</div>
 	</div>
     
-    
+	<div class="chrome-container">
     
 
