@@ -79,6 +79,8 @@ $defaultoptions = array(
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
 	'teaser-title'               => __( 'Willkommen bei den Piraten', 'piratenkleider' ),
     'teaser-title-words'            => 7,
+	'teaser-showpauseplay'			=> 1,
+	'teaser-showpaging'				=> 1,
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
     'anonymize-user'                => 0,
@@ -1005,7 +1007,7 @@ $setoptions = array(
                'slider-modus' => array(
                   'type'    => 'select',
                   'title'   => __( 'Modus', 'piratenkleider' ),
-                  'label'   => __( 'Welcher Modus soll verwendet werden?.', 'piratenkleider' ),
+                  'label'   => __( '<strong>Artikelbilder:</strong> Es werden die neuesten Artikel einer gewählten Kategorie angezeigt.<br /><strong>GP-Modus:</strong> Es werden festgelegte Bilder mit einem festgelegten Text angezeigt.', 'piratenkleider' ),
                   'liste'   => array(0=> 'Artikelbilder', 1=> 'GP-Modus'),
 				  'default' => $defaultoptions['slider-modus'],
                    'parent'  => 'sliderpars'
@@ -1102,7 +1104,18 @@ $setoptions = array(
                   'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser_maxlength'],
               ),  
-               
+              'teaser-showpauseplay' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Play/Pause-Button', 'piratenkleider' ),
+				  'label'   => __( 'Play/Pause-Button anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-showpauseplay'],
+              ),
+              'teaser-showpaging' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Slide-Auswahl', 'piratenkleider' ),
+				  'label'   => __( 'Slide-Auswahl anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-showpaging'],
+              ),
                
           )
        ),

@@ -3056,6 +3056,13 @@ background: none repeat scroll 0 0 #EEEEEE;
     padding: 0.2em;
 }
 
+.flexslider-hidepauseplay .flex-pauseplay, .flexslider-hidepaging .flex-control-paging {
+	display: none;
+}
+.flexslider-hidepauseplay .flex-control-paging {
+	right: 10px;
+}
+
 .more-link {
 	content: "Weiterlesen →";
 }
