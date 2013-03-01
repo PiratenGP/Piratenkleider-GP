@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.2.10, 01.03.2013
+Version 1.2.11, 01.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -27,6 +27,9 @@ Features:
 - Newsletter-Widget: Info-Texte ausblendbar
 
 Changelog:
+= 01.03.2013 - v1.2.11 =
+-- Interne Korrekturen (Zeilenenden=
+-- Anzeigefehler Breadcrumbs korrigiert
 = 01.03.2013 - v1.2.10 =
 -- Update auf Version 2.15.4 von xwolf
 = 28.02.2013 - v1.2.9 =
