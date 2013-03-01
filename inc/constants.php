@@ -1005,7 +1005,7 @@ $setoptions = array(
                'slider-modus' => array(
                   'type'    => 'select',
                   'title'   => __( 'Modus', 'piratenkleider' ),
-                  'label'   => __( 'Welcher Modus soll verwendet werden?.', 'piratenkleider' ),
+                  'label'   => __( '<strong>Artikelbilder:</strong> Es werden die neuesten Artikel einer gewählten Kategorie angezeigt.<br /><strong>GP-Modus:</strong> Es werden festgelegte Bilder mit einem festgelegten Text angezeigt.', 'piratenkleider' ),
                   'liste'   => array(0=> 'Artikelbilder', 1=> 'GP-Modus'),
 				  'default' => $defaultoptions['slider-modus'],
                    'parent'  => 'sliderpars'
