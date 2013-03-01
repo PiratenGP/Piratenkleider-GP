@@ -11,7 +11,15 @@
    
     if (!isset($options['slider-modus'])) 
 		$options['slider-modus'] = $defaultoptions['slider-modus'];       
-		
+    if (!isset($options['teaser-showpauseplay'])) 
+		$options['teaser-showpauseplay'] = $defaultoptions['teaser-showpauseplay'];       	
+    if (!isset($options['teaser-showpaging'])) 
+		$options['teaser-showpaging'] = $defaultoptions['teaser-showpaging'];     
+	
+	$hideclasses = array();
+	if ($options['teaser-showpauseplay'] == 0) $hideclasses[] = "flexslider-hidepauseplay";
+	if ($options['teaser-showpaging'] == 0) $hideclasses[] = "flexslider-hidepaging";
+	
 	if ($options['slider-modus'] == 0) {
 	
 			 $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
@@ -43,7 +51,7 @@
 
 			query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
 			?>
-			<div class="flexslider">
+			<div class="flexslider <? echo implode(" ", $hideclasses); ?>">
 				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
 				<ul class="slides">
 			<?php 
@@ -97,7 +105,7 @@
 			
 		} elseif ($options['slider-modus'] == 1) {
 			?>
-			<div class="flexslider">
+			<div class="flexslider <? echo implode(" ", $hideclasses); ?>">
 				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
 				<ul class="slides">
 			<?
