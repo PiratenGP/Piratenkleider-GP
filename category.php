@@ -39,7 +39,15 @@
       if (!isset($options['num-article-startpage-fullwidth'])) 
             $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
       if (!isset($options['num-article-startpage-halfwidth'])) 
-            $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth'];       
+            $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth']; 
+	  if (!isset($options['aktiv-calendericon-instead-text'])) 
+			$options['aktiv-calendericon-instead-text'] = $defaultoptions['aktiv-calendericon-instead-text'];  	
+	  if (!isset($options['aktiv-startseite-comments'])) 
+			$options['aktiv-startseite-comments'] = $defaultoptions['aktiv-startseite-comments']; 
+	  if (!isset($options['zeige_commentbubble_null'])) 
+			$options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null']; 
+	  if (!isset($options['aktiv-images-instead-date'])) 
+			$options['aktiv-images-instead-date'] = $defaultoptions['aktiv-images-instead-date']; 
       $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
       $col_count = 3; 
       $cols = array();
@@ -50,6 +58,7 @@
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       ob_start();
+	  $num_comments = get_comments_number();
       ?>
 
       <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
@@ -60,50 +69,59 @@
             </a>
           </h2>
         </div>
+		<?php if ($options['aktiv-calendericon-instead-text'] == 0) { ?>
+				<div class="cal-datum">
+				<?php
+				$infostring = translate("Vom")." ".get_the_time('j. F Y').", ".get_the_time('H:i')." ".translate("Uhr");
+				if ($options['aktiv-startseite-comments'] == 1) {
+					if ($num_comments>1) { 
+						$infostring .= ", <a href=\"".get_comments_link()."\">".$num_comments." ".translate("Kommentare")."</a>";
+					} elseif ($num_comments==1) {
+						$infostring .= ", <a href=\"".get_comments_link()."\">1 ".translate("Kommentar")."</a>";
+					} elseif (($num_comments==0) && ($options['zeige_commentbubble_null'] == 1)) {
+						$infostring .= ", <a href=\"".get_comments_link()."\">".translate("keine Kommentare")."</a>";
+					}
+				}
+				echo $infostring;
+				?>
+				</div>
+		<?php } ?>
         <div class="post-info">
-         <?php  $num_comments = get_comments_number();
-             if (!isset($options['zeige_commentbubble_null'])) 
-                $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } 
-
-          if ($options['aktiv-images-instead-date']) {                                                    
-            $firstpic = get_piratenkleider_firstpicture();
-            if (!empty($firstpic)) { ?>                       
-                <div class="infoimage">                    
-                        <?php echo $firstpic ?>
-                </div>
-            <?php } else { ?>                        
-                <div class="cal-icon">
+		<?php $firstpic = get_piratenkleider_firstpicture(); ?>
+		<?php if ($options['aktiv-startseite-comments'] == 1) { ?>
+			<?php if ($options['aktiv-calendericon-instead-text'] == 1) { ?>
+			  <?php if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
+				 <div class="commentbubble"> 
+					<?php 
+						if ($num_comments>0) {
+						   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
+						} else {
+							// Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
+							// liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
+							// Woraround:
+							$link = get_comments_link();
+							echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
+					  }
+					?>
+				  </div> 
+			  <?php } ?>
+			<?php } ?>
+		<?php } ?>
+		<?php
+          if ($options['aktiv-images-instead-date'] && !empty($firstpic)) {                                                    
+			?>
+			<div class="infoimage">                    
+					<?php echo $firstpic ?>
+			</div>                    
+			<?
+          } elseif ($options['aktiv-calendericon-instead-text'] == 1) { ?>
+			 <div class="cal-icon">
                     <span class="day"><?php the_time('j.'); ?></span>
                     <span class="month"><?php the_time('m.'); ?></span>
                     <span class="year"><?php the_time('Y'); ?></span>
-                </div>
-                <?php 
-            }
-          } else { ?>
-              <div class="cal-icon">
-                <span class="day"><?php the_time('j.'); ?></span>
-                <span class="month"><?php the_time('m.'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          <?php } ?>  
-     
-         
-        </div>
+             </div>
+		  <? } ?>
+          </div>
         <div class="post-entry">
         <?php echo get_piratenkleider_custom_excerpt(); ?>         
         </div>
