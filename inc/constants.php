@@ -53,7 +53,7 @@ $defaultoptions = array(
     'aktiv-autoren'                 => 1,
     'alle-socialmediabuttons'               => 1,
     'aktiv-circleplayer'                    => 1,
-    'aktiv-platzhalterbilder-indexseiten'   => 0,
+    'aktiv-platzhalterbilder-indexseiten'   => 1,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
     'aktiv-startseite-tags'                 => 1,
@@ -1339,7 +1339,7 @@ $setoptions = array(
               'aktiv-commentreplylink' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Antwortlinks auf Kommentare', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Kommentaren wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-commentreplylink'],
               ),
               'aktiv-disablepagecomments' => array(
