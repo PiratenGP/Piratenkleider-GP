@@ -984,8 +984,8 @@ $setoptions = array(
               ), 		  
               'aktiv-images-instead-date' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Thumbnails anstelle Datum', 'piratenkleider' ),
-                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes anstelle des Datums angezeigt', 'piratenkleider' ),
+                  'title'   => __( 'Thumbnails', 'piratenkleider' ),
+                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes angezeigt', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-images-instead-date'],
               ),
                
