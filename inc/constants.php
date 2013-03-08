@@ -61,6 +61,8 @@ $defaultoptions = array(
     'aktiv-startseite-alteartikel-num'      => 5,
 	'aktiv-startseite-alteartikel-link'      => '',
     'aktiv-images-instead-date'             => 0,
+	'aktiv-calendericon-instead-text'		=> 0,
+	'aktiv-startseite-comments'				=> 1,
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
@@ -982,10 +984,28 @@ $setoptions = array(
                   'label'   => __( 'Wenn leer wird kein Link angezeigt.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel-link'],
               ), 		  
+              'aktiv-calendericon-instead-text' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kalenderblatt', 'piratenkleider' ),
+                  'label'   => __( 'Kalenderblatt statt Datum in Textform anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-calendericon-instead-text'],
+              ),
+              'aktiv-startseite-comments' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kommentarzahl', 'piratenkleider' ),
+                  'label'   => __( 'Kommentaranzahl auf der Startseite anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-comments'],
+              ),
+               'zeige_commentbubble_null' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Keine Kommentare', 'piratenkleider' ),
+                  'label'   => __( 'Zeige Kommentaranzahl auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_commentbubble_null'],
+              ), 
               'aktiv-images-instead-date' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Thumbnails', 'piratenkleider' ),
-                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes angezeigt', 'piratenkleider' ),
+                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes angezeigt. Ersetzt dann das Kalenderblatt.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-images-instead-date'],
               ),
                
@@ -1314,13 +1334,7 @@ $setoptions = array(
                   'title'   => __( 'Platzhalterbilder', 'piratenkleider' ),
                   'label'   => __( 'Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-platzhalterbilder-indexseiten'],
-              ),
-               'zeige_commentbubble_null' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Kommentarbubble', 'piratenkleider' ),
-                  'label'   => __( 'Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_commentbubble_null'],
-              ),          
+              ),         
               'aktiv-circleplayer'   => array(
                   'type'    => 'bool',
                   'title'   => __( 'Circle Player', 'piratenkleider' ),
