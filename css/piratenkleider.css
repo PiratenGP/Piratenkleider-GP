@@ -1547,9 +1547,7 @@ display: inline-block;
   
 .post .post-info {
   float: left;
-  position: relative;
-  margin-top: -10px;
-  display: none; }
+  position: relative; }
   .post .post-info .commentbubble {
     display: inline-block;
     position: absolute;
