@@ -721,7 +721,7 @@ $setoptions = array(
               'defaultwerbesticker' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Sticker', 'piratenkleider' ),
-                  'label'   => __( 'Sticker anzeigen (Hinweistexte oder Grafiken im Kopfteil)', 'piratenkleider' ),
+                  'label'   => __( 'Sticker anzeigen (Hinweistexte oder Grafiken im Kopfteil), deaktiviert die Header-Sidebar', 'piratenkleider' ),
                   'default' => $defaultoptions['defaultwerbesticker'],
               ),
               'stickerlink1'  => array(
@@ -802,6 +802,19 @@ $setoptions = array(
        'sidebar'   => array(
            'tabtitle'   => __('Sidebar', 'piratenkleider'),
            'fields' => array(
+              'position_sidebarbottom' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
+                  'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
+                  'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
+                  'default' => 0,
+              ),
+               'aktiv-dynamic-sidebar' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
+                  'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-dynamic-sidebar'],
+              ),         
               'seitenmenu'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Seitenmenu', 'piratenkleider' ),
@@ -834,6 +847,92 @@ $setoptions = array(
                   'label'   => __( 'Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultwerbeplakate'],
               ),
+               
+               
+          )
+       ),
+       'startseite'   => array(
+           'tabtitle'   => __('Startseite', 'piratenkleider'),
+           'fields' => array(
+		     'artikel'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Artikel', 'piratenkleider' ),                      
+              ),
+              'num-article-startpage-fullwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
+				  'parent'  => 'artikel'
+              ),
+              'num-article-startpage-halfwidth' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
+                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
+                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
+				  'parent'  => 'artikel'
+              ),
+              'aktiv-startseite-comments' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kommentarzahl', 'piratenkleider' ),
+                  'label'   => __( 'Kommentaranzahl auf der Startseite anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-comments'],
+				  'parent'  => 'artikel'
+              ),
+               'zeige_commentbubble_null' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Keine Kommentare', 'piratenkleider' ),
+                  'label'   => __( 'Zeige Kommentaranzahl auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_commentbubble_null'],
+				  'parent'  => 'artikel'
+              ), 
+              'aktiv-images-instead-date' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Thumbnails', 'piratenkleider' ),
+                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes angezeigt. Ersetzt dann das Kalenderblatt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-images-instead-date'],
+				  'parent'  => 'artikel'
+              ),
+		     'footer'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Fußteil', 'piratenkleider' ),                      
+              ),
+              'aktiv-startseite-kategorien' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kategorien', 'piratenkleider' ),
+                  'label'   => __( 'Liste der Kategorien anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-kategorien'],
+				  'parent'  => 'footer'
+              ),
+              'aktiv-startseite-tags' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Schlagworte', 'piratenkleider' ),
+                  'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-tags'],
+				  'parent'  => 'footer'
+              ),
+              'aktiv-startseite-alteartikel' => array(
+                  'type'    => 'bool',
+                  'title'   => __( '&auml;ltere Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-alteartikel'],
+				  'parent'  => 'footer'
+              ),
+              'aktiv-startseite-alteartikel-num' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl &auml;ltere Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
+				  'parent'  => 'footer'
+              ), 
+			  'aktiv-startseite-alteartikel-link' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Link zu allen Artikeln', 'piratenkleider' ),
+                  'label'   => __( 'Wenn leer wird kein Link angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-alteartikel-link'],
+				  'parent'  => 'footer'
+              ), 		  
               'teaser1'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Teaserlink 1', 'piratenkleider' ),                      
@@ -933,95 +1032,17 @@ $setoptions = array(
                   'default' => $defaultoptions['teaserlink3-url'],
                     'parent'  => 'teaserlink3',
               ),  
-               
-               
           )
        ),
-       'startseite'   => array(
-           'tabtitle'   => __('Startseite', 'piratenkleider'),
+'slider'   => array(
+           'tabtitle'   => __('Slider', 'piratenkleider'),
            'fields' => array(
-              'num-article-startpage-fullwidth' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
-              ),
-              'num-article-startpage-halfwidth' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
-                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
-                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
-              ),
-               
-              'aktiv-startseite-kategorien' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Kategorien', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Kategorien anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-kategorien'],
-              ),
-              'aktiv-startseite-tags' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Schlagworte', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-tags'],
-              ),
-              'aktiv-startseite-alteartikel' => array(
-                  'type'    => 'bool',
-                  'title'   => __( '&auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel'],
-              ),
-              'aktiv-startseite-alteartikel-num' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Zahl &auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
-              ), 
-			  'aktiv-startseite-alteartikel-link' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Link zu allen Artikeln', 'piratenkleider' ),
-                  'label'   => __( 'Wenn leer wird kein Link angezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel-link'],
-              ), 		  
-              'aktiv-calendericon-instead-text' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Kalenderblatt', 'piratenkleider' ),
-                  'label'   => __( 'Kalenderblatt statt Datum in Textform anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-calendericon-instead-text'],
-              ),
-              'aktiv-startseite-comments' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Kommentarzahl', 'piratenkleider' ),
-                  'label'   => __( 'Kommentaranzahl auf der Startseite anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-comments'],
-              ),
-               'zeige_commentbubble_null' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Keine Kommentare', 'piratenkleider' ),
-                  'label'   => __( 'Zeige Kommentaranzahl auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_commentbubble_null'],
-              ), 
-              'aktiv-images-instead-date' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Thumbnails', 'piratenkleider' ),
-                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes angezeigt. Ersetzt dann das Kalenderblatt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-images-instead-date'],
-              ),
-               
-               
-               
-               
-              'sliderpars'  => array(
-                  'type'    => 'section',
-                  'title'   => __( 'Slider', 'piratenkleider' ),                      
-              ),
+
               'slider-aktiv' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Aktivieren', 'piratenkleider' ),
                   'label'   => __( 'Slider im Teaserbereich auf der Startseite aktivieren. <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-aktiv'],
-                  'parent'  => 'sliderpars'
               ),
 			  
                'slider-modus' => array(
@@ -1032,13 +1053,22 @@ $setoptions = array(
 				  'default' => $defaultoptions['slider-modus'],
                    'parent'  => 'sliderpars'
               ), 
-              
+             'teaser-subtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt, in beiden Modi', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-subtitle'],
+              ),   
+			'modus_artikelbilder'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Modus: Artikelbilder', 'piratenkleider' ),                      
+              ),
               'slider-catid' => array(
                   'type'    => 'select',
                   'title'   => __( 'Kategorie', 'piratenkleider' ),
                   'label'   => __( 'Aus welcher Artikelkategorie sollen die Slider genommen werden.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,
-                   'parent'  => 'sliderpars'
+                   'parent'  => 'modus_artikelbilder'
               ), 
               'slider-numberarticle' => array(
                   'type'    => 'select',
@@ -1046,15 +1076,66 @@ $setoptions = array(
                   'label'   => __( 'Wieviele Slides sollen maximal gezeigt werden.', 'piratenkleider' ),
                   'liste'   => array(2 => 2,3 => 3, 4 => 4, 5 => 5, 6 => 6),
                   'default' => $defaultoptions['slider-numberarticle'],
-                   'parent'  => 'sliderpars'
+                   'parent'  => 'modus_artikelbilder'
               ), 
+             'teaser-type' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Teaser-Darstellung', 'piratenkleider' ),
+                  'label'   => __( 'Teaser mit gro&szlig;em Bild &uuml;ber gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
+                  'liste'   => array("big" => "big", "small" => "small"),
+                  'default' => $defaultoptions['teaser-type'],
+                   'parent'  => 'modus_artikelbilder'
+              ), 
+             'teaser-title-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-maxlength'],
+				  'parent'  => 'modus_artikelbilder'
+              ),   
+             'teaser-title-words' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-words'],
+				  'parent'  => 'modus_artikelbilder'
+              ),
+             'teaser_maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser_maxlength'],
+				  'parent'  => 'modus_artikelbilder'
+              ),  
+			'modus_gpmodus'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Modus: GP-Modus', 'piratenkleider' ),                      
+              ),
+             'teaser-title' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Haupt-Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Wird als großer Text dauerhaft angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title'],
+				  'parent'  => 'modus_gpmodus'
+              ),  
+             'teaser-gplink' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Link f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Darauf verlinkt der Haupt-Titel dauerhaft', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-gplink'],
+				  'parent'  => 'modus_gpmodus'
+              ), 
+			'animation'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Animation', 'piratenkleider' ),                      
+              ),
               'slider-animationType' => array(
                   'type'    => 'select',
                   'title'   => __( 'Animationstyp', 'piratenkleider' ),
                   'label'   => __( 'Wie soll der Slidewechsel optisch aussehen.', 'piratenkleider' ),
                   'liste'   => array("fade" => "fade", "slide" => "slide"),
                   'default' => $defaultoptions['slider-animationType'],
-                   'parent'  => 'sliderpars'
+                   'parent'  => 'animation'
               ), 
                  
               'slider-Direction' => array(
@@ -1063,81 +1144,37 @@ $setoptions = array(
                   'label'   => __( 'Von wo sollen Bilder erscheinen.', 'piratenkleider' ),
                   'liste'   => array("horizontal" => "horizontal" , "vertical" => "vertical"),
                   'default' => $defaultoptions['slider-Direction'],
-                   'parent'  => 'sliderpars'
+                   'parent'  => 'animation'
               ), 
               'slider-slideshowSpeed' => array(
                   'type'    => 'number',
                   'title'   => __( 'Dauer Bildwechsel', 'piratenkleider' ),
                   'label'   => __( 'Geschwindigkeit des Bildwechsels in Milisekunden.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-slideshowSpeed'],
-                   'parent'  => 'sliderpars'
+                   'parent'  => 'animation'
               ), 
               'slider-animationDuration' => array(
                   'type'    => 'number',
                   'title'   => __( 'Animationsdauer', 'piratenkleider' ),
                   'label'   => __( 'Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-animationDuration'],
-                   'parent'  => 'sliderpars'
-              ),  
-             'teaser-type' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Teaser-Darstellung', 'piratenkleider' ),
-                  'label'   => __( 'Teaser mit gro&szlig;em Bild &uuml;ber gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
-                  'liste'   => array("big" => "big", "small" => "small"),
-                  'default' => $defaultoptions['teaser-type'],
-                   'parent'  => 'sliderpars'
-              ), 
-               
-             'teaser-subtitle' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-subtitle'],
-              ),  
-             'teaser-title' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Haupt-Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Nur im GP-Modus.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title'],
-              ),  
-             'teaser-gplink' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Link f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Nur im GP-Modus.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-gplink'],
-              ),  
-             'teaser-title-maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-maxlength'],
-              ),   
-             'teaser-title-words' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-words'],
-              ),
-             'teaser_maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser_maxlength'],
+                   'parent'  => 'animation'
               ),  
               'teaser-showpauseplay' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Play/Pause-Button', 'piratenkleider' ),
 				  'label'   => __( 'Play/Pause-Button anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-showpauseplay'],
+				  'parent'  => 'animation'
               ),
               'teaser-showpaging' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Slide-Auswahl', 'piratenkleider' ),
 				  'label'   => __( 'Slide-Auswahl anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-showpaging'],
+				  'parent'  => 'animation'
               ),
-               
-          )
+           )
        ),
        'socialmedia'   => array(
            'tabtitle'   => __('Social Media', 'piratenkleider'),
@@ -1293,18 +1330,11 @@ $setoptions = array(
        'sonstiges'   => array(
            'tabtitle'   => __('Sonstiges', 'piratenkleider'),
            'fields' => array(
-               'aktiv-dynamic-sidebar' => array(
+              'aktiv-calendericon-instead-text' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
-                  'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-dynamic-sidebar'],
-              ),         
-              'position_sidebarbottom' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
-                  'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
-                  'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
-                  'default' => 0,
+                  'title'   => __( 'Kalenderblatt', 'piratenkleider' ),
+                  'label'   => __( 'Kalenderblatt statt Datum in Textform anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-calendericon-instead-text'],
               ),
               'aktiv-commentreplylink' => array(
                   'type'    => 'bool',
