@@ -1534,15 +1534,16 @@ display: inline-block;
 .post .post-title {
   position: relative;
   float: left;
-  width: 100%;
-  margin-bottom: -5px; }
+  width: 100%; }
   .post .post-title h1 {
     line-height: 24px; 
   }
 
 .post .cal-datum {
 	font-size: 0.85em;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
+	position: relative;
+	top: -5px;
 }
   
 .post .post-info {
@@ -1575,6 +1576,7 @@ display: inline-block;
     height: auto;
     max-height: 250px;
     margin: 5px;
+	margin-left: 0px;
     overflow: hidden;
   }
   .post .post-info .cal-icon {

@@ -50,9 +50,9 @@
             </a>
           </h2>
         </div>
-		<div class="cal-datum">
+		
 		<?php if ($options['aktiv-calendericon-instead-text'] == 0) { ?>
-
+				<div class="cal-datum">
 				<?php
 				$infostring = translate("Vom")." ".get_the_time('j. F Y').", ".get_the_time('H:i')." ".translate("Uhr");
 				if ($options['aktiv-startseite-comments'] == 1) {
@@ -66,8 +66,8 @@
 				}
 				echo $infostring;
 				?>
+				</div>
 		<?php } ?>
-		&nbsp;</div>
         <div class="post-info">
 		<?php $firstpic = get_piratenkleider_firstpicture(); ?>
 		<?php if ($options['aktiv-startseite-comments'] == 1) { ?>
