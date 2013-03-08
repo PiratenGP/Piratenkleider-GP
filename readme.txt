@@ -2,24 +2,24 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.2.12, 04.03.2013
+Version 1.3.0, 08.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 
 Github: https://github.com/PiratenGP/Piratenkleider
 
-basierend auf Version 2.15.2 von xwolf
+basierend auf Version 2.15.4 von xwolf
 
 Features:
 - Mehr Beiträge über die ganze Breite auf der Startseite möglich
 - "GP-Modus" für den Slider (feste Texte und Links für mehrere Bilder)
-- Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben
+- Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben (alter Modus optional)
 - Sidebar "oben rechts" hinzugefügt
-- keine Hinweistexte in der Newsletter-Box
+- keine Hinweistexte in der Newsletter-Box (optional)
 - Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
 - Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
-- kleinere Anpassungen im Style
+- Anpassungen im Style
 - Unterstützung des Plugins "Announcer" (Als Klasse 'sticky' angeben)
 - Link zu "Allen Artikeln" unter den älteren Artikeln aktiverbar
 - Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
@@ -27,6 +27,10 @@ Features:
 - Newsletter-Widget: Info-Texte ausblendbar
 
 Changelog:
+= 08.03.2013 - v1.3.0 =
+-- Die Kommentaranzahl wird jetzt auf der Startseite angezeigt (optional)
+-- Das alse Kaldenderblatt kann wieder aktiviert werden
+-- Updates von xwolf übernommen
 = 04.03.2013 - v1.2.12 =
 -- Anzeigefehler korrigiert (E-Mail-Links)
 = 01.03.2013 - v1.2.11 =
