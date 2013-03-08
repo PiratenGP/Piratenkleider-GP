@@ -41,50 +41,32 @@
             </a>
           </h2>
         </div>
+			  <div class="cal-datum">
+			  <?php
+			  $infostring = translate("Vom")." ".get_the_time('j. F Y').", ".get_the_time('H:i')." ".translate("Uhr");
+			  $num_comments = get_comments_number();
+			  if ($num_comments>1) { 
+					$infostring .= ", <a href=\"".get_comments_link()."\">".$num_comments." ".translate("Kommentare")."</a>";
+			  } elseif ($num_comments==1) {
+					$infostring .= ", <a href=\"".get_comments_link()."\">1 ".translate("Kommentar")."</a>";
+			  }
+			  echo $infostring;
+           ?>  
+       
+			</div>
         <div class="post-info">
-         <?php  $num_comments = get_comments_number();
-             if (!isset($options['zeige_commentbubble_null'])) 
-                $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } 
-
+		<?php
           if ($options['aktiv-images-instead-date']) {                                                    
             $firstpic = get_piratenkleider_firstpicture();
             if (!empty($firstpic)) { ?>                       
                 <div class="infoimage">                    
                         <?php echo $firstpic ?>
                 </div>
-            <?php } else { ?>                        
-                <div class="cal-icon">
-                    <span class="day"><?php the_time('j.'); ?></span>
-                    <span class="month"><?php the_time('m.'); ?></span>
-                    <span class="year"><?php the_time('Y'); ?></span>
-                </div>
-                <?php 
-            }
-          } else { ?>
-              </div>
-			  <div class="cal-datum">
-			  Vom <?php the_time('j. F Y'); ?>, <?php the_time('H:i'); ?> Uhr
-          <?php } ?>  
-            
-            
-            
-         
-        </div>
+            <?php }                       
+
+          } ?>
+          </div>
+
         <div class="post-entry">
         <?php //echo get_piratenkleider_custom_excerpt(); ?>         
 		<?php the_content(); ?>
