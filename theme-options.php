@@ -363,7 +363,12 @@ function theme_defaultbilder_do_page() {
                                                  break;
                                             }                                           ;
                                         }
-                                    } 
+                                    } else {
+                                            if ($defaultbildsrc == $option['src']) {
+                                                 $checked = "checked=\"checked\"";                                                                                            
+                                                 break;
+                                            } 
+									}
 									
                                         ?>
                                         <label class="tile">                                                                                          
