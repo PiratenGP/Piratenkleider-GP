@@ -15,6 +15,15 @@
 		$options['teaser-showpauseplay'] = $defaultoptions['teaser-showpauseplay'];       	
     if (!isset($options['teaser-showpaging'])) 
 		$options['teaser-showpaging'] = $defaultoptions['teaser-showpaging'];     
+	if (!isset($options['teaser-gplink'])) 
+		$options['teaser-gplink'] = $defaultoptions['teaser-gplink'];   
+	if (!isset($options['teaser-subtitle'])) 
+		$options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
+	if (!isset($options['teaser-gpsubtitle'])) 
+		$options['teaser-gpsubtitle'] = $defaultoptions['teaser-gpsubtitle'];
+	if (!isset($options['teaser-title'])) 
+		$options['teaser-title'] = $defaultoptions['teaser-title'];
+	 
 	
 	$hideclasses = array();
 	if ($options['teaser-showpauseplay'] == 0) $hideclasses[] = "flexslider-hidepauseplay";
