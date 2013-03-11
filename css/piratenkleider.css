@@ -1920,7 +1920,7 @@ img.wp-smiley {
     margin-bottom: 2px; }
 .content-aside table {
   background: #c96a00;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   padding: 5px;
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1933,7 +1933,7 @@ img.wp-smiley {
   margin: 0 0 20px 0;
   border: 0 solid;
   background: #c96a00;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow: hidden; 
   -webkit-border-radius: 2px;
@@ -1977,7 +1977,7 @@ img.wp-smiley {
 
 .content-aside ul.menu {
     background: #c96a00;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     padding: 5px;
     margin: 0 0 20px 0;
     -webkit-border-radius: 2px; 
@@ -2195,7 +2195,12 @@ img.wp-smiley {
 #ics-calendar-widget li:focus, 
  .content-aside .twitterwidget li:hover, 
  .content-aside .twitterwidget li:focus {
-     background: #ff8800; 
+     background: rgba(0, 0, 0, 0.12);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
  }
  .content-aside .twitterwidget li a:hover, 
  .content-aside .twitterwidget li a:focus {
@@ -2221,7 +2226,7 @@ img.wp-smiley {
  }
  .content-aside .widget li a.rsswidget:hover,
  .content-aside .widget li a.rsswidget:focus {    
-       background: #ff8800;
+        background: rgba(0, 0, 0, 0.02); 
  }
  .content-aside .widget li .rssSummary {
     color:#333333;
