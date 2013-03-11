@@ -101,7 +101,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     }
     if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
         echo '  <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
-    }        	
+    } 
     $custom_fields = get_post_custom();    
     if ( ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true) && is_singular()) 
          ||
@@ -116,6 +116,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     wp_head(); 
     if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
+    }
+    if (!(isset($designspecials['disable-linkicons']) && ($designspecials['disable-linkicons']==1))) {
+      echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons.css">';      
     }
 ?>
 

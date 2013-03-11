@@ -1084,6 +1084,15 @@ function theme_designspecials_do_page() {
                                </label>
                             </td>
 			</tr>
+			
+                       <tr valign="top"><th scope="row"><?php _e( 'Link-Icons deaktivieren', 'piratenkleider' ); ?></th>
+                            <td>
+                              <input id="piratenkleider_theme_designspecials[disable-linkicons]" name="piratenkleider_theme_designspecials[disable-linkicons]" type="checkbox" value="1" <?php checked( '1', $options['disable-linkicons'] ); ?> />
+                               <label  for="piratenkleider_theme_designspecials[disable-linkicons]">
+                                   <?php _e( 'Die Icons vor bzw. nach den Links ausblenden.', 'piratenkleider' ); ?>
+                               </label>
+                            </td>
+			</tr>
                        
                        <tr valign="top"><th scope="row"><?php _e( 'H&ouml;he des Kopfbereiches ( .header )', 'piratenkleider' ); ?></th>
                         <td>
