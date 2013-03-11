@@ -461,8 +461,8 @@ button, input[type="submit"],
   padding: 0 10px; }
 
 .skin {
-  padding: 20px; 
-  margin-left: 10px;
+  padding: 25px; 
+  //margin-left: 10px;
 }
 
 .row {
@@ -2508,7 +2508,7 @@ div.ics-calendar-holder .ics-calendar-event {
    
   }
   .content-primary .skin {
-      margin-left: 10px;
+      //margin-left: 10px;
   }    
   .content-primary .first-startpage-widget-area {
       width: 50%;
