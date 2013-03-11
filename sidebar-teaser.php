@@ -23,6 +23,8 @@
 	if ($options['slider-modus'] == 0) {
 	
 			 $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
+			 $defaultbildersrc = $bilderoptions['slider-defaultbildersrc'];
+			 $defaultbildersrc_alt = $bilderoptions['slider-altadressen'];
 			 $cat = $options['slider-catid'];
 		 global $thisCat;
 		 if (isset($thisCat)) {
@@ -62,8 +64,20 @@
 					if (has_post_thumbnail()) {           
 					 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']));
 					} else {
-						if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
-							echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
+					
+						if (isset($defaultbildersrc) || ((isset($defaultbildersrc_alt)) && (strlen( $defaultbildersrc_alt)>2))) {
+							if ((isset($defaultbildersrc_alt)) && (strlen(trim($defaultbildersrc_alt)))) {                  
+								$slider_alturls = preg_split("/[\n\r]+/", $defaultbildersrc_alt);
+							}
+							if ((is_array($slider_alturls)) && (is_array($defaultbildersrc))) {
+								$slider_liste = array_merge($slider_alturls, $defaultbildersrc);
+							} elseif (is_array($slider_alturls)) {
+								$slider_liste = $slider_alturls;
+							} else {
+								$slider_liste = $defaultbildersrc;
+							}	
+							$randombild = array_rand($slider_liste,1);
+							echo '<img src="'.$slider_liste[$randombild].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
 						} else {
 							$randombild = array_rand($defaultbilder_liste,2);
 							echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
@@ -81,8 +95,19 @@
 					if (has_post_thumbnail()) {           
 						the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']));                
 				   } else {
-						if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {
-							echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
+						if (isset($defaultbildersrc) || ((isset($defaultbildersrc_alt)) && (strlen( $defaultbildersrc_alt)>2))) {
+							if ((isset($defaultbildersrc_alt)) && (strlen(trim($defaultbildersrc_alt)))) {                  
+								$slider_alturls = preg_split("/[\n\r]+/", $defaultbildersrc_alt);
+							}
+							if ((is_array($slider_alturls)) && (is_array($defaultbildersrc))) {
+								$slider_liste = array_merge($slider_alturls, $defaultbildersrc);
+							} elseif (is_array($slider_alturls)) {
+								$slider_liste = $slider_alturls;
+							} else {
+								$slider_liste = $defaultbildersrc;
+							}	
+							$randombild = array_rand($slider_liste,1);
+							echo '<img src="'.$slider_liste[$randombild].'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
 						} else {
 							$randombild = array_rand($defaultbilder_liste,2);
 							echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">'; 

@@ -354,37 +354,41 @@ function theme_defaultbilder_do_page() {
                             <?php 
                                 if ( ! isset( $checked ) ) $checked = '';
                                 foreach ( $defaultbilder_liste as $option ) {
-
-
-                                        if ( '' != $defaultbildsrc ) {
-                                                if ( $defaultbildsrc == $option['src'] ) {
-                                                        $checked = "checked=\"checked\"";
-                                                } else {
-                                                        $checked = '';
-                                                }
+									
+                                    $checked = '';
+                                    if ((isset($options['slider-defaultbildersrc'])) && (is_array($options['slider-defaultbildersrc']))) {
+                                        foreach ($options['slider-defaultbildersrc'] as $current) {                                                                                      
+                                            if ($current == $option['src']) {
+                                                 $checked = "checked=\"checked\"";                                                                                            
+                                                 break;
+                                            }                                           ;
                                         }
+                                    } 
+									
                                         ?>
                                         <label class="tile">                                                                                          
-                                               <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                                                                 
+                                               
+											<input type="checkbox" name="piratenkleider_theme_defaultbilder[slider-defaultbildersrc][]" value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
                                             <?php echo $option['label']?>
                                                <br> 
                                             <img src="<?php echo $option['src'] ?>" style="margin: 5px auto; width: 320px; height: auto;">
                                         </label>
                                 <?php } ?>        
                                 <br style="clear: left;">     
-                                <p><?php _e( 'Eigene URL:', 'piratenkleider' ); ?>
-                                 <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php echo esc_attr( $options['slider-alternativesrc'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
-                                <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
+                                <p><?php _e( 'Eigene URLs:', 'piratenkleider' ); ?>
+                                 <textarea id="piratenkleider_theme_defaultbilder[slider-altadressen]" class="large-text" cols="30" rows="5"  name="piratenkleider_theme_defaultbilder[slider-altadressen]"><?php echo esc_attr( $options['slider-altadressen'] ); ?></textarea>
+                            <label class="description" for="piratenkleider_theme_defaultbilder[slider-altadressen]">
+                                <?php _e( 'URL inkl. http:// zu den Bildern. Dieses können auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
                                 <br>
                                        <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
+                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?><br>
+									<?php _e( 'Eine URL pro Zeile!', 'piratenkleider' ); ?>
                             </label></p>
                 <hr />
                                 <h3><?php _e( 'Slider-Bilder f&uuml;r den GP-Modus:', 'piratenkleider' ); ?></h3>
                                 <p><?php _e( 'Im GP-Modus werden die unten angegebenen Bilder angezeigt.', 'piratenkleider' ); ?></p>
                                 <textarea id="piratenkleider_theme_defaultbilder[gpmodus-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php echo esc_textarea( $options['gpmodus-altadressen'] ); ?></textarea>
-				<label class="description" for="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php _e( 'Adressen der GP-Modus-Bilder', 'piratenkleider' ); ?></label>
+				<label class="description" for="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php _e( 'Adressen der GP-Modus-Bilder', 'piratenkleider' ); ?><br><?php _e( 'Eine URL pro Zeile!', 'piratenkleider' ); ?></label>
 				<hr />
 				<h3><?php _e( 'Defaultbild für Seiten', 'piratenkleider' ); ?></h3>
 				<p><?php _e( 'Sofern in den Einstellungen (Takelage) aktiviert, wird das hier ausgewählte Bild bei Seiten angezeigt, bei denen kein Seitenbild vorhanden ist.', 'piratenkleider' ); ?>
@@ -604,10 +608,9 @@ function theme_defaultbilder_validate( $input ) {
         $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
               
         
-        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
-        if ($input['slider-alternativesrc'] != '') {            
-            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
-        }
+        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] ); 
+		$input['slider-altadressen'] = wp_filter_post_kses( $input['slider-altadressen'] );		
+
         $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
         $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
         if ($input['seiten-alternativesrc'] != '') {            
