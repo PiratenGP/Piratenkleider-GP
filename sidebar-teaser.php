@@ -148,7 +148,7 @@
 						echo "<li class='slide'>";
 						echo '<div class="bigslider">';
 						echo '<img src="'.$thisurl.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
-						$subtitle =  $options['teaser-subtitle'];
+						$subtitle =  $options['teaser-gpsubtitle'];
 						echo '<div class="caption"><p class="bebas">'.do_shortcode(stripslashes($subtitle)).'</p>';
 						echo "<h3><a href=\"{$options['teaser-gplink']}\">";
 						echo do_shortcode(stripslashes($options['teaser-title']));

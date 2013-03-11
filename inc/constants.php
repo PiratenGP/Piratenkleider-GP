@@ -79,6 +79,7 @@ $defaultoptions = array(
     'teaser_maxlength'              => 300,
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
+	'teaser-gpsubtitle'               => __( 'Herzlich willkommen!', 'piratenkleider' ),
 	'teaser-title'               => __( 'Willkommen bei den Piraten', 'piratenkleider' ),
     'teaser-title-words'            => 7,
 	'teaser-showpauseplay'			=> 1,
@@ -1048,20 +1049,14 @@ $setoptions = array(
                'slider-modus' => array(
                   'type'    => 'select',
                   'title'   => __( 'Modus', 'piratenkleider' ),
-                  'label'   => __( '<strong>Artikelbilder:</strong> Es werden die neuesten Artikel einer gewählten Kategorie angezeigt.<br /><strong>GP-Modus:</strong> Es werden festgelegte Bilder mit einem festgelegten Text angezeigt.', 'piratenkleider' ),
+                  'label'   => __( '<strong>Artikelbilder:</strong> Es werden die neuesten Artikel einer gewählten Kategorie angezeigt. Sollte für einen Artikel kein Atrikelbild definiert sein, werden Standardbilder verwendet, die unter "Segel setzen" konfiguriert werden können.<br><strong>GP-Modus:</strong> Es werden festgelegte Bilder mit einem festgelegten Text angezeigt. Die Bilder können unter "Segel setzen" konfiguriert werden.', 'piratenkleider' ),
                   'liste'   => array(0=> 'Artikelbilder', 1=> 'GP-Modus'),
 				  'default' => $defaultoptions['slider-modus'],
                    'parent'  => 'sliderpars'
               ), 
-             'teaser-subtitle' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt, in beiden Modi', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-subtitle'],
-              ),   
 			'modus_artikelbilder'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Modus: Artikelbilder', 'piratenkleider' ),                      
+                  'title'   => __( 'Modus: Artikelbilder', 'piratenkleider' ),   
               ),
               'slider-catid' => array(
                   'type'    => 'select',
@@ -1086,6 +1081,13 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'modus_artikelbilder'
               ), 
+             'teaser-subtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt, in beiden Modi', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-subtitle'],
+				  'parent'  => 'modus_artikelbilder'
+              ),   
              'teaser-title-maxlength' => array(
                   'type'    => 'number',
                   'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
@@ -1125,6 +1127,13 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-gplink'],
 				  'parent'  => 'modus_gpmodus'
               ), 
+             'teaser-gpsubtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Kleiner Titel', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb des Haupt-Titels angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-gpsubtitle'],
+				  'parent'  => 'modus_gpmodus'
+              ),   
 			'animation'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Animation', 'piratenkleider' ),                      
