@@ -347,7 +347,9 @@ function theme_defaultbilder_do_page() {
                     
               <div id="einstellungen">                    
                 <div>
-                      
+				<h3><?php _e( 'Defaultbild für den Slider', 'piratenkleider' ); ?></h3>
+				<p><?php _e( 'Hier kann ein Bild ausgewählt werden, das im <em>Artikelmodus</em> angezeigt wird, wenn bei einem Artikel kein Bild vorhanden ist.', 'piratenkleider' ); ?>
+				<?php _e( 'Alternativ kann unten eine URL zu einem Bild angegeben werden.', 'piratenkleider' ); ?></p>      
 
                             <?php 
                                 if ( ! isset( $checked ) ) $checked = '';
@@ -370,16 +372,23 @@ function theme_defaultbilder_do_page() {
                                         </label>
                                 <?php } ?>        
                                 <br style="clear: left;">     
-                                <h3><?php _e( 'Alternatives Sliderbild als URL', 'piratenkleider' ); ?></h3>
+                                <p><?php _e( 'Eigene URL:', 'piratenkleider' ); ?>
                                  <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php echo esc_attr( $options['slider-alternativesrc'] ); ?>" />
                             <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
                                 <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
                                 <br>
                                        <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
                                     <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
-                            </label>
-                
-
+                            </label></p>
+                <hr />
+                                <h3><?php _e( 'Slider-Bilder f&uuml;r den GP-Modus:', 'piratenkleider' ); ?></h3>
+                                <p><?php _e( 'Im GP-Modus werden die unten angegebenen Bilder angezeigt.', 'piratenkleider' ); ?></p>
+                                <textarea id="piratenkleider_theme_defaultbilder[gpmodus-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php echo esc_textarea( $options['gpmodus-altadressen'] ); ?></textarea>
+				<label class="description" for="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php _e( 'Adressen der GP-Modus-Bilder', 'piratenkleider' ); ?></label>
+				<hr />
+				<h3><?php _e( 'Defaultbild für Seiten', 'piratenkleider' ); ?></h3>
+				<p><?php _e( 'Sofern in den Einstellungen (Takelage) aktiviert, wird das hier ausgewählte Bild bei Seiten angezeigt, bei denen kein Seitenbild vorhanden ist.', 'piratenkleider' ); ?>
+				<?php _e( 'Alternativ kann unten eine URL zu einem Bild angegeben werden.', 'piratenkleider' ); ?></p>      
                             <?php 
                                 if ( ! isset( $checked ) ) $checked = '';
                                 foreach ( $defaultbilder_liste as $option ) {
@@ -400,7 +409,7 @@ function theme_defaultbilder_do_page() {
                                         </label>
                                 <?php } ?>        
                                 <br style="clear: left;">   
-                                <h3><?php _e( 'Alternatives Seitenbild als URL', 'piratenkleider' ); ?></h3>
+                                <p><?php _e( 'Eigene URL:', 'piratenkleider' ); ?>
                                 <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php echo esc_attr( $options['seiten-alternativesrc'] ); ?>" />
                                <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
                                    <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein. ', 'piratenkleider' ); ?>                              
@@ -410,9 +419,10 @@ function theme_defaultbilder_do_page() {
                                     <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
                                    
                               </label>
-
-                                
-                                     
+								</p>
+						<hr />                                
+						<h3><?php _e( 'Plakatbilder', 'piratenkleider' ); ?></h3>
+                                     <p><?php _e( ' Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ); ?></p>
                             <?php                                                                                     
                                 if ( ! isset( $checked ) ) $checked = '';
                                 foreach ( $defaultplakate_liste as $option ) {    
@@ -437,7 +447,6 @@ function theme_defaultbilder_do_page() {
                                     </label>
                                <?php } ?>        
                                 <br style="clear: left;"> 
-                                <p><?php _e( ' Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ); ?></p>
                                 <table>
                                     <tr>
                                         <th><?php _e( 'Optionaler Ersatztitel', 'piratenkleider' ); ?></th>
@@ -457,7 +466,7 @@ function theme_defaultbilder_do_page() {
                                 </table>    
                                 
                                 
-                                <h3><?php _e( 'Eigene Plakatbilder:', 'piratenkleider' ); ?></h3>
+                                <p><strong><?php _e( 'Eigene Plakatbilder:', 'piratenkleider' ); ?></strong></p>
                                 
                                 <textarea id="piratenkleider_theme_defaultbilder[plakate-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php echo esc_textarea( $options['plakate-altadressen'] ); ?></textarea>
 				<label class="description" for="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php _e( 'Adressen alternativer Plakatbilder', 'piratenkleider' ); ?></label>
@@ -477,12 +486,8 @@ function theme_defaultbilder_do_page() {
                                 
                                  </p>      
                               </label>
-							  
-                                <h3><?php _e( 'Slider-Bilder f&uuml;r den GP-Modus:', 'piratenkleider' ); ?></h3>
-                                
-                                <textarea id="piratenkleider_theme_defaultbilder[gpmodus-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php echo esc_textarea( $options['gpmodus-altadressen'] ); ?></textarea>
-				<label class="description" for="piratenkleider_theme_defaultbilder[gpmodus-altadressen]"><?php _e( 'Adressen der GP-Modus-Bilder', 'piratenkleider' ); ?></label>
-
+					<hr />
+					<h3><?php _e( 'Sonstiges', 'piratenkleider' ); ?></h3>
                                       
                       <table>
                          <tr valign="top">
