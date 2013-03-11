@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.3.1, 09.03.2013
+Version 1.4.0, 11.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -25,8 +25,17 @@ Features:
 - Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
 - Newlsetter: Box aus den Einstellungen entfernt
 - Newsletter-Widget: Info-Texte ausblendbar
+- Neue Struktur der Einstellungen
+- Linkicons sind ausblendbar
+- Es können mehrere Standard-Bilder für den Slider ausgewählt werden
 
 Changelog:
+= 11.03.2013 - v1.4.0 =
+-- VORSICHT! Die Einstellungen zu den Texten (Slider, GP-Modus) sowie zu den Standardbildern (Slider, Artikelmodus) gehen eventuell verloren!
+-- Seite "Segel setzen" neu strukturiert
+-- Es können nun mehrere Standard-Bilder für den Slider ausgewählt werden
+-- Linkicons können nun ausgeblendet werden
+-- Anzeigefehler korrigiert, Schönheitskorrekturen
 = 09.03.2013 - v1.3.1 =
 -- Bugfix: Kommentar und Datumsanzeige bei der Einzelartikelansicht
 -- Kategorieseite an Home angepasst
