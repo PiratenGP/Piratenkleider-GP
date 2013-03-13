@@ -193,10 +193,9 @@
     }
    
     
-    .nav-main ul.menu li ul li a:hover,
-    .nav-main ul.menu li ul li.hover a {
-            background: #2d7dc5;
-            color: white; 
+    .nav-main ul.menu li ul li a:hover {
+            background-color: #2d7dc5 !important;
+            color: white !important; 
     }
     .nav-main ul.menu li ul li.hover ul li a{
         background: white;
@@ -208,21 +207,28 @@
    }
    
    
-   .nav-main ul.menu li:hover ul li.has_children,
-   .nav-main ul.menu li.hover ul li.has_children {
-        background: url("../images/plus_black.gif") center right no-repeat;
+   .nav-main ul.menu li:hover ul li.has_children > a {
+        background-image: url("../images/plus_black.gif");
+		background-position: center right;
+		background-repeat: no-repeat;
    }
 
-    
+   .nav-main ul.menu li:hover ul li.has_children.current-menu-item > a,
+   .nav-main .menu-pages ul.menu li:hover ul li.has_children.current_page_item > a   {
+        background-image: url("../images/plus.gif");
+		background-position: center right;
+		background-repeat: no-repeat;
+   }
    
    .nav-main ul.menu li:hover ul li:hover ul li,
    .nav-main ul.menu li.hover ul li.hover ul li { 
         background-image: none; 
    }
 
-   .nav-main ul.menu li:hover ul li:hover ul li.has_children,
-   .nav-main ul.menu li.hover ul li.hover ul li.has_children { 
-        background: url("../images/plus_black.gif") center right no-repeat;
+   .nav-main ul.menu li:hover ul li:hover ul li.has_children > a { 
+        background-image: url("../images/plus_black.gif");
+		background-position: center right;
+		background-repeat: no-repeat;
    }
    .nav-main ul.menu li:hover ul li:hover ul li:hover ul li,
    .nav-main ul.menu li.hover ul li.hover ul li.hover ul li { 
