@@ -197,7 +197,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
                                 if ( has_nav_menu( 'primary' ) ) {
                                     wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
                                 } else { ?>
-                                    <div class="menu-header">
+                                    <div class="menu-header menu-pages">
                                         <ul id="menu-mainmenu" class="menu">      
                                             <?php  wp_page_menu( array(
                                         'sort_column' => 'menu_order, post_title',

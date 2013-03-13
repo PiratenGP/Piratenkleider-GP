@@ -70,22 +70,31 @@
         background: url("../images/home.gif") no-repeat center 10px; 
 }
 
-.nav-main ul.menu li.current-menu-item > a {
+.nav-main ul.menu li.current-menu-item > a,
+.nav-main .menu-pages ul.menu li.current_page_item > a {
     background: none repeat scroll 0 0 black;
     color: white;
 }
 
 
-
+.nav-main ul.menu li.current-menu-item  > a,
+.nav-main .menu-pages ul.menu li.current_page_item  > a,
+.nav-main .menu-pages ul.menu li.current_page_ancestor  > a,
+.nav-main ul.menu li.current-menu-ancestor > a {
+    background: none repeat scroll 0 0 black;
+    color: white;
+}
 
 
  
-.nav-main ul.menu li.current-menu-ancestor:hover ul.sub-menu li.current-menu-ancestor > a {
+.nav-main ul.menu li.current-menu-ancestor:hover ul.sub-menu li.current-menu-ancestor > a,
+.nav-main .menu-pages ul.menu li.current_page_ancestor:hover ul.children li.current_page_ancestor > a {
     background-color: #ccc;
     color: black;
 }
 
- .nav-main ul.menu li.current-menu-item  > a {
+ .nav-main ul.menu li.current-menu-item  > a,
+ .nav-main .menu-pages ul.menu li.current_page_item  > a {
     background: none repeat scroll 0 0 black;
 	background-color: black !important;
     color: white !important;
@@ -99,13 +108,13 @@
       background: white url("../images/home.gif") no-repeat center 10px; 
  }
      
- .nav-main ul.menu li.current_page_item a[title="Home"],
+ .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"],
  .nav-main ul.menu li.current-menu-item.menu-item-home a {
     background: #111111 url("../images/home.gif") no-repeat center -107px;
  }
 
- .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
- .nav-main ul.menu li.current_page_item a[title="Home"].hover,
+ .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"]:hover,
+ .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"].hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
       background: #111111 url("../images/home.gif") no-repeat center 10px; 
