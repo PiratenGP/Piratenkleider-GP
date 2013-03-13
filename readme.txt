@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.4.0, 11.03.2013
+Version 1.4.1, 13.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -30,6 +30,12 @@ Features:
 - Es können mehrere Standard-Bilder für den Slider ausgewählt werden
 
 Changelog:
+= 13.03.2013 - v1.4.1 =
+-- Bugfix: Defaultoptions
+-- kleinere Anpassungen im Stylesheet
+-- Bugfix: Farben im HEader-Menü wurden falsch angezeigt
+-- Pfeile werden im HEadermenü jetzt auch bei ausgewählten Elementen angezeigt
+-- Einstellungen verständlicher gemacht
 = 11.03.2013 - v1.4.0 =
 -- VORSICHT! Die Einstellungen zu den Texten (Slider, GP-Modus) sowie zu den Standardbildern (Slider, Artikelmodus) gehen eventuell verloren!
 -- Seite "Segel setzen" neu strukturiert
