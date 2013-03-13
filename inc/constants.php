@@ -815,11 +815,24 @@ $setoptions = array(
                   'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
                   'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-dynamic-sidebar'],
-              ),         
+              ),
+              'slider-defaultwerbeplakate' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Plakatslider', 'piratenkleider' ),
+                  'label'   => __( 'Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden', 'piratenkleider' ),
+                  'default' => $defaultoptions['slider-defaultwerbeplakate'],
+              ),
               'seitenmenu'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Seitenmenu', 'piratenkleider' ),
               ),
+              'zeige_sidebarpagemenu' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Aktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Men&uuml; in der Sidebar anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_sidebarpagemenu'],
+                  'parent'  => 'seitenmenu',
+              ),  
               'seitenmenu_mode' => array(
                   'type'    => 'select',
                   'title'   => __( 'Gliederung', 'piratenkleider' ),
@@ -834,20 +847,7 @@ $setoptions = array(
                   'label'   => __( 'Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet.', 'piratenkleider' ),
                   'default' => $defaultoptions['zeige_subpagesonly'],
                   'parent'  => 'seitenmenu',
-              ),
-              'zeige_sidebarpagemenu' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Offene Struktur', 'piratenkleider' ),
-                  'label'   => __( 'Men&uuml; in der Sidebar anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_sidebarpagemenu'],
-                  'parent'  => 'seitenmenu',
-              ),          
-              'slider-defaultwerbeplakate' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Plakatslider', 'piratenkleider' ),
-                  'label'   => __( 'Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden', 'piratenkleider' ),
-                  'default' => $defaultoptions['slider-defaultwerbeplakate'],
-              ),
+              ),        
                
                
           )
