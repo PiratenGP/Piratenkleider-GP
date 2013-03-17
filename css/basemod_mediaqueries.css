@@ -322,6 +322,9 @@
    }
    
    .content-primary .skin {
+       padding: 10px;
+   }
+   .content-primary .skin .skin {
        padding: 0;
    }
    .content-header,
