@@ -1255,6 +1255,8 @@ display: inline-block;
       margin-bottom: 20px; }
   .content-primary .columns .column1 hr, .content-primary .columns .column2 hr {
         display: none; }
+  .content-primary .columns hr {
+        clear: both; }
   .content-primary .columns .column1 {
       float: left; }
   .content-primary .columns .column2 {
