@@ -1112,9 +1112,6 @@ display: inline-block;
 
 .content p, .content form {
     margin-bottom: 10px; }
-.content img {
-    margin: 0 10px 10px 0; 
-}
 .content img.aligncenter {
     display: block;
     margin: 10px auto;
