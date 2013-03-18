@@ -137,9 +137,27 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
 	<ul role="navigation" class="nav skiplinks">		
 		<li><a class="ym-skip" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
-            <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
-		<?php } ?>
+        
+        <?php
+            $searchwkeys = null;
+            if (is_array(get_option('widget_search')) && $options['aktiv-suche'] != "1") {
+                foreach (get_option('widget_search') as $key => $val) {
+                    $searchwkeys[] = "search-".$key;
+                }
+                if (is_array(get_option('sidebars_widgets'))) {
+                    foreach (get_option('sidebars_widgets') as $key => $val) {
+                        if (is_array($val) && in_array($key, array("sidebar-widget-area", "sidebar-widget-area-afterplakate", "first-footer-widget-area", "second-footer-widget-area"))) {
+                             if (count(array_intersect($val, $searchwkeys)) > 0) {
+                                ?>
+                                <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+                                <?php
+                                break;
+                             }
+                        }
+                    }
+                }
+            }  
+        ?>    
 	</ul>
 
 
