@@ -60,6 +60,7 @@ $defaultoptions = array(
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
 	'aktiv-startseite-alteartikel-link'      => '',
+    'aktiv-startseite-hide-second-widgetarea' => 0,
     'aktiv-images-instead-date'             => 0,
 	'aktiv-calendericon-instead-text'		=> 0,
 	'aktiv-startseite-comments'				=> 1,
@@ -934,7 +935,14 @@ $setoptions = array(
                   'label'   => __( 'Wenn leer wird kein Link angezeigt.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel-link'],
 				  'parent'  => 'footer'
-              ), 		  
+              ), 	
+			  'aktiv-startseite-hide-second-widgetarea' => array(
+                  'type'    => 'bool',
+                  'title'   => __( '"Rechts unten" ausblenden', 'piratenkleider' ),
+                  'label'   => __( 'Sidebar "Rechts unten" ausblenden. Die Sidebar "Links unten" wird dann über die gesamte Breite angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-hide-second-widgetarea'],
+				  'parent'  => 'footer'
+              ), 
               'teaser1'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Teaserlink 1', 'piratenkleider' ),                      

@@ -2519,6 +2519,11 @@ div.ics-calendar-holder .ics-calendar-event {
       float: left;
       padding-top: 10px; 
   }
+  
+  .content-primary .first-startpage-widget-area-full {
+      width: 100%; 
+  }
+  
     .content-primary .first-startpage-widget-area .skin {
         padding-right: 10px; 
     }

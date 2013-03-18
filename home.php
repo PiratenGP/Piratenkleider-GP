@@ -151,12 +151,15 @@
       <?php endif; ?>
 
            
-        
+      <?php
+            if (!isset($options['aktiv-startseite-hide-second-widgetarea'])) 
+                $options['aktiv-startseite-hide-second-widgetarea'] = $defaultoptions['aktiv-startseite-hide-second-widgetarea'];
+      ?>
       
       <div class="startpage-widget-area">
 
         <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
-        <div class="first-startpage-widget-area">
+        <div class="first-startpage-widget-area <?php echo ($options['aktiv-startseite-hide-second-widgetarea'] == 1) ? "first-startpage-widget-area-full" : ""; ?>">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
@@ -201,32 +204,39 @@
           </div>
         </div>
 
-        <div class="second-startpage-widget-area">
-        <div class="skin">
-            <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
-                <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
-            <?php } else { 
-                if (!isset($options['aktiv-startseite-tags'])) 
-                     $options['aktiv-startseite-tags'] = $defaultoptions['aktiv-startseite-tags'];
-                
-                if ($options['aktiv-startseite-tags']==1) {
-                ?>    
-                <div  class="widget">
-                    <?php 
-                     $tags = get_tags();
-                     if ((isset($tags)) && (count($tags)>0)) { ?>
-                            <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
+        <?php           
+            if ($options['aktiv-startseite-hide-second-widgetarea'] != 1) {
+        ?>
+        
+                <div class="second-startpage-widget-area">
+                <div class="skin">
+                    <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
+                        <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
+                    <?php } else { 
+                        if (!isset($options['aktiv-startseite-tags'])) 
+                             $options['aktiv-startseite-tags'] = $defaultoptions['aktiv-startseite-tags'];
+                        
+                        if ($options['aktiv-startseite-tags']==1) {
+                        ?>    
+                        <div  class="widget">
+                            <?php 
+                             $tags = get_tags();
+                             if ((isset($tags)) && (count($tags)>0)) { ?>
+                                    <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
 
-                            <div class="tagcloud">            
-                                <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
-                            </div>
-                              
-                    <?php  }  ?>
-                     
+                                    <div class="tagcloud">            
+                                        <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
+                                    </div>
+                                      
+                            <?php  }  ?>
+                             
+                        </div>
+                    <?php } } ?>
                 </div>
-            <?php } } ?>
-        </div>
-      </div>
+              </div>
+        <?php
+            }
+        ?>
       </div>
 
       </div>
