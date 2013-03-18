@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.5.0, 18.03.2013
+Version 1.5.1, 18.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -36,6 +36,9 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 18.03.2013 - v1.5.1 =
+-- Bugfix searchform
+-- Bugfix menu-item-home
 = 18.03.2013 - v1.5.0 =
 -- Neue Funktion: Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
 -- Neue Funktion: Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
