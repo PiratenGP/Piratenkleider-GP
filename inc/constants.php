@@ -904,21 +904,14 @@ $setoptions = array(
               'aktiv-startseite-kategorien' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Kategorien', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Kategorien anzeigen', 'piratenkleider' ),
+                  'label'   => __( 'Liste der Kategorien anzeigen (links)', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-kategorien'],
-				  'parent'  => 'footer'
-              ),
-              'aktiv-startseite-tags' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Schlagworte', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-tags'],
 				  'parent'  => 'footer'
               ),
               'aktiv-startseite-alteartikel' => array(
                   'type'    => 'bool',
                   'title'   => __( '&auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen', 'piratenkleider' ),
+                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen (links)', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel'],
 				  'parent'  => 'footer'
               ),
@@ -943,6 +936,13 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-startseite-hide-second-widgetarea'],
 				  'parent'  => 'footer'
               ), 
+              'aktiv-startseite-tags' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Schlagworte', 'piratenkleider' ),
+                  'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen (rechts)', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-startseite-tags'],
+				  'parent'  => 'footer'
+              ),
               'teaser1'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Teaserlink 1', 'piratenkleider' ),                      
