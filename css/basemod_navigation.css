@@ -109,14 +109,17 @@
  }
      
  .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"],
- .nav-main ul.menu li.current-menu-item.menu-item-home a {
+ .nav-main ul.menu li.current-menu-item.menu-item-home a,
+ .nav-main ul.menu li.current-menu-item a[title="Home"] {
     background: #111111 url("../images/home.gif") no-repeat center -107px;
  }
 
  .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"]:hover,
  .nav-main .menu-pages ul.menu li.current_page_item a[title="Home"].hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
- .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
+ .nav-main ul.menu li.current-menu-item.menu-item-home a.hover,
+ .nav-main ul.menu li.current-menu-item a[title="Home"]:hover,
+ .nav-main ul.menu li.current-menu-item a[title="Home"].hover {
       background: #111111 url("../images/home.gif") no-repeat center 10px; 
  }
      
