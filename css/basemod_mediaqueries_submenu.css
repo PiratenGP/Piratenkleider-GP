@@ -1,0 +1,79 @@
+@media only screen and (max-width: 600px) {
+
+  .nav-main ul li.current-menu-ancestor ul, .nav-main ul li.current-menu-ancestor:hover ul,
+  .nav-main ul li.current-menu-item ul, .nav-main ul li.current-menu-item:hover ul,
+  .nav-main .menu-pages ul li.current_page_ancestor ul, .nav-main .menu_pages ul li.current_page_ancestor:hover ul,
+  .nav-main .menu-pages ul li.current_page_item ul, .nav-main .menu-pages ul li.current_page_item:hover ul {
+    position: relative !important;
+    top: 0px !important;
+    width: 93%;
+    padding: 0;
+    margin: 0;
+    left: 0px !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.nav-main ul.menu li.current-menu-ancestor:hover ul.sub-menu li.current-menu-ancestor > a,
+.nav-main .menu-pages ul.menu li.current_page_ancestor:hover ul.children li.current_page_ancestor > a {
+        background-color: black;
+        color: white;
+  }
+  
+  .nav-main ul li.current-menu-ancestor, .nav-main ul li.current-menu-ancestor:hover,
+  .nav-main ul li.current-menu-item, .nav-main ul li.current-menu-item:hover,
+  .nav-main .menu-pages ul li.current_page_ancestor, .nav-main .menu-pages ul li.current_page_ancestor:hover,
+  .nav-main .menu-pages ul li.current_page_item, .nav-main .menu-pages ul li.current_page_item:hover {
+    background-color: transparent !important;
+  }
+  
+  .nav-main ul li.current-menu-parent ul li, .nav-main ul li.current-menu-parent:hover ul li,
+  .nav-main ul li.current-menu-item ul li, .nav-main ul li.current-menu-item:hover ul li,
+  .nav-main .menu-pages ul li.current_page_parent ul li, .nav-main .menu-pages ul li.current_page_parent:hover ul li,
+  .nav-main .menu-pages ul li.current_page_item ul li, .nav-main .menu-pages ul li.current_page_item:hover ul li  {
+    background-color: transparent !important;
+  }
+  
+  .nav-main ul li.current-menu-ancestor ul li > a, .nav-main ul li.current-menu-ancestor:hover ul li > a,
+  .nav-main ul li.current-menu-item ul li > a, .nav-main ul li.current-menu-item:hover ul li > a,
+  .nav-main .menu-pages ul li.current_page_ancestor ul li > a, .nav-main .menu-pages ul li.current_page_ancestor:hover ul li > a,
+  .nav-main .menu-pages ul li.current_page_item ul li > a, .nav-main .menu-pages ul li.current_page_item:hover ul li > a{
+          font-family: Helvetica, Arial, sans-serif;
+          letter-spacing: 0;
+          font-size: 12px;
+          padding: 2px 18px;
+          background-image: none !important;
+  }
+  
+ .nav-main ul li.current-menu-ancestor ul li a:hover,
+ .nav-main ul li.current-menu-item ul li a:hover,
+ .nav-main .menu-pages ul li.current_page_ancestor ul li a:hover,
+ .nav-main .menu-pages ul li.current_page_item ul li a:hover{
+      background: #24639b !important;
+        color: black !important; 
+ }  
+  
+   .nav-main ul li.current-menu-ancestor > ul,
+   .nav-main .menu-pages ul li.current_page_ancestor > ul {
+    display: block !important;
+  }
+  
+  .nav-main ul li.current-menu-item ul li ul,
+  .nav-main ul li.current-menu-ancestor ul li ul,
+  .nav-main .menu-pages ul li.current_page_item ul li ul,
+  .nav-main .menu-pages ul li.current_page_ancestor ul li ul {
+    display: none;
+  }
+  
+  .nav-main ul li.current-menu-item > ul,
+  .nav-main .menu-pages ul li.current_page_item > ul  {
+    display: block !important;
+   }
+
+  .nav-main ul li.menu_separator {
+    display: none !important;
+   }   
+   
+}
