@@ -136,7 +136,6 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks">		
-		<li><a class="ym-skip" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
 		<li><a class="ym-skip" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
             <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
