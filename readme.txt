@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.4.3, 17.03.2013
+Version 1.5.0, 18.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -16,6 +16,8 @@ Features:
 - "GP-Modus" für den Slider (feste Texte und Links für mehrere Bilder)
 - Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben (alter Modus optional)
 - Sidebar "oben rechts" hinzugefügt
+- Die Widgets in den Sidebars "Rechts unten" und "Links unten" werden unter den alten Artikeln, Kategorien, etc. angezeigt.
+- Die Sidebar "Links unten" kann über die gesamte Breite angezeigt werden
 - keine Hinweistexte in der Newsletter-Box (optional)
 - Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
 - Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
@@ -28,9 +30,27 @@ Features:
 - Neue Struktur der Einstellungen
 - Linkicons sind ausblendbar
 - Es können mehrere Standard-Bilder für den Slider ausgewählt werden
+- Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
+- Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
 
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
+
+= 18.03.2013 - v1.5.0 =
+-- Neue Funktion: Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
+-- Neue Funktion: Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
+-- Der Skiplink "Zur Navigation springen" wurde entfernt
+-- Neue Funktion: Die Sidebar "Links unten" kann über die gesamte Breite angezeigt werden
+-- Verhalten geändert: Die Widgets in den Sidebars "Rechts unten" und "Links unten" werden unter den alten Artikeln, Kategorien, etc. angezeigt.
+-- Bugfix: Thumbnails konnten für ein verschobenes Layout führen
+-- Schönheitskorrekturen: Thumbnails, Kommentarbox, Slider Pause-Button
+-- Updates von xwolf übernommen
+-- UPDATEHINWEISE:
+--- Wenn in der Sidebar "Links unten" bzw. "Rechts unten" Widgets aktiv waren, wurden die Elemente "Alte Artikel", "Kategorienliste" und "Schlagwortwolke" bisher nicht mehr angezeigt. Nun werden diese auf jeden Fall angezeigt, wenn sie in der Takelage aktiviert sind.
+--- Standardmäßig werden jetzt auf kleinen Bildschirmen in der Hauptnavigation auch aktive Submenüs angezeigt. Dadurch schiebt sich der Inhalt möglicherweise weit nach unten. Die Submenüs können im Klüverbaum deaktiviert werden.
+--- Auf kleinen Bildschirmen wird der Link "Zur Suche springen" nur noch angezeigt, wenn die Suche im Header in der Takelage deaktiviert wurde und ein eigenes Suchwidget in einer dauerhaft aktiven SIdebar platziert wurde.
+--- Der Link "Zur Navigation springen" wird gar nicht mehr angezeigt.
+
 = 17.03.2013 - v1.4.3 =
 -- Bugfix #searchform
 = 17.03.2013 - v1.4.2 =
