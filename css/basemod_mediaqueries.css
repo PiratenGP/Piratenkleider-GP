@@ -336,11 +336,6 @@
        padding: 10px;
        max-width: 100%;
    }
-  .post-comments {
-     background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
-     padding: 3px;
-     margin: 10px 0px;
-  }
   .post-comments a {
       color: black;
   }
