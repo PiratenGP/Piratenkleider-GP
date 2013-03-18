@@ -639,6 +639,9 @@ button, input[type="submit"],
   background: rgba(255, 255, 255, 0.5);
   position: relative;
 }
+div#searchform {
+  float: left;
+}
 .searchform input#s {
     width: 160px;
     line-height: 1em;      
