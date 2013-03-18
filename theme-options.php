@@ -1088,7 +1088,7 @@ function theme_designspecials_do_page() {
                             <td>
                               <input id="piratenkleider_theme_designspecials[aktiv-mediaqueries-submenu]" name="piratenkleider_theme_designspecials[aktiv-mediaqueries-submenu]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-mediaqueries-submenu'] ); ?> />
                                <label  for="piratenkleider_theme_designspecials[aktiv-mediaqueries-submenu]">
-                                   <?php _e( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch aktive Submenüs anzeigen.', 'piratenkleider' ); ?>
+                                   <?php _e( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen Submenüs ausblenden.', 'piratenkleider' ); ?>
                                </label>
                             </td>
 			</tr>

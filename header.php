@@ -117,7 +117,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
     }
-    if (isset($designspecials['aktiv-mediaqueries-submenu']) && ($designspecials['aktiv-mediaqueries-submenu']==1)) {
+    if (!isset($designspecials['aktiv-mediaqueries-submenu']) || ($designspecials['aktiv-mediaqueries-submenu'] != 1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_submenu.css">';      
     }
     if (!(isset($designspecials['disable-linkicons']) && ($designspecials['disable-linkicons']==1))) {
