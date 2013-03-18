@@ -161,9 +161,7 @@
         <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area <?php echo ($options['aktiv-startseite-hide-second-widgetarea'] == 1) ? "first-startpage-widget-area-full" : ""; ?>">
           <div class="skin">
-            <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
-                <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
-            <?php } else { 
+            <?php 
                  if (!isset($options['aktiv-startseite-alteartikel'])) 
                      $options['aktiv-startseite-alteartikel'] = $defaultoptions['aktiv-startseite-alteartikel'];
                  if (!isset($options['aktiv-startseite-alteartikel-num'])) 
@@ -200,7 +198,11 @@
                         <?php wp_list_categories('title_li='); ?>
                     </ul>
                 </div>
-             <?php } } ?>
+             <?php }
+                if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { 
+                    dynamic_sidebar( 'first-startpage-widget-area' ); ?>
+            <?php }
+             ?>
           </div>
         </div>
 
@@ -210,9 +212,7 @@
         
                 <div class="second-startpage-widget-area">
                 <div class="skin">
-                    <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
-                        <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
-                    <?php } else { 
+                    <?php 
                         if (!isset($options['aktiv-startseite-tags'])) 
                              $options['aktiv-startseite-tags'] = $defaultoptions['aktiv-startseite-tags'];
                         
@@ -231,7 +231,11 @@
                             <?php  }  ?>
                              
                         </div>
-                    <?php } } ?>
+                    <?php } 
+                    if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { 
+                         dynamic_sidebar( 'second-startpage-widget-area' ); 
+                    }
+                    ?>
                 </div>
               </div>
         <?php

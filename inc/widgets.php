@@ -79,9 +79,7 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Links unten', 'piratenkleider' ),
                 'id' => 'first-startpage-widget-area',
-                'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
-                        Wenn leer, werden hier weitere Artikel aus
-                        der Kategorie "pm" gezeigt. ', 'piratenkleider' ),
+                'description' => __( 'Bereich links unten auf der Startseite. Wird pber die gesamte Breite angezeigt, wenn die Sidebar "Rechts unten" in der Takelage deaktiviert wurde.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3>',
@@ -92,9 +90,7 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Rechts unten', 'piratenkleider' ),
                 'id' => 'second-startpage-widget-area',
-                'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
-                         Wenn leer, wird hier eine Schlagwortliste 
-                         gezeigt.', 'piratenkleider' ),
+                'description' => __( 'Bereich rechts unten auf der Startseite. Kann in der Takelage deaktiviert werden, dann wird die Sidebar "Links unten" über die gesamte Breite angezeigt..', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
