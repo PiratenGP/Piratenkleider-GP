@@ -632,15 +632,14 @@ button, input[type="submit"],
     position: absolute;
     top: -999em; 
 }
-
+div#searchform {
+    display: inline; 
+}
 .searchform {
   padding: 10px 10px 5px 10px;
   background: #f7f7f7;
   background: rgba(255, 255, 255, 0.5);
   position: relative;
-}
-div#searchform {
-  float: left;
 }
 .searchform input#s {
     width: 160px;
@@ -1099,7 +1098,7 @@ display: inline-block;
      position: relative;
  } 
 .content {
-   //background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
+  //background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
  }
 .content .row {
    /*  overflow: hidden; */
@@ -1114,7 +1113,7 @@ display: inline-block;
 }
 
 .content p, .content form {
-    margin-bottom: 10px; }
+    margin-bottom: 18px; }
 .content img.aligncenter {
     display: block;
     margin: 10px auto;
@@ -1535,7 +1534,9 @@ display: inline-block;
 }
 .post .post-title {
   position: relative;
-  width: 100%; }
+  float: left;
+  width: 100%;
+  margin-bottom: 18px; }
   .post .post-title h1 {
     line-height: 24px; 
   }

@@ -9,7 +9,7 @@ Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 
 Github: https://github.com/PiratenGP/Piratenkleider
 
-basierend auf Version 2.15.4 von xwolf
+basierend auf Version 2.16 von xwolf
 
 Features:
 - Mehr Beiträge über die ganze Breite auf der Startseite möglich
@@ -136,7 +136,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.15.4 von Wolfgang Wiese (xwolf), 28. Februar 2013
+Version 2.16 von Wolfgang Wiese (xwolf), 18. Maerz 2013
 
 
 DOWNLOADS
@@ -597,4 +597,14 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     alternativ wieder die Listenansicht angezeigt werden.
 
 16. Farbcodes für Ungarn und USA eingebaut.
+
+17. Aber der Version 2.16 ist ein Aprilscherz enthalten. Dieser ist per Default
+    AUSgeschaltet, da es möglicherweise einigen Mut benötigt, es durchziehen.
+    Um es einzuschalten, wird im Backend unter Takelage eisntellen->Sonstiges
+    die Option "Aprilscherz" eingeschaltet.
+    Seit ihr mutig genug um es einzuschalten, ohne in den Code zu schauen, was
+    passiert?  Und seit ihr Manns und Fraues genug, es am Tag dann anzulassen?
+
+
+
 
