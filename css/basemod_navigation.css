@@ -67,7 +67,9 @@
         padding-left: 25px;
         padding-right: 25px;
         text-indent: -999em;
-        background: url("../images/home.gif") no-repeat center 10px; 
+        background-image: url("../images/home.gif");
+        background-repeat: no-repeat;
+        background-position: center 10px; 
 }
 
 .nav-main ul.menu li.current-menu-item > a,

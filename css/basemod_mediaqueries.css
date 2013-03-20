@@ -250,6 +250,23 @@
     background-image: linear-gradient(top, #2d7dc5, #24639b);
   }
 
+.nav-main ul.menu li a[title="Home"],
+.nav-main ul.menu li.menu-item-home a {
+        background-image: url("../images/home.gif");
+        background-repeat: no-repeat;
+        background-position: center -107px; 
+}
+
+ .nav-main ul.menu li a[title="Home"]:hover,
+ .nav-main ul.menu li a[title="Home"].hover,
+ .nav-main ul.menu li.menu-item-home a:hover,
+ .nav-main ul.menu li.menu-item-home a.hover {
+      background-image: url("../images/home.gif");
+      background-repeat: no-repeat;
+      background-position: center -107px !important; 
+      background-color:  #24639b;
+ }
+  
   .nav-main ul.menu li a:hover {
       background: #4e96d7;
     }
