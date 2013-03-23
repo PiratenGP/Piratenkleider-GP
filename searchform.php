@@ -2,15 +2,8 @@
 global $defaultoptions;
 global $notfirstsearchform;
 ?>
-<h2 class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
-<?php
-    if (!($notfirstsearchform == true)) {
-        $searchformid = "id=\"searchform\"";
-        $notfirstsearchform = true;
-    } else {
-        $searchformid = "";
-    }
-?>
+<h2 name="searchform" if="searchform" class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
+
 <form method="get" <?=$searchformid;?> class="searchform" action="<?php echo home_url(); ?>/">
 	<label class="visuallyhidden" for="s"><?php _e("Suche nach", 'piratenkleider'); ?>:</label>
 	<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>"  
