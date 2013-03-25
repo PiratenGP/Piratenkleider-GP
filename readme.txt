@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.5.1, 18.03.2013
+Version 1.5.2, 25.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -36,6 +36,11 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 25.03.2013 - v1.5.2 =
+-- Neue Funktion: Link-Icons-Auswahl
+-- Schönheitskorrekturen: Home-Button
+-- Update auf Version 2.16 von xwolf
+-- Updates von xwolf übernommen
 = 18.03.2013 - v1.5.1 =
 -- Bugfix searchform
 -- Bugfix menu-item-home
