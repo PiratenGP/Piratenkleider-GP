@@ -1,0 +1,17 @@
+@media screen, projection {
+  
+
+    .content-primary a[href ^="mailto:"],
+    .piratenkleider-optionen #liopt2 a[href ^="mailto:"]    {
+        background: url(../images/links/mail.gif) top right no-repeat;
+        padding-right: 18px;
+        padding-left: 0px;
+        margin-right: 4px;
+    }
+
+    .content-primary a.nolinkicon {
+            background: none;
+            padding-right: 0;
+    }
+
+}

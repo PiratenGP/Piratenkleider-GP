@@ -10,7 +10,8 @@
 @media screen, projection {
   
 
-    .content-primary a[href ^="mailto:"] {
+    .content-primary a[href ^="mailto:"],
+    .piratenkleider-optionen #liopt0 a[href ^="mailto:"]    {
         background: url(../images/links/mail.gif) top right no-repeat;
         padding-right: 18px;
         margin-right: 4px;
@@ -21,7 +22,13 @@
     .content-primary a[href $=".midi"],.content-primary a[href $=".MIDI"],
     .content-primary a[href $=".mp3"], .content-primary a[href $=".MP3"],
     .content-primary a[href $=".wav"], .content-primary a[href $=".WAV"],
-    .content-primary a[href $=".wma"], .content-primary a[href $=".WMA"] {
+    .content-primary a[href $=".wma"], .content-primary a[href $=".WMA"],
+    .piratenkleider-optionen #liopt0 a[href $=".ogg"], .piratenkleider-optionen #liopt0 a[href $=".OGG"],
+    .piratenkleider-optionen #liopt0 a[href $=".mid"], .piratenkleider-optionen #liopt0 a[href $=".MID"],
+    .piratenkleider-optionen #liopt0 a[href $=".midi"],.piratenkleider-optionen #liopt0 a[href $=".MIDI"],
+    .piratenkleider-optionen #liopt0 a[href $=".mp3"], .piratenkleider-optionen #liopt0 a[href $=".MP3"],
+    .piratenkleider-optionen #liopt0 a[href $=".wav"], .piratenkleider-optionen #liopt0 a[href $=".WAV"],
+    .piratenkleider-optionen #liopt0 a[href $=".wma"], .piratenkleider-optionen #liopt0 a[href $=".WMA"]    {
         background: url("../images/links/audio.png") center left no-repeat;
         padding-left: 19px;
     }
@@ -30,49 +37,75 @@
     .content-primary a[href $=".midi"]:after,.content-primary a[href $=".MIDI"]:after,
     .content-primary a[href $=".mp3"]:after, .content-primary a[href $=".MP3"]:after,
     .content-primary a[href $=".wav"]:after, .content-primary a[href $=".WAV"]:after,
-    .content-primary a[href $=".wma"]:after, .content-primary a[href $=".WMA"]:after {
+    .content-primary a[href $=".wma"]:after, .content-primary a[href $=".WMA"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".ogg"]:after, .piratenkleider-optionen #liopt0 a[href $=".OGG"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".mid"]:after, .piratenkleider-optionen #liopt0 a[href $=".MID"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".midi"]:after,.piratenkleider-optionen #liopt0 a[href $=".MIDI"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".mp3"]:after, .piratenkleider-optionen #liopt0 a[href $=".MP3"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".wav"]:after, .piratenkleider-optionen #liopt0 a[href $=".WAV"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".wma"]:after, .piratenkleider-optionen #liopt0 a[href $=".WMA"]:after {
         content: " (Audio) ";
     }
 
     .content-primary a[href $=".ogm"], .content-primary a[href $=".OGM"],
     .content-primary a[href $=".avi"], .content-primary a[href $=".AVI"],
     .content-primary a[href $=".mpeg"],.content-primary a[href $=".MPEG"],
-    .content-primary a[href $=".mpg"], .content-primary a[href $=".MPG"] {
+    .content-primary a[href $=".mpg"], .content-primary a[href $=".MPG"],
+    .piratenkleider-optionen #liopt0 a[href $=".ogm"], .piratenkleider-optionen #liopt0 a[href $=".OGM"],
+    .piratenkleider-optionen #liopt0 a[href $=".avi"], .piratenkleider-optionen #liopt0 a[href $=".AVI"],
+    .piratenkleider-optionen #liopt0 a[href $=".mpeg"],.piratenkleider-optionen #liopt0 a[href $=".MPEG"],
+    .piratenkleider-optionen #liopt0 a[href $=".mpg"], .piratenkleider-optionen #liopt0 a[href $=".MPG"] {
         background: url("../images/links/video.png") center left no-repeat;
         padding-left: 19px;
     }
     .content-primary a[href $=".ogm"]:after, .content-primary a[href $=".OGM"]:after,
     .content-primary a[href $=".avi"]:after, .content-primary a[href $=".AVI"]:after,
     .content-primary a[href $=".mpeg"]:after,.content-primary  a[href $=".MPEG"]:after,
-    .content-primary a[href $=".mpg"]:after, .content-primary a[href $=".MPG"]:after {
+    .content-primary a[href $=".mpg"]:after, .content-primary a[href $=".MPG"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".ogm"]:after, .piratenkleider-optionen #liopt0 a[href $=".OGM"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".avi"]:after, .piratenkleider-optionen #liopt0 a[href $=".AVI"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".mpeg"]:after,.piratenkleider-optionen #liopt0  a[href $=".MPEG"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".mpg"]:after, .piratenkleider-optionen #liopt0 a[href $=".MPG"]:after    {
         content: " (Video) ";
     }
 
     .content-primary a[href $=".pdf"], .content-primary a[href $=".PDF"],
     .content-primary a[href *=".pdf#"], .content-primary a[href *=".PDF#"],
-    .content-primary a[href *=".pdf?"],.content-primary a[href *=".PDF?"] {
+    .content-primary a[href *=".pdf?"],.content-primary a[href *=".PDF?"],
+    .piratenkleider-optionen #liopt0 a[href $=".pdf"], .piratenkleider-optionen #liopt0 a[href $=".PDF"],
+    .piratenkleider-optionen #liopt0 a[href *=".pdf#"], .piratenkleider-optionen #liopt0 a[href *=".PDF#"],
+    .piratenkleider-optionen #liopt0 a[href *=".pdf?"],.piratenkleider-optionen #liopt0 a[href *=".PDF?"]    {
         background: url("../images/links/pdf.gif") center left no-repeat;
         padding-left: 19px;
     }
     .content-primary a[href $=".pdf"]:after, .content-primary a[href $=".PDF"]:after,
     .content-primary a[href *=".pdf#"]:after, .content-primary a[href *=".PDF#"]:after,
-    .content-primary a[href *=".pdf?"]:after,.content-primary a[href *=".PDF?"]:after {
+    .content-primary a[href *=".pdf?"]:after,.content-primary a[href *=".PDF?"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".pdf"]:after, .piratenkleider-optionen #liopt0 a[href $=".PDF"]:after,
+    .piratenkleider-optionen #liopt0 a[href *=".pdf#"]:after, .piratenkleider-optionen #liopt0 a[href *=".PDF#"]:after,
+    .piratenkleider-optionen #liopt0 a[href *=".pdf?"]:after,.piratenkleider-optionen #liopt0 a[href *=".PDF?"]:after    {
        content: " (PDF) ";
     }
-    .content-primary a[href $=".ppt"], .content-primary a[href $=".PPT"]{
+    .content-primary a[href $=".ppt"], .content-primary a[href $=".PPT"],
+    .piratenkleider-optionen #liopt0 a[href $=".ppt"], .piratenkleider-optionen #liopt0 a[href $=".PPT"] {
         background: url("../images/links/ppt.gif") center left no-repeat;
         padding-left: 19px;
     }
-    .content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after {
+    .content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".ppt"]:after, .piratenkleider-optionen #liopt0 a[href $=".PPT"]:after {
        content: " (Powerpoint-Datei) ";
     }
     .content-primary a[href $=".doc"], .content-primary a[href $=".DOC"],
-    .content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"] {
+    .content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"],
+    .piratenkleider-optionen #liopt0 a[href $=".doc"], .piratenkleider-optionen #liopt0 a[href $=".DOC"],
+    .piratenkleider-optionen #liopt0 a[href $=".docx"], .piratenkleider-optionen #liopt0 a[href $=".DOCX"]    {
         background: url("../images/links/word.gif") center left no-repeat;
         padding-left: 19px;
     }
     .content-primary a[href $=".doc"]:after, .content-primary a[href $=".DOC"]:after,
-    .content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after {
+    .content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".doc"]:after, .piratenkleider-optionen #liopt0 a[href $=".DOC"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".docx"]:after, .piratenkleider-optionen #liopt0 a[href $=".DOCX"]:after    {
        content: " (Word-Datei) ";
     }
     .content-primary a[href $=".zip"], .content-primary a[href $=".ZIP"],
@@ -81,50 +114,71 @@
     .content-primary a[href $=".msi"], .content-primary a[href $=".MSI"],
     .content-primary a[href $=".dmg"],.content-primary a[href $=".DMG"],
     .content-primary a[href $=".gz"], .content-primary a[href $=".GZ"],
-    .content-primary a[href *=".gzip"], .content-primary a[href *=".GZIP"] {
+    .content-primary a[href *=".gzip"], .content-primary a[href *=".GZIP"],
+    .piratenkleider-optionen #liopt0 a[href $=".zip"], .piratenkleider-optionen #liopt0 a[href $=".ZIP"],
+    .piratenkleider-optionen #liopt0 a[href $=".rar"], .piratenkleider-optionen #liopt0 a[href $=".RAR"],
+    .piratenkleider-optionen #liopt0 a[href $=".exe"], .piratenkleider-optionen #liopt0 a[href $=".EXE"],
+    .piratenkleider-optionen #liopt0 a[href $=".msi"], .piratenkleider-optionen #liopt0 a[href $=".MSI"],
+    .piratenkleider-optionen #liopt0 a[href $=".dmg"],.piratenkleider-optionen #liopt0 a[href $=".DMG"],
+    .piratenkleider-optionen #liopt0 a[href $=".gz"], .piratenkleider-optionen #liopt0 a[href $=".GZ"],
+    .piratenkleider-optionen #liopt0 a[href *=".gzip"], .piratenkleider-optionen #liopt0 a[href *=".GZIP"]    {
         background: url("../images/links/zip.gif") center left no-repeat;
         padding-left: 19px;
     }
     .content-primary a[href $=".rar"]:after, .content-primary a[href $=".RAR"]:after,
     .content-primary a[href $=".exe"]:after, .content-primary a[href $=".EXE"]:after,
     .content-primary a[href $=".msi"]:after, .content-primary a[href $=".MSI"]:after,
-    .content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after {
+    .content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".rar"]:after, .piratenkleider-optionen #liopt0 a[href $=".RAR"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".exe"]:after, .piratenkleider-optionen #liopt0 a[href $=".EXE"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".msi"]:after, .piratenkleider-optionen #liopt0 a[href $=".MSI"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".dmg"]:after,.piratenkleider-optionen #liopt0 a[href $=".DMG"]:after     {
         content: " (Archiv) ";
     }
     .content-primary a[href $=".zip"]:after, .content-primary a[href $=".ZIP"]:after,
     .content-primary a[href $=".gz"]:after, .content-primary a[href $=".GZ"]:after,
-    .content-primary a[href *=".gzip"]:after, .content-primary a[href *=".GZIP"]:after {
+    .content-primary a[href *=".gzip"]:after, .content-primary a[href *=".GZIP"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".zip"]:after, .piratenkleider-optionen #liopt0 a[href $=".ZIP"]:after,
+    .piratenkleider-optionen #liopt0 a[href $=".gz"]:after, .piratenkleider-optionen #liopt0 a[href $=".GZ"]:after,
+    .piratenkleider-optionen #liopt0 a[href *=".gzip"]:after, .piratenkleider-optionen #liopt0 a[href *=".GZIP"]:after    {
         content: " (ZIP-Datei) ";
     }
 
 
-    .content-primary a.extern {
+    .content-primary a.extern,
+    .piratenkleider-optionen #liopt0 a.extern    {
         background: url("../images/links/extern.gif") center left no-repeat;
 		background-position: 1px;
         padding-left: 12px;
     }
 
-    .content-primary a[href *= "lqfb.piratenpartei.de"] {
+    .content-primary a[href *= "lqfb.piratenpartei.de"],
+    .piratenkleider-optionen #liopt0 a[href *= "lqfb.piratenpartei.de"] {
         background: url("../images/links/lqfb.png") center left no-repeat;
         padding-left: 18px;
     }
-    .content-primary a[href *= "wiki.piratenpartei.de"] {
+    .content-primary a[href *= "wiki.piratenpartei.de"],
+    .piratenkleider-optionen #liopt0 a[href *= "wiki.piratenpartei.de"]    {
         background: url("../images/links/piratenwiki.png") center left no-repeat;
         padding-left: 18px;
     }
-    .content-primary a[href *= "news.piratenpartei.de"] {
+    .content-primary a[href *= "news.piratenpartei.de"],
+    .piratenkleider-optionen #liopt0 a[href *= "news.piratenpartei.de"]    {
         background: url("../images/links/syncforum.png") center left no-repeat;
         padding-left: 18px;
     }
-    .content-primary a[href *= "feedback.piratenpartei-bayern.de"] {
+    .content-primary a[href *= "feedback.piratenpartei-bayern.de"],
+    .piratenkleider-optionen #liopt0 a[href *= "feedback.piratenpartei-bayern.de"] {
         background: url("../images/links/piratefeedback.png") center left no-repeat;
         padding-left: 18px;
     }
-    .content-primary a[href *= "de.wikipedia.org"] {
+    .content-primary a[href *= "de.wikipedia.org"],
+    .piratenkleider-optionen #liopt0 a[href *= "de.wikipedia.org"] {
         background: url("../images/links/wikipedia.png") center left no-repeat;
         padding-left: 18px;
     }
-    .content-primary a[href *= "piratenpad.de"] {
+    .content-primary a[href *= "piratenpad.de"],
+    .piratenkleider-optionen #liopt0 a[href *= "piratenpad.de"] {
         background: url("../images/links/piratenpad.png") center left no-repeat;
         padding-left: 18px;
     }

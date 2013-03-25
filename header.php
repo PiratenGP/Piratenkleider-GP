@@ -136,8 +136,25 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     if (!isset($designspecials['aktiv-mediaqueries-submenu']) || ($designspecials['aktiv-mediaqueries-submenu'] != 1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_submenu.css">';      
     }
-    if (!(isset($designspecials['disable-linkicons']) && ($designspecials['disable-linkicons']==1))) {
-      echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons.css">';      
+    
+    if (!isset($designspecials['mode-linkicons']) || !in_array($designspecials['mode-linkicons'], array(0,1,2,3))) {
+        if ($designspecials['disable-linkicons'] == 1) {
+            $designspecials['mode-linkicons'] = 3;
+        } else {
+            $designspecials['mode-linkicons'] = 0;
+        }
+    }
+    
+    switch($designspecials['mode-linkicons']) {
+    case 0:
+        echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons.css">';      
+        break;
+    case 1:
+        echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons1.css">';      
+        break;
+    case 2:
+        echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons2.css">';      
+        break;
     }
 ?>
 

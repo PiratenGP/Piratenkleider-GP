@@ -1093,13 +1093,58 @@ function theme_designspecials_do_page() {
                                </label>
                             </td>
 			</tr>
-			
-                       <tr valign="top"><th scope="row"><?php _e( 'Link-Icons deaktivieren', 'piratenkleider' ); ?></th>
+            
+            <?php
+                if (!isset($options['mode-linkicons'])) {
+                    if ($options['disable-linkicons'] == 1) {
+                        $options['mode-linkicons'] = 3;
+                    } else {
+                        $options['mode-linkicons'] = 0;
+                    }
+                }
+            ?>
+            
+                       <tr valign="top"><th scope="row"><?php _e( 'Linkicons', 'piratenkleider' ); ?></th>
                             <td>
-                              <input id="piratenkleider_theme_designspecials[disable-linkicons]" name="piratenkleider_theme_designspecials[disable-linkicons]" type="checkbox" value="1" <?php checked( '1', $options['disable-linkicons'] ); ?> />
-                               <label  for="piratenkleider_theme_designspecials[disable-linkicons]">
-                                   <?php _e( 'Die Icons vor bzw. nach den Links ausblenden.', 'piratenkleider' ); ?>
-                               </label>
+                                <table border="1">
+                                    <tr>
+                                        <td><input id="piratenkleider_theme_designspecials[mode-linkicons]" name="piratenkleider_theme_designspecials[mode-linkicons]" type="radio" value="0" <?php checked( '0', $options['mode-linkicons'] ); ?> /> <?php _e( 'Piratenkleider-Standard', 'piratenkleider' ); ?></td>
+                                        <td><input id="piratenkleider_theme_designspecials[mode-linkicons]" name="piratenkleider_theme_designspecials[mode-linkicons]" type="radio" value="1" <?php checked( '1', $options['mode-linkicons'] ); ?> /> <?php _e( 'Pfeile / E-Mail', 'piratenkleider' ); ?></td>
+                                        <td><input id="piratenkleider_theme_designspecials[mode-linkicons]" name="piratenkleider_theme_designspecials[mode-linkicons]" type="radio" value="2" <?php checked( '2', $options['mode-linkicons'] ); ?> /> <?php _e( 'Nur E-Mail', 'piratenkleider' ); ?></td>
+                                        <td><input id="piratenkleider_theme_designspecials[mode-linkicons]" name="piratenkleider_theme_designspecials[mode-linkicons]" type="radio" value="3" <?php checked( '3', $options['mode-linkicons'] ); ?> /> <?php _e( 'Keine Linkicons', 'piratenkleider' ); ?></td>
+                                    </tr>
+                                    <tr  valign="top">
+                                        <td id="liopt0">
+                                            <a href="#">Interner Link</a><br>
+                                            <a class="extern" href="#">Externer Link</a><br>
+                                            <a href="mailto:">E-Mail</a><br>
+                                            <a href="piratenpad.de">Piratenpad</a><br>
+                                            <a href="de.wikipedia.org">Wkipedia</a><br>
+                                            <a href="news.piratenpartei.de">news.piratenpartei.de</a><br>
+                                            <a href="feedback.piratenpartei-bayern.de">feedback.piratenpartei-bayern.de</a><br>
+                                            <a href="wiki.piratenpartei.de">wiki.piratenpartei.de</a><br>
+                                            <a href="lqfb.piratenpartei.de">lqfb.piratenpartei.de</a><br>
+                                            <a href=".zip">Archiv</a><br>
+                                            <a href=".doc">Word-Datei</a><br>
+                                            <a href=".ppt">Powerpoint-Datei</a><br>
+                                            <a href=".pdf">PDF</a><br>
+                                            <a href=".avi">Video</a><br>
+                                            <a href=".mp3">Audio</a>
+                                        </td>
+                                        <td id="liopt1">
+                                            <a href="#">Interner Link</a><br>
+                                            <a href="mailto:">E-Mail</a><br>
+                                            <a class="extern" href="#">Sonstige Links</a>
+                                        </td>
+                                        <td id="liopt2">
+                                            <a href="mailto:">E-Mail</a><br>
+                                            <a class="extern" href="#">Sonstige Links</a>
+                                        </td>
+                                        <td>
+                                            <a href="#">Alle Links</a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
 			</tr>
                        
