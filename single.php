@@ -129,17 +129,27 @@
         if ((($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
            || (($custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
             {   ?>
-            <div id="steckbrief">   
+            <div id="steckbrief">
+                
                 <?php
+                if ($custom_fields['link'][0]<>'') {
+                    echo '<a href="'.$custom_fields['link'][0].'" class="steckbrief-link">';
+                }
+                
                 if ($custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
                 } else {
                      the_post_thumbnail(array(300,300));
                 } ?>
                 
-                <div class="text">
+                <span class="text">
                      <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
-                </div>
+                </span>
+                <?php
+                if ($custom_fields['link'][0]<>'') {
+                    echo '</a>';
+                }
+                ?>
            </div>
            <?php 
         }  

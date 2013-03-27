@@ -1399,8 +1399,18 @@ display: inline-block;
   } 
     
    .content-aside #steckbrief .text {
+      display: block;
       background-color: white;
       padding: 0.4em 0.8em 0.3em 0.8em;
+   } 
+   
+   .content-aside #steckbrief a.steckbrief-link {
+      display: block;
+      margin: -10px -10px -15px;
+      padding: 10px 10px 15px;
+   } 
+   .content-aside #steckbrief a.steckbrief-link:hover {
+      text-decoration: none;
    } 
   
  .content-aside .newsletter {     
