@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.5.2, 25.03.2013
+Version 1.5.3, 27.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -32,10 +32,18 @@ Features:
 - Es können mehrere Standard-Bilder für den Slider ausgewählt werden
 - Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
 - Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
+- Verlinken des Steckbriefs mit custom field 'link' möglich
+- Die Rotation und Animation im Steckbrief sind nun standardmäßig deaktiviert. Sie können im Klüverbaum wieder aktiviert werden.
 
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 27.03.2013 - v1.5.3 =
+-- Neue Funktion: Animation des Steckbriefs deaktivieren
+-- Neue Funktion: Kompletten Steckbrief verlinken (custom field: 'link')
+-- Schönheitskorrekturen Steckbrief
+-- UPDATEHINWEISE:
+--- Die Rotation und Animation im Steckbrief sind nun standardmäßig deaktiviert. Sie können im Klüverbaum wieder aktiviert werden.
 = 25.03.2013 - v1.5.2 =
 -- Neue Funktion: Link-Icons-Auswahl
 -- Schönheitskorrekturen: Home-Button
