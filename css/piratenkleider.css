@@ -1379,31 +1379,15 @@ display: inline-block;
 
 .content-aside #steckbrief {    
     background-color: white;
-    cursor: pointer;
     display: inline-block;
     padding: 10px 10px 15px;
     z-index: 1;
     box-shadow: 0 1px 8px #999999;
-    margin: 0 0 20px -20px;
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -ms-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-    transform: rotate(2deg);
-    -webkit-transition: all 406ms ease-out 0s;
-    -moz-transition: all 406ms ease-out 0s;
-    -ms-transition: all 406ms ease-out 0s;
-    -o-transition: all 406ms ease-out 0s;
-    transition: all 406ms ease-out 0s;                    
+    margin: 0 0 20px -20px;                   
 }
   .content-aside #steckbrief:hover,
   .content-aside #steckbrief:focus,
   .content-aside #steckbrief:active {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
     z-index: 9;
 	}   
   .content-aside #steckbrief img {

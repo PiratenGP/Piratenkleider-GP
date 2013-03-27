@@ -1077,6 +1077,15 @@ function theme_designspecials_do_page() {
 		       </tr>
                        
                        
+                       <tr valign="top"><th scope="row"><?php _e( 'Steckbrief-Animation', 'piratenkleider' ); ?></th>
+                            <td>
+                              <input id="piratenkleider_theme_designspecials[aktiv-steckbrief-animation]" name="piratenkleider_theme_designspecials[aktiv-steckbrief-animation]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-steckbrief-animation'] ); ?> />
+                               <label  for="piratenkleider_theme_designspecials[aktiv-steckbrief-animation]">
+                                   <?php _e( 'Der Steckbrief wird leicht schräg angezeigt und ist animiert. Bei manchen Browsern verschlechtert sich die Textqualität.', 'piratenkleider' ); ?>
+                               </label>
+                            </td>
+			</tr>
+            
                        <tr valign="top"><th scope="row"><?php _e( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ); ?></th>
                             <td>
                               <input id="piratenkleider_theme_designspecials[aktiv-mediaqueries-allparts]" name="piratenkleider_theme_designspecials[aktiv-mediaqueries-allparts]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-mediaqueries-allparts'] ); ?> />

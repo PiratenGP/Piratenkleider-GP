@@ -1,0 +1,22 @@
+.content-aside #steckbrief {    
+    cursor: pointer;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+    -webkit-transition: all 406ms ease-out 0s;
+    -moz-transition: all 406ms ease-out 0s;
+    -ms-transition: all 406ms ease-out 0s;
+    -o-transition: all 406ms ease-out 0s;
+    transition: all 406ms ease-out 0s;                    
+}
+  .content-aside #steckbrief:hover,
+  .content-aside #steckbrief:focus,
+  .content-aside #steckbrief:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+	} 
