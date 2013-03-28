@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.5.3, 27.03.2013
+Version 1.5.4, 28.03.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -38,6 +38,9 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 28.03.2013 - v1.5.4 =
+-- Bugfix: Skiplink für die Suche hat nicht funktioniert
+-- HTML5-Fehler beseitigt
 = 27.03.2013 - v1.5.3 =
 -- Neue Funktion: Animation des Steckbriefs deaktivieren
 -- Neue Funktion: Kompletten Steckbrief verlinken (custom field: 'link')
