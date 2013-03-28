@@ -2,7 +2,7 @@
 global $defaultoptions;
 global $notfirstsearchform;
 ?>
-<h2 name="searchform" if="searchform" class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
+<h2 id="searchform" class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
 
 <form method="get" <?=$searchformid;?> class="searchform" action="<?php echo home_url(); ?>/">
 	<label class="visuallyhidden" for="s"><?php _e("Suche nach", 'piratenkleider'); ?>:</label>
