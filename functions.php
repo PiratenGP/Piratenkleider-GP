@@ -977,7 +977,7 @@ function get_post_audio_enclosure($information) {
 	// $allowed_output = array('mp3', 'oga', 'ogg', 'mp4','m4a','ogv','m4v');
 	$allowed_output = array('mp3', 'oga', 'ogg');
 	    
-	if (in_array('enclosure',$custom_keys)) {
+	if (is_array($custom_keys) && in_array('enclosure',$custom_keys)) {
 		$custom_fields  = get_post_custom();
 		$enclosures = 	$custom_fields['enclosure'];
                 if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
