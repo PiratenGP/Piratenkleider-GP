@@ -1134,3 +1134,122 @@ function piratenkleider_echo_player() {
     <?php
     }	
 }
+
+
+/**
+ *  Install Add-ons
+ *  
+ *  The following code will include all 4 premium Add-Ons in your theme.
+ *  Please do not attempt to include a file which does not exist. This will produce an error.
+ *  
+ *  All fields must be included during the 'acf/register_fields' action.
+ *  Other types of Add-ons (like the options page) can be included outside of this action.
+ *  
+ *  The following code assumes you have a folder 'add-ons' inside your theme.
+ *
+ *  IMPORTANT
+ *  Add-ons may be included in a premium theme as outlined in the terms and conditions.
+ *  However, they are NOT to be included in a premium / free plugin.
+ *  For more information, please read http://www.advancedcustomfields.com/terms-conditions/
+ */ 
+
+// Felder 
+add_action('acf/register_fields', 'my_register_fields');
+
+function my_register_fields()
+{
+	//include_once('add-ons/acf-repeater/repeater.php');
+	//include_once('add-ons/acf-gallery/gallery.php');
+	//include_once('add-ons/acf-flexible-content/flexible-content.php');
+}
+
+// Optionen-Seite 
+//include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+/**
+ *  Register Field Groups
+ *
+ *  The register_field_group function accepts 1 array which holds the relevant data to register a field group
+ *  You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
+ */
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_steckbrief',
+		'title' => 'Steckbrief',
+		'fields' => array (
+			array (
+				'key' => 'field_5159329a6f885',
+				'label' => 'desc',
+				'name' => 'desc',
+				'type' => 'message',
+				'message' => 'Wenn Text und Bild angegeben sind, wird neben dem Artikel ein Steckbrief angezeigt.',
+			),
+			array (
+				'key' => 'field_5159319f55ff7',
+				'label' => 'Text',
+				'name' => 'text',
+				'type' => 'textarea',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5159336dc0da4',
+							'operator' => '==',
+							'value' => 1,
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'formatting' => 'html',
+			),
+			array (
+				'key' => 'field_5159316655ff6',
+				'label' => 'Bild',
+				'name' => 'image_url',
+				'type' => 'image',
+				'save_format' => 'id',
+				'preview_size' => 'thumbnail',
+			),
+			array (
+				'key' => 'field_515931c655ff8',
+				'label' => 'Titel',
+				'name' => 'title',
+				'type' => 'text',
+				'instructions' => 'z.B. Name des Autors',
+				'default_value' => '',
+				'formatting' => 'none',
+			),
+			array (
+				'key' => 'field_515931d755ff9',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'text',
+				'instructions' => 'Wenn angeben, wird die komplette Steckbrief-Box verlinkt.',
+				'default_value' => '',
+				'formatting' => 'none',
+			),
+		),
+		'location' => array (
+			'rules' => array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+				),
+			),
+			'allorany' => 'all',
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
