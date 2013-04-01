@@ -135,7 +135,9 @@
                 if ($custom_fields['link'][0]<>'') {
                     echo '<a href="'.$custom_fields['link'][0].'" class="steckbrief-link">';
                 }
-                
+                if ($custom_fields['title'][0]<>'') {
+                    echo '<span class="likeh2">'.$custom_fields['title'][0]."</span>";
+                }
                 if ($custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
                 } else {
