@@ -1382,13 +1382,14 @@ display: inline-block;
     padding: 10px 10px 15px;
     z-index: 1;
     box-shadow: 0 1px 8px #999999;
-    margin: 0 0 20px -20px;                   
+    margin: 0 0 20px -20px;
+    padding: 20px;
 }
   .content-aside #steckbrief:hover,
   .content-aside #steckbrief:focus,
   .content-aside #steckbrief:active {
     z-index: 9;
-	}   
+	}
   .content-aside #steckbrief img {
     background-position: center center;
     background-repeat: no-repeat;
@@ -1400,7 +1401,6 @@ display: inline-block;
    .content-aside #steckbrief .text {
       display: block;
       background-color: white;
-      padding: 0.4em 0.8em 0.3em 0.8em;
    } 
    
    .content-aside #steckbrief a.steckbrief-link {
