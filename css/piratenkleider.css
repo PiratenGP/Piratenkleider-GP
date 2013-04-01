@@ -641,7 +641,7 @@ div#searchform {
   background: rgba(255, 255, 255, 0.5);
   position: relative;
 }
-.searchform input#s {
+.searchform input.s {
     width: 160px;
     line-height: 1em;      
     margin-top: 2px;
@@ -2944,8 +2944,8 @@ background: none repeat scroll 0 0 #EEEEEE;
     width: 200px;
     height: 30px;
     padding: 3px 5px 0 5px; }
-.ie7 .nav-top form.searchform #s, 
-.ie8 .nav-top form.searchform #s {
+.ie7 .nav-top form.searchform .s, 
+.ie8 .nav-top form.searchform .s {
       line-height: 18px;
      }
 .ie7 .nav-top form.searchform .searchsubmit, 

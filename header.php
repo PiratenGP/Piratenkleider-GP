@@ -249,9 +249,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
                                 } 
                                 if ( $options['aktiv-suche'] == "1" ){
-                                    echo '<div id="searchform">';
                                     get_search_form(); 
-                                    echo '</div>';
                                 }
                                 ?>
                                 
