@@ -1,3 +1,5 @@
+@media only screen and (min-width: 600px) {
+
 .content-aside #steckbrief {    
     cursor: pointer;
     -webkit-transform: rotate(2deg);
@@ -20,3 +22,5 @@
     -o-transform: scale(1.1);
     transform: scale(1.1);
 	} 
+    
+}
