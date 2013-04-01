@@ -353,6 +353,9 @@
        padding: 10px;
        max-width: 100%;
    }
+  .post-comments {
+    padding: 10px;
+  }
   .post-comments a {
       color: black;
   }
