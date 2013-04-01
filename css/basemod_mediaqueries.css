@@ -304,6 +304,9 @@
       float: none;
       clear: both;
   }
+  .content-aside #steckbrief {    
+        margin-left: 0px;                   
+  }
   .content-primary .columns .column0,
   .content-primary .columns .column1,
   .content-primary .columns .column2 {
