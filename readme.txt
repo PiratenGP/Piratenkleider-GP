@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.5.4, 28.03.2013
+Version 1.6.0, 01.04.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -12,31 +12,47 @@ Github: https://github.com/PiratenGP/Piratenkleider
 basierend auf Version 2.16.1 von xwolf
 
 Features:
-- Mehr Beiträge über die ganze Breite auf der Startseite möglich
-- "GP-Modus" für den Slider (feste Texte und Links für mehrere Bilder)
-- Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben (alter Modus optional)
-- Sidebar "oben rechts" hinzugefügt
-- Die Widgets in den Sidebars "Rechts unten" und "Links unten" werden unter den alten Artikeln, Kategorien, etc. angezeigt.
-- Die Sidebar "Links unten" kann über die gesamte Breite angezeigt werden
-- keine Hinweistexte in der Newsletter-Box (optional)
-- Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
-- Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
-- Anpassungen im Style
-- Unterstützung des Plugins "Announcer" (Als Klasse 'sticky' angeben)
-- Link zu "Allen Artikeln" unter den älteren Artikeln aktiverbar
-- Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
-- Newlsetter: Box aus den Einstellungen entfernt
-- Newsletter-Widget: Info-Texte ausblendbar
-- Neue Struktur der Einstellungen
-- Linkicons sind ausblendbar
-- Es können mehrere Standard-Bilder für den Slider ausgewählt werden
-- Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
-- Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
-- Verlinken des Steckbriefs mit custom field 'link' möglich
-- Die Rotation und Animation im Steckbrief sind nun standardmäßig deaktiviert. Sie können im Klüverbaum wieder aktiviert werden.
+- Allgemeines
+-- Die Einstellungen sind intuitiver angeordnet
+-- Sidebar "oben rechts" hinzugefügt
+-- Möglichkeit hinzugefügt, Kommentare pauschal für alle Seiten zu deaktivieren
+-- Im Impressum können zusätzliche Credits und ein Link zu DSE eingetragen werden, außerdem Infos über den Hoster + Freitext
+- Slider
+-- "GP-Modus" (feste Texte und Links für mehrere Bilder)
+-- Es können mehrere Standard-Bilder für den Slider ausgewählt werden
+- Menü
+-- Seitenmenü angepasst, es kann jetzt eingestellt werden, nur das aktive Menü angezeigt werden
+- Startseite
+-- Link zu "Allen Artikeln" unter den älteren Artikeln aktiverbar
+- Optik
+-- Datum und Zeit eines Posts werden als Text über diesem angezeigt, nicht als Icon daneben (alter Modus optional)
+-- Die Sidebar "Links unten" kann über die gesamte Breite angezeigt werden
+-- keine Hinweistexte in der Newsletter-Box (optional)
+-- Linkicons sind ausblendbar
+-- Etliche Anpassungen im Style
+- Kleine Bildschirme
+-- Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
+-- Bei kleinen Bildschirmen können jetzt auch Submenüs angezeigt werden
+- Steckbrief
+-- Die Rotation und Animation im Steckbrief sind nun standardmäßig deaktiviert. Sie können im Klüverbaum wieder aktiviert werden.
+-- Verlinken des Steckbriefs mit custom field 'link' möglich
+-- Titel beim Steckbrief mit custom field 'title' möglich
+- Plugins
+-- Unterstützung des Plugins "Announcer" (Als Klasse 'sticky' angeben)
+-- Unterstützung des Plugins "Advances Custom Fields" für den Steckbrief
+
 
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
+
+= 01.04.2013 - v1.6.0 =
+-- Neue Funktion: Titel beim Steckbrief mit custom field 'title' möglich
+-- Unterstützung des Plugins "Advances Custom Fields" für den Steckbrief
+-- Schönheitskorrekturen: Steckbrief, Post-Comments
+-- HTML5 Fehler beseitigt
+-- Update auf Version 2.16.1 von xwolf
+-- UPDATEHINWEISE:
+--- Bei dem Steckbrief können jetzt auch Title angezeigt werden. Zur einfacheren Bedienung wurde eine Unterstützung des Plugins "Advanced Custom Fields" eingebaut, das Plugin muss nur installiert werden, dann erscheinen unter dem Beitragseditor weitere Felder für den Steckbrief.
 
 = 28.03.2013 - v1.5.4 =
 -- Bugfix: Skiplink für die Suche hat nicht funktioniert
