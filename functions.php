@@ -1192,17 +1192,6 @@ if(function_exists("register_field_group"))
 				'label' => 'Text',
 				'name' => 'text',
 				'type' => 'textarea',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5159336dc0da4',
-							'operator' => '==',
-							'value' => 1,
-						),
-					),
-					'allorany' => 'all',
-				),
 				'default_value' => '',
 				'formatting' => 'html',
 			),
