@@ -2,7 +2,7 @@
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.6.2, 13.04.2013
+Version 1.6.3, 30.04.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -29,6 +29,7 @@ Features:
 -- Die Sidebar "Links unten" kann über die gesamte Breite angezeigt werden
 -- keine Hinweistexte in der Newsletter-Box (optional)
 -- Linkicons sind ausblendbar
+-- Unterstützung für die Schriftart "Politics Head"
 -- Etliche Anpassungen im Style
 - Kleine Bildschirme
 -- Der Skiplink "Zur Suche springen" wird nur bei einer Suche in der Sidebar angezeigt
@@ -45,6 +46,8 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 30.04.2013 - v1.6.3 =
+-- Neue Funktion: Schriftart "Politics Head" im Klüverbaum aktivierbar
 = 13.04.2013 - v1.6.2 =
 -- Bugfix: in_array Fehlermeldun (thx @ Thomas Ulrich)
 = 04.04.2013 - v1.6.1 =
