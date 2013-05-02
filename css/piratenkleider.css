@@ -1647,7 +1647,10 @@ display: inline-block;
     color: black;
     background: #f38100;
     padding: 0 2px;
-}      
+}   
+.sticky p {
+    margin-bottom: 0;
+}   
 .post .disclaimer a:hover, 
 .post .disclaimer a:focus,
 .sticky a:hover,
