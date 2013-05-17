@@ -86,7 +86,7 @@
 ?>  
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php
 if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) { ?>
