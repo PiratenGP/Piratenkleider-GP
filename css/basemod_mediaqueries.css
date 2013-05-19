@@ -86,34 +86,41 @@
          min-width: 300px;
          clear: both;
          text-align: center;
+         height: auto;
     }
     
     .nav-top form.searchform {
         clear: both;
-        float: none;
         display: block;     
         width: 250px;
-        background: white;
+        background: transparent;
         margin: 5px auto;
         position: relative;     
+        float: none;
     }
    
-    .nav-top .searchform input#s {       
-        line-height: 1.2em;
-        width: 15em;        
-        float: left;
-        
+    .nav-top form.searchform input {       
+        padding: 5px;
     }
    .nav-top form.searchform .searchsubmit {
         position: relative;       
         width: auto;
-        float: left;
+        float: right;
         text-indent: 0;
         background: #2D7DC5;
         height: inherit;
-        line-height: 1.2em;
+        line-height: 1em;
         overflow: none;
-        height: 1.4em;
+        height: auto;
+        padding: 5px;
+        top: 0px;
+        margin-top: 2px;
+        left: -15px;
+     }
+    
+       .nav-top form.searchform .searchsubmit:after {
+       content: "a";
+       clear: both;
      }
     
     .nav-top div.menu-header {
