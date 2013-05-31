@@ -95,14 +95,14 @@
 			<div class="infoimage">                    
 					<?php echo $firstpic ?>
 			</div>                    
-			<?
+			<?php
           } elseif ($options['aktiv-calendericon-instead-text'] == 1) { ?>
 			 <div class="cal-icon">
                     <span class="day"><?php the_time('j.'); ?></span>
                     <span class="month"><?php the_time('m.'); ?></span>
                     <span class="year"><?php the_time('Y'); ?></span>
              </div>
-		  <? } ?>
+		  <?php } ?>
           </div>
 
         <div class="post-entry">

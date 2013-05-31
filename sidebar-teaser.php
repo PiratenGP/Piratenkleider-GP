@@ -62,7 +62,7 @@
 
 			query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
 			?>
-			<div class="flexslider <? echo implode(" ", $hideclasses); ?>">
+			<div class="flexslider <?php echo implode(" ", $hideclasses); ?>">
 				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
 				<ul class="slides">
 			<?php 
@@ -139,10 +139,10 @@
 			
 		} elseif ($options['slider-modus'] == 1) {
 			?>
-			<div class="flexslider <? echo implode(" ", $hideclasses); ?>">
+			<div class="flexslider <?php echo implode(" ", $hideclasses); ?>">
 				<h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
 				<ul class="slides">
-			<?
+			<?php
 			
 		$gpteaser = get_option( 'piratenkleider_theme_defaultbilder'); 
 			
@@ -169,7 +169,7 @@
 			}
 			?>
 			</ul></div>
-			<?
+			<?php
 		}
     } ?>
 </div>

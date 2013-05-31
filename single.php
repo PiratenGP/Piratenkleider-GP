@@ -49,7 +49,7 @@
                     <span class="month"><?php the_time('m.'); ?></span>
                     <span class="year"><?php the_time('Y'); ?></span>
              </div>
-		  <? } ?>
+		  <?php } ?>
           </div>
             
           
