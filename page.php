@@ -53,6 +53,10 @@ if (!isset($options['aktiv-disablepagecomments']))
           
             <?php
             
+            if ( is_active_sidebar( 'sidebar-widget-area-nav' ) )  {
+                dynamic_sidebar( 'sidebar-widget-area-nav' );     
+            }    
+            
             if (!isset($options['zeige_subpagesonly'])) 
             $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
   
