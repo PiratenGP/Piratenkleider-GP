@@ -1,3 +1,8 @@
+<?php
+/* 
+ Template Name: Wahlkampfportal
+ */
+?>
 <?php get_header();
 global $defaultoptions;
 $options = get_option( 'piratenkleider_theme_options' );
@@ -8,9 +13,8 @@ if (!isset($options['aktiv-disablepagecomments']))
 ?>
 
 <div class="section content" id="main-content">
-  <div class="row">
-    <div class="content-primary">     
-        <div class="content-header">            
+  <div class="row">   
+        <div class="content-header wkp-header">            
           <h1 id="page-title"><span><?php the_title(); ?></span></h1>
         
         <?php if (has_post_thumbnail()) { 
@@ -18,18 +22,12 @@ if (!isset($options['aktiv-disablepagecomments']))
               the_post_thumbnail(); 
             echo '</div>';  
         } else {            
-           if ($options['aktiv-defaultseitenbild']==1) {   
-                $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-                $defaultbildsrc = $bilderoptions['seiten-defaultbildsrc'];
-                if (isset($defaultbildsrc) && (strlen($defaultbildsrc)>4)) {
-                  echo '<div class="symbolbild">';
-                  echo '<img src="'.$defaultbildsrc.'"  alt="">';                        
-                  echo '</div>';  
-                }
-           }            
+            echo '<div class="symbolbild">&nbsp;';
+            echo '</div>';             
         }   
          ?>
       </div>
+      <div class="content-primary">  
       <div class="skin">
         
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -50,8 +48,12 @@ if (!isset($options['aktiv-disablepagecomments']))
     <div class="content-aside">
       <div class="skin">                
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
-          
+          <div class="wkp-sidebar">
             <?php
+            
+            if ( is_active_sidebar( 'sidebar-widget-area-wkp-top' ) )  {
+                dynamic_sidebar( 'sidebar-widget-area-wkp-top' );     
+            }    
             
             if (!isset($options['zeige_subpagesonly'])) 
             $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
@@ -62,7 +64,14 @@ if (!isset($options['aktiv-disablepagecomments']))
 			if (!isset($options['seitenmenu_mode'])) 
             $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-        
+            
+            if ( is_active_sidebar( 'sidebar-widget-area-wkp-bottom' ) )  {
+                dynamic_sidebar( 'sidebar-widget-area-wkp-bottom' );     
+            }    
+            
+            ?>
+            </div>
+            <?php
 
              if ( get_post_meta($post->ID, 'right_column', true) )
              echo do_shortcode(get_post_meta($post->ID, 'right_column', $single = true));

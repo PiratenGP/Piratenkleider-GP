@@ -16,16 +16,6 @@ function piratenkleider_widgets_init() {
                 'before_title' => '<h2>',
                 'after_title' => '</h2>',
         ) );
-       // Page-Sidebar	   
-        register_sidebar( array(
-                'name' => __( 'Sidebar (über der Navigation)', 'piratenkleider' ),
-                'id' => 'sidebar-widget-area-nav',
-                'description' => __( 'Dieser Bereich befindet sich auf Seiten über dem Navigationsbereich.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
        // Sidebar	   
         register_sidebar( array(
                 'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
@@ -133,7 +123,27 @@ function piratenkleider_widgets_init() {
                 'before_title' => '<h2>',
                 'after_title' => '</h2>',
         ) );
-
+       // WKP-Top--Sidebar	   
+        register_sidebar( array(
+                'name' => __( 'WKP (über der Navigation)', 'piratenkleider' ),
+                'id' => 'sidebar-widget-area-wkp-top',
+                'description' => __( 'Dieser Bereich befindet sich auf den Wahlkampfportal über dem Navigationsbereich.', 'piratenkleider' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
+        ) );
+       // WKP-Bottom--Sidebar	   
+        register_sidebar( array(
+                'name' => __( 'WKP (unter der Navigation)', 'piratenkleider' ),
+                'id' => 'sidebar-widget-area-wkp-bottom',
+                'description' => __( 'Dieser Bereich befindet sich auf den Wahlkampfportal unter dem Navigationsbereich.', 'piratenkleider' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
+        ) );
+        
 }
 add_action( 'widgets_init', 'piratenkleider_widgets_init' );
 

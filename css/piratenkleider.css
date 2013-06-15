@@ -3079,3 +3079,13 @@ background: none repeat scroll 0 0 #EEEEEE;
 .more-link {
 	content: "Weiterlesen →";
 }
+.wkp-sidebar {
+    margin: -25px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background: #ff8800 url("../images/wkp-side.jpg");
+}
+.wkp-header .symbolbild {
+    background: #ff8800 url("../images/wkp-banner.jpg");
+    height: 100%;
+}
