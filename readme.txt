@@ -52,6 +52,9 @@ Changelog:
 = 15.06.2013 - v1.7.0 =
 -- Update auf Piratenkleider 2.17.8 (big update!!)
 -- Neues Template: Wahlkampfportal
+-- UPDATEHINWEISE:
+--- Viele Änderungen! Vor dem Update unbedingt ein Backup machen!
+
 = 31.05.2013 - v1.6.6 =
 -- Bugfix: Fehler bei short_open_tag=Off
 -- Schlönheitskorrektur: Absätze in .sticky
