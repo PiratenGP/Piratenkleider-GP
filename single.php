@@ -1,27 +1,55 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-	  if (!isset($options['aktiv-calendericon-instead-text'])) 
-			$options['aktiv-calendericon-instead-text'] = $defaultoptions['aktiv-calendericon-instead-text'];  	
-	  if (!isset($options['aktiv-startseite-comments'])) 
-			$options['aktiv-startseite-comments'] = $defaultoptions['aktiv-startseite-comments']; 
-	  if (!isset($options['zeige_commentbubble_null'])) 
-			$options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null']; 
-	  if (!isset($options['aktiv-images-instead-date'])) 
-			$options['aktiv-images-instead-date'] = $defaultoptions['aktiv-images-instead-date'];   
+  global $options;    
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="skin">
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+	
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
         $custom_fields = get_post_custom();
         ?>
 
+	<?php
+	    $image_url = '';
+	    $image_alt = '';
+	    if (has_post_thumbnail()) { 
+		$thumbid = get_post_thumbnail_id(get_the_ID());
+		 // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
+		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
+		$image_url = $image_url_data[0];
+		$image_alt = trim(strip_tags( get_post_meta($thumbid, '_wp_attachment_image_alt', true) ));
+			
+	    } else {
+		if (($options['aktiv-artikelbild']==1) && (isset($options['artikelbild-src']))) {  
+		    $image_url = $options['artikelbild-src'];		    
+		}
+	    }
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['artikelbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
+		     echo '<div class="caption">'.$image_alt.'</div>';  
+		   }  ?>
+		   </div>
+		</div>  	
+	    <?php } ?>
+      
+      <div class="skin">
+       <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+	<?php } ?>
+ 
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-          <div class="post-title">
-            <h1><?php the_title(); ?></h1>
-          </div>
+  
           
+	    
            <?php 
             if ( (isset($custom_fields['show-post-disclaimer']))
                  && ($custom_fields['show-post-disclaimer'][0]<>'') 
@@ -68,6 +96,7 @@
                 echo '</div>';
                 }
           ?>  
+			
           <div class="post-meta">
             <div>
                <?php 
@@ -75,12 +104,19 @@
                 if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
                  piratenkleider_post_taxonominfo();  
                 ?>        
-            </div>
-            <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
+            </div>            
           </div>
-          
+	  
+	  <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
         </div>
-
+	<div class="post-nav">
+		<ul>
+		<?php 
+		 previous_post_link('<li class="back">&#9664; %link</li>', '%title'); 
+		 next_post_link('<li class="forward">%link &#9654;</li>', '%title'); 
+		 ?>
+		</ul>
+	  </div>        
         <hr>
 
         <div class="post-comments" id="comments">
@@ -88,10 +124,6 @@
         </div>
 
         <div class="post-nav">
-          <ul>
-          <?php previous_post_link('<li class="back">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
-          <?php next_post_link('<li class="forward">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
-          </ul>
             
            <?php if (has_filter( 'related_posts_by_category')) { ?>   
           <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
@@ -117,8 +149,9 @@
           <?php } ?>
         </div>
 
-        <?php endwhile; // end of the loop. ?>
+       
       </div>
+	 <?php endwhile; // end of the loop. ?>
     </div>
 
     <div class="content-aside">
@@ -126,8 +159,11 @@
        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
        <?php
        
-        if ((($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
-           || (($custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
+        if (  
+		( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
+		   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
+		|| (
+			(isset($custom_fields['text']) && $custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
             {   ?>
             <div id="steckbrief">
                 
@@ -138,7 +174,7 @@
                 if ($custom_fields['title'][0]<>'') {
                     echo '<span class="likeh2">'.$custom_fields['title'][0]."</span>";
                 }
-                if ($custom_fields['image_url'][0]<>'') {
+                if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
                 } else {
                      the_post_thumbnail(array(300,300));

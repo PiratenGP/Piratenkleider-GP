@@ -1,29 +1,15 @@
 <?php
    global $defaultoptions;
    global $defaultbilder_liste;
-   $options = get_option( 'piratenkleider_theme_options' );
-   $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+   global $options;  
+   $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
 ?>          
 <div class="first-teaser-widget-area">
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
    
-    if (!isset($options['slider-modus'])) 
-		$options['slider-modus'] = $defaultoptions['slider-modus'];       
-    if (!isset($options['teaser-showpauseplay'])) 
-		$options['teaser-showpauseplay'] = $defaultoptions['teaser-showpauseplay'];       	
-    if (!isset($options['teaser-showpaging'])) 
-		$options['teaser-showpaging'] = $defaultoptions['teaser-showpaging'];     
-	if (!isset($options['teaser-gplink'])) 
-		$options['teaser-gplink'] = $defaultoptions['teaser-gplink'];   
-	if (!isset($options['teaser-subtitle'])) 
-		$options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
-	if (!isset($options['teaser-gpsubtitle'])) 
-		$options['teaser-gpsubtitle'] = $defaultoptions['teaser-gpsubtitle'];
-	if (!isset($options['teaser-title'])) 
-		$options['teaser-title'] = $defaultoptions['teaser-title'];
-	 
+
 	
 	$hideclasses = array();
 	if ($options['teaser-showpauseplay'] == 0) $hideclasses[] = "flexslider-hidepauseplay";
@@ -144,9 +130,9 @@
 				<ul class="slides">
 			<?php
 			
-		$gpteaser = get_option( 'piratenkleider_theme_defaultbilder'); 
+		$gpteaser = $options; 
 			
-		  if ((isset($gpteaser['gpmodus-altadressen'])) && (strlen(trim($gpteaser['gpmodus-altadressen']))>2)) {                  
+		  if ((isset($gpteaser['gpmodus-altadressen'])) && (strlen(trim($gpteaser['gpmodus-altadressen']))>2)) {               
 				$alturls = preg_split("/[\n\r]+/", $gpteaser['gpmodus-altadressen']);
 				if (is_array( $alturls )) {
 					foreach ( $alturls  as $current) {
@@ -177,33 +163,7 @@
 <div class="skin">
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
-    <?php } else {
-          if (!isset($options['teaserlink1-title'])) 
-            $options['teaserlink1-title'] = $defaultoptions['teaserlink1-title'];   
-        if (!isset($options['teaserlink1-untertitel'])) 
-            $options['teaserlink1-untertitel'] = $defaultoptions['teaserlink1-untertitel'];   
-        if (!isset($options['teaserlink1-url'])) 
-            $options['teaserlink1-url'] = $defaultoptions['teaserlink1-url'];   
-        if (!isset($options['teaserlink1-symbol'])) 
-            $options['teaserlink1-symbol'] = $defaultoptions['teaserlink1-symbol'];   
-        if (!isset($options['teaserlink2-title'])) 
-            $options['teaserlink2-title'] = $defaultoptions['teaserlink2-title'];   
-        if (!isset($options['teaserlink2-untertitel'])) 
-            $options['teaserlink2-untertitel'] = $defaultoptions['teaserlink2-untertitel'];   
-        if (!isset($options['teaserlink2-url'])) 
-            $options['teaserlink2-url'] = $defaultoptions['teaserlink2-url'];   
-        if (!isset($options['teaserlink2-symbol'])) 
-            $options['teaserlink2-symbol'] = $defaultoptions['teaserlink2-symbol'];  
-
-        if (!isset($options['teaserlink3-title'])) 
-            $options['teaserlink3-title'] = $defaultoptions['teaserlink3-title'];   
-        if (!isset($options['teaserlink3-untertitel'])) 
-            $options['teaserlink3-untertitel'] = $defaultoptions['teaserlink3-untertitel'];   
-        if (!isset($options['teaserlink3-url'])) 
-            $options['teaserlink3-url'] = $defaultoptions['teaserlink3-url'];   
-        if (!isset($options['teaserlink3-symbol'])) 
-            $options['teaserlink3-symbol'] = $defaultoptions['teaserlink3-symbol'];  
-     ?>
+    <?php } else {  ?>
     
         <div class="teaserlinks">
             <ul>

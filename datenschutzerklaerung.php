@@ -3,35 +3,59 @@
  Template Name: Datenschutzerklaerung
  */
 ?>
-<?php get_header();
- $options = get_option( 'piratenkleider_theme_options' );  
- $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
- $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild'])) 
-            $bilderoptions['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
-        ?>
+<?php 
+    get_header();
+    global $options;  
+     ?>
 
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">
-        <h1 id="page-title"><span>Datenschutzerkl&auml;rung</span></h1>   
-        <?php if (has_post_thumbnail()) { 
-            echo '<div class="symbolbild">';
-              the_post_thumbnail(); 
-            echo '</div>';  
-        } else {            
-           if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
-            <div class="symbolbild"> 
-              <img src="<?php echo $bilderoptions['src-default-symbolbild']?>" alt="" >
-           </div>                                 
-          <?php }     
-            }   
-         ?>
-      </div>
-      <div class="skin">
+	
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+        $custom_fields = get_post_custom();
+        ?>
 
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	<?php
+	    $image_url = '';
+	    $image_alt = '';
+	    if (has_post_thumbnail()) { 
+		$thumbid = get_post_thumbnail_id(get_the_ID());
+		 // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
+		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
+		$image_url = $image_url_data[0];
+		$image_alt = trim(strip_tags( get_post_meta($thumbid, '_wp_attachment_image_alt', true) ));
+			
+	    } else {
+		if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
+		    $image_url = $options['src-default-symbolbild'];		    
+		}
+	    }
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
+		     echo '<div class="caption">'.$image_alt.'</div>';  
+		   }  ?>
+		   </div>
+		</div>  	
+	    <?php } ?>
+
+      <div class="skin">
+        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+	<?php } ?>
+	
+	
+
+
         <?php the_content(); ?>
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
@@ -98,17 +122,17 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
 <h2>Auskunftsrecht</h2>
 <p>Sie haben jederzeit das Recht auf Auskunft &uuml;ber die bez&uuml;glich Ihrer Person 
     gespeicherten Daten, deren Herkunft und Empf&auml;nger sowie den Zweck der 
-    Speicherung. Wenden Sie sich dazu bitte an
-    <?php if ( (isset($kontaktinfos['dsbemail'])) && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
-        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if ((isset($kontaktinfos['dsbperson'])) && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
-            echo $kontaktinfos['dsbperson'];
-        } else {
-            echo 'bundesbeauftragter@piraten-dsb.de';
+    Speicherung. Auskunft &uuml;ber die gespeicherten Daten gibt Ihnen die 
+    Piratenpartei Deutschland. Wenden Sie sich dazu bitte an
+    <?php if ( (isset($options['dsbemail'])) && (strlen(trim($options['dsbemail']))>1)) {
+        echo '<a href="mailto:'.$options['dsbemail'].'">';
+        if ((isset($options['dsbperson'])) && (strlen(trim($options['dsbperson']))>1)) {
+            echo 'den/die Datenschutzbeauftrage/n ';
+            echo $options['dsbperson'];
         }
        echo '</a>.';
     } else {
-        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.';
+        echo 'Unbekannt :( (E-Mail-Adresse wurde noch nicht gesetzt!).';
     }
     ?>
     
@@ -126,17 +150,16 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     Wenn Sie Fragen haben, die Ihnen diese Datenschutzerkl&auml;rung nicht 
     beantworten konnte oder wenn Sie zu einem Punkt vertiefte Informationen 
     w&uuml;nschen, wenden Sie sich bitte jederzeit an die Piraten. Sie k&ouml;nnen ihre
-    Fragen und Anregungen an 
-    <?php if ((isset($kontaktinfos['dsbemail']))  && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
-        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if ((isset($kontaktinfos['dsbperson']))  && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
-            echo $kontaktinfos['dsbperson'];
-        } else {
-            echo 'bundesbeauftragter@piraten-dsb.de';
+    Fragen und Anregungen im Forum oder an 
+    <?php if ((isset($options['dsbemail']))  && (strlen(trim($options['dsbemail']))>1)) {
+        echo '<a href="mailto:'.$options['dsbemail'].'">';
+        if ((isset($options['dsbperson']))  && (strlen(trim($options['dsbperson']))>1)) {
+            echo 'den/die Datenschutzbeauftrage/n ';
+            echo $options['dsbperson'];
         }
        echo '</a>';      
     } else {
-        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>';
+        echo 'Unbekannt :( (E-Mail-Adresse wurde noch nicht gesetzt!).';
     }
     ?> 
     stellen.</p>
@@ -150,17 +173,8 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
 
         <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
             <?php
-            if (!isset($options['zeige_subpagesonly'])) 
-            $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
-  
-            if (!isset($options['zeige_sidebarpagemenu'])) 
-            $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-			
-            if (!isset($options['seitenmenu_mode'])) 
-            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-          
-        
+
+            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);       
             get_sidebar(); ?>
       </div>
     </div>

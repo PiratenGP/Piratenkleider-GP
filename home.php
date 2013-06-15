@@ -1,7 +1,6 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-  if (!isset($options['slider-aktiv'])) 
-        $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
+  global $options;  
+
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
         <div class="row">
@@ -21,18 +20,6 @@
       <?php
       $i = 0; 
       $col = 0; 
-      if (!isset($options['num-article-startpage-fullwidth'])) 
-            $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
-      if (!isset($options['num-article-startpage-halfwidth'])) 
-            $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth'];
-	  if (!isset($options['aktiv-calendericon-instead-text'])) 
-			$options['aktiv-calendericon-instead-text'] = $defaultoptions['aktiv-calendericon-instead-text'];  	
-	  if (!isset($options['aktiv-startseite-comments'])) 
-			$options['aktiv-startseite-comments'] = $defaultoptions['aktiv-startseite-comments']; 
-	  if (!isset($options['zeige_commentbubble_null'])) 
-			$options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null']; 
-	  if (!isset($options['aktiv-images-instead-date'])) 
-			$options['aktiv-images-instead-date'] = $defaultoptions['aktiv-images-instead-date']; 
       $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
       $col_count = 3; 
       $cols = array();

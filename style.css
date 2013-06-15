@@ -2,7 +2,7 @@
 Theme Name: Piratenkleider-GP
 Theme URI: https://github.com/PiratenGP/Piratenkleider-GP
 Description: Anpassung der Themes "Piratenkleider" (xwolf) für die PiratenGP
-Author: @stoppegp / xwolf
+Author: @stoppegp
 Author URI: https://www.stoppe-gp.de
 Author E-Mail: martin.stoppler@piratenpartei-gp.de
 Version: 1.6.6
@@ -15,11 +15,10 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 @import url(yaml/core/base.min.css);
 
 /* import screen layout | Screen-Layout einbinden */
-@import url(css/piratenkleider.css);
-@import url(css/basemod_navigation.css);
-@import url(css/basemod_slider.css);
-@import url(css/basemod_mediaqueries.css);
-@import url(css/basemod_ymbuttons.css);
-
+/* @import url(css/piratenkleider.css); */
+@import url(css/piratenkleider.min.css); 
+/* @import url(css/basemod_mediaqueries.css); */
+@import url(css/basemod_mediaqueries.min.css); 
 /* import print layout | Druck-Layout einbinden */
-@import url(css/print.css);
+@import url(css/print.min.css);
+

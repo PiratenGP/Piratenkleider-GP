@@ -1,38 +1,53 @@
 <?php get_header();
-global $defaultoptions;
-$options = get_option( 'piratenkleider_theme_options' );
-if (!isset($options['aktiv-defaultseitenbild'])) 
-            $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
-if (!isset($options['aktiv-disablepagecomments'])) 
-            $options['aktiv-disablepagecomments'] = $defaultoptions['aktiv-disablepagecomments'];
+    global $defaultoptions;
+    global $options;
 ?>
 
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">     
-        <div class="content-header">            
-          <h1 id="page-title"><span><?php the_title(); ?></span></h1>
-        
-        <?php if (has_post_thumbnail()) { 
-            echo '<div class="symbolbild">';
-              the_post_thumbnail(); 
-            echo '</div>';  
-        } else {            
-           if ($options['aktiv-defaultseitenbild']==1) {   
-                $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-                $defaultbildsrc = $bilderoptions['seiten-defaultbildsrc'];
-                if (isset($defaultbildsrc) && (strlen($defaultbildsrc)>4)) {
-                  echo '<div class="symbolbild">';
-                  echo '<img src="'.$defaultbildsrc.'"  alt="">';                        
-                  echo '</div>';  
-                }
-           }            
-        }   
-         ?>
-      </div>
+	
+	
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+        $custom_fields = get_post_custom();
+        ?>
+
+	<?php
+	    $image_url = '';
+	    $image_alt = '';
+	    if (has_post_thumbnail()) { 
+		$thumbid = get_post_thumbnail_id(get_the_ID());
+		 // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
+		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
+		$image_url = $image_url_data[0];
+		$image_alt = trim(strip_tags( get_post_meta($thumbid, '_wp_attachment_image_alt', true) ));
+			
+	    } else {
+		if (($options['aktiv-defaultseitenbild']==1) && (isset($options['seiten-defaultbildsrc']))) {  
+		    $image_url = $options['seiten-defaultbildsrc'];		    
+		}
+	    }
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['seitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
+		     echo '<div class="caption">'.$image_alt.'</div>';  
+		   }  ?>
+		   </div>
+		</div>  	
+	    <?php } ?>
+
       <div class="skin">
-        
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+	<?php } ?>
         <?php the_content(); ?>
         
 		<?php if ($options['aktiv-disablepagecomments'] != 1) { ?>
@@ -53,14 +68,6 @@ if (!isset($options['aktiv-disablepagecomments']))
           
             <?php
             
-            if (!isset($options['zeige_subpagesonly'])) 
-            $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
-  
-            if (!isset($options['zeige_sidebarpagemenu'])) 
-            $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
- 
-			if (!isset($options['seitenmenu_mode'])) 
-            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
         
 

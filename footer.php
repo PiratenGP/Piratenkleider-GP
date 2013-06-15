@@ -1,3 +1,7 @@
+<?php 
+    global $options;
+    global $defaultoptions;
+ ?>   
 </div>
 
 <div class="section footer">
@@ -5,31 +9,19 @@
         <?php get_sidebar( 'footer' ); ?>
         <?php get_sidebar( 'footer-secondary' ); ?>  
     </div>
+    <ul role="navigation" class="nav skiplinks">		
+		<li><a class="ym-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen.', 'piratenkleider' ); ?></a></li>
+		<li><a class="ym-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Zum Beginn des Inhaltes springen.', 'piratenkleider' ); ?></a></li>
+		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
+                <li><a class="ym-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+		<?php } ?>
+	</ul>
+
   </div>
 
 <?php 
-    global $defaultoptions;
     wp_footer();     
    
-      $options = get_option( 'piratenkleider_theme_options' );
-      
-        if (!isset($options['slider-slideshowSpeed'])) 
-            $options['slider-slideshowSpeed'] = $defaultoptions['slider-slideshowSpeed'];
-        if (!isset($options['slider-animationDuration'])) 
-            $options['slider-animationDuration'] = $defaultoptions['slider-animationDuration'];
-        if (!isset($options['slider-Direction'])) 
-            $options['slider-Direction'] = $defaultoptions['slider-Direction'];
-        if (!isset($options['slider-animationType'])) 
-            $options['slider-animationType'] = $defaultoptions['slider-animationType'];
-        if (!isset($options['slider-aktiv'])) 
-            $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
-        if (!isset($options['slider-defaultwerbeplakate'])) 
-            $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
-        if (!isset($options['category-startpageview'])) 
-            $options['category-startpageview'] = $defaultoptions['category-startpageview'];  
-      
-        
-       
       $slideshowSpeed = $options['slider-slideshowSpeed'];    
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
@@ -43,10 +35,10 @@
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
         if (! isset($animationType)) $animationType = 'slide';        
         ?>
-       <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>      
-       <script type="text/javascript">
+       <script src="<?php echo $defaultoptions['src-flexslider'] ?>"></script>      
+       <script type="text/javascript" charset="utf-8">
         /* <![CDATA[ */
-    $(window).load(function() {
+	jQuery(document).ready(function($) {
        $('.flexslider').flexslider({
          slideshowSpeed: <?php echo $slideshowSpeed ?>,
          animationDuration: <?php echo $animationDuration ?>,
@@ -58,22 +50,20 @@
     /* ]]> */
       </script> 
     <?php }  
-        if (!isset($options['aktiv-dynamic-sidebar'])) 
-          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];      
+   
         if ($options['aktiv-dynamic-sidebar']==1) { 
             ?>
      <script type="text/javascript">
         /* <![CDATA[ */
-        var $htmlOnSwitch = '<div class="switchoff"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/ausblenden.png" width="18" height="18" alt="<?php _e('Leiste ausblenden','piratenkleider'); ?>"></a></div>';
-        var $htmlOffSwitch = '<div class="switchon" ><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/einblenden.png" width="18" height="18" alt="<?php _e('Leiste anzeigen','piratenkleider'); ?>"></a></div>';
+        var $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Leiste ausblenden','piratenkleider'); ?>">&#9654;</abbr></a></div>';
+        var $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
        <?php }
     
-   $designspecials = get_option( 'piratenkleider_theme_designspecials' );
-   if (isset($designspecials['html-eigene-anweisungen'])
-        && strlen(trim($designspecials['html-eigene-anweisungen'])) > 0) {
-       echo $designspecials['html-eigene-anweisungen'];     
+   if (isset($options['html-eigene-anweisungen'])
+        && strlen(trim($options['html-eigene-anweisungen'])) > 0) {
+       echo $options['html-eigene-anweisungen'];     
    }  ?>       
 </body>
 </html>

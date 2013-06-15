@@ -1,22 +1,12 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-  $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-
-   if (!isset($bilderoptions['src-default-symbolbild-category'])) 
-            $bilderoptions['src-default-symbolbild-category'] = $defaultoptions['src-default-symbolbild-category'];
-   if (!isset($options['category-startpageview'])) 
-            $options['category-startpageview'] = $defaultoptions['category-startpageview'];   
-
-   
+  global $options;  
+  
    
    if ($options['category-startpageview']) {
         global $wp_query;
       $cat_obj = $wp_query->get_queried_object();
       $thisCat = $cat_obj->term_id;
       $thisCatName =  get_cat_name($thisCat);
-      
-          if (!isset($options['slider-aktiv'])) 
-	    $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
 	  
 	    if ( $options['slider-aktiv'] == "1" ){ ?>  
 	    <div class="section teaser">
@@ -36,18 +26,6 @@
       <?php
       $i = 0; 
       $col = 0; 
-      if (!isset($options['num-article-startpage-fullwidth'])) 
-            $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
-      if (!isset($options['num-article-startpage-halfwidth'])) 
-            $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth']; 
-	  if (!isset($options['aktiv-calendericon-instead-text'])) 
-			$options['aktiv-calendericon-instead-text'] = $defaultoptions['aktiv-calendericon-instead-text'];  	
-	  if (!isset($options['aktiv-startseite-comments'])) 
-			$options['aktiv-startseite-comments'] = $defaultoptions['aktiv-startseite-comments']; 
-	  if (!isset($options['zeige_commentbubble_null'])) 
-			$options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null']; 
-	  if (!isset($options['aktiv-images-instead-date'])) 
-			$options['aktiv-images-instead-date'] = $defaultoptions['aktiv-images-instead-date']; 
       $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
       $col_count = 3; 
       $cols = array();
@@ -172,12 +150,7 @@
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
             <?php } else { 
-                 if (!isset($options['aktiv-startseite-alteartikel'])) 
-                     $options['aktiv-startseite-alteartikel'] = $defaultoptions['aktiv-startseite-alteartikel'];
-                 if (!isset($options['aktiv-startseite-alteartikel-num'])) 
-                     $options['aktiv-startseite-alteartikel-num'] = $defaultoptions['aktiv-startseite-alteartikel-num'];
-                 if (!isset($options['aktiv-startseite-kategorien'])) 
-                     $options['aktiv-startseite-kategorien'] = $defaultoptions['aktiv-startseite-kategorien'];
+
                  $numold = $options['aktiv-startseite-alteartikel-num'];
                  
                  if ($options['aktiv-startseite-alteartikel']==1) {                  
@@ -212,8 +185,6 @@
             <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
             <?php } else { 
-                if (!isset($options['aktiv-startseite-tags'])) 
-                     $options['aktiv-startseite-tags'] = $defaultoptions['aktiv-startseite-tags'];
                 
                 if ($options['aktiv-startseite-tags']==1) {
                 ?>    
@@ -245,17 +216,34 @@
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">
-            <h1><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></h1>           
-          <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
-          <div class="symbolbild"> 
-              <img src="<?php echo $bilderoptions['src-default-symbolbild-category']?>" alt="" >           
-           </div>                                 
-          <?php } ?> 
-      </div>
-        <div class="skin">
-            <?php 
-            get_template_part( 'loop', 'category' );?>       
+
+	  
+	  
+	<?php
+	    $image_url = '';	  
+	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
+		    $image_url = $options['src-default-symbolbild-category'];		    
+	    }	    
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>
+		</div>  	
+	    <?php } ?>
+	
+      <div class="skin">
+	  
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+	<?php } 
+	
+          get_template_part( 'loop', 'category' ); ?>       
           <div class="widget">               
                 <ul>
                      <?php wp_list_categories('title_li='); ?> 

@@ -95,6 +95,7 @@
 
      }      
      .sticky a:hover,
+     .sticky a:visited,
      .sticky a:focus {    
         color: #000;
         background: #d97300;
@@ -251,6 +252,10 @@
          color: black;
          font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     }
+    .content-header-big {
+	  background: url(../images/int/bg-tags-at.png);
+    }
+    
   .content-primary input[type="text"]:hover, 
   .content-primary textarea:hover,
   .content-primary input[type="text"]:focus, 
