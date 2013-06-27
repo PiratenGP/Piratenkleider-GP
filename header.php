@@ -80,22 +80,22 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
     }
-    if (!isset($designspecials['aktiv-mediaqueries-submenu']) || ($designspecials['aktiv-mediaqueries-submenu'] != 1)) {
+    if (!isset($options['aktiv-mediaqueries-submenu']) || ($designspecials['aktiv-mediaqueries-submenu'] != 1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_submenu.css">';      
     }
-    if (isset($designspecials['aktiv-steckbrief-animation']) && ($designspecials['aktiv-steckbrief-animation']==1)) {
+    if (isset($options['aktiv-steckbrief-animation']) && ($designspecials['aktiv-steckbrief-animation']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_steckbrief.css">';      
     }
     
-    if (!isset($designspecials['mode-linkicons']) || !in_array($designspecials['mode-linkicons'], array(0,1,2,3))) {
-        if ($designspecials['disable-linkicons'] == 1) {
-            $designspecials['mode-linkicons'] = 3;
+    if (!isset($options['mode-linkicons']) || !in_array($options['mode-linkicons'], array(0,1,2,3))) {
+        if ($options['disable-linkicons'] == 1) {
+            $options['mode-linkicons'] = 3;
         } else {
-            $designspecials['mode-linkicons'] = 0;
+            $options['mode-linkicons'] = 0;
         }
     }
     
-    switch($designspecials['mode-linkicons']) {
+    switch($options['mode-linkicons']) {
     case 0:
         echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_linkicons.css">';      
         break;
