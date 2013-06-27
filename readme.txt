@@ -2,7 +2,7 @@ Piratenkleider-GP
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.7.0, 15.06.2013
+Version 1.7.1, 27.06.2013
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -49,6 +49,8 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 27.06.2013 - v1.7.1 =
+-- Bugfix: Linkicons
 = 15.06.2013 - v1.7.0 =
 -- Update auf Piratenkleider 2.17.8 (big update!!)
 -- Neues Template: Wahlkampfportal
