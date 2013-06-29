@@ -1138,7 +1138,8 @@ display: inline-block;
 }
 .content .symbolbild img {
    display: block;
-  margin: 0 auto;    
+  margin: 0 auto;
+  max-width: 705px;
 }
  
 .content .symbolbild .caption {
@@ -1703,7 +1704,7 @@ img.wp-smiley {
 
 .single .post-title, 
 .content-primary .skin h1 {  
-  margin-bottom: 40px; 
+  // margin-bottom: 40px; 
 }
 .single .post-entry p {
   margin-bottom: 10px; }
