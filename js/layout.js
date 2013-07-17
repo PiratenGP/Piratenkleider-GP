@@ -2,7 +2,9 @@
  * JS-Frameset fuer Piratenkleider
  *
  */
-
+    var $htmlOnSwitch = '';
+    var $htmlOffSwitch = '';
+    
 jQuery(document).ready(function($) {
 
 /*
@@ -15,7 +17,7 @@ jQuery(document).ready(function($) {
 
      /* Barrierefreie Hauptnavigation mit Tastatur 
      * Links, die via Tastatur einen Fikus bekommen, erhalten die Klasse
-     * "hover". Diese Klasse wird auf das aktive Element, sowie die darübergehenden
+     * "hover". Diese Klasse wird auf das aktive Element, sowie die darÃ¼bergehenden
      * Elemente vergeben.
      * Die hover-Klasse ist parallel zu der normalen hover-Funktion im CSS
      * zu definieren.
@@ -59,6 +61,10 @@ jQuery(document).ready(function($) {
     var $cssASideOnViewSidebar = {
 	'width' : '33%' 
     };
+    
+
+    
+    
     $.SetOnSwitch = function() {   
 	 $(".content-primary").prepend($htmlOnSwitch);     
     };
@@ -100,7 +106,7 @@ jQuery(document).ready(function($) {
 });  
 
 /* 
- *  Workaround für IE8 und Webkit browser, um den Focus zu korrigieren, bei Verwendung von Skiplinks
+ *  Workaround fÃ¼r IE8 und Webkit browser, um den Focus zu korrigieren, bei Verwendung von Skiplinks
  */  
 (function () {
 	var YAML_focusFix = {
