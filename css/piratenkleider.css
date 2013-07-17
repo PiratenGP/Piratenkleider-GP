@@ -3329,6 +3329,12 @@ html[xmlns] .slides {
 .flexslider .flex-pauseplay:focus {
         background: white;
 }
+.flexslider-hidepauseplay .flex-pauseplay, .flexslider-hidepaging .flex-control-paging {
+	display: none;
+}
+.flexslider-hidepauseplay .flex-control-paging {
+	right: 10px;
+}
 .slide .caption  h3 {
   font-size: 22.8px;
   line-height: 22px;
