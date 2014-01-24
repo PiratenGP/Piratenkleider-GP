@@ -74,21 +74,16 @@ foreach($mapresults as $mapresult)
 {
         $spots[$mapresult["keyvalue"]] = $mapresult;
 }
-?>
-<?php
-
-
 $spotname="fruehlingsau";
 if(isset($_GET["spotname"])) { $spotname = $_GET["spotname"]; }
 $mapdata = $spots[$spotname];
 ?>
 <h2><?php echo $mapdata["headline"]; ?></h2>
+<p>Diesen Punkt auf <a href="http://www.bing.com/maps/?v=2&cp=<?=$mapdata["gpslong"]?>~<?=$mapdata["gpslat"]?>&amp;lvl=12&amp;sty=r&amp;where1=<?=$mapdata["gpslong"]?>%252C%2520<?=$mapdata["gpslat"]?>" target="_blank">Bing</a> oder <a href="https://maps.google.com/maps?q=<?=$mapdata["gpslong"]?>,+<?=$mapdata["gpslat"]?>&hl=de&z=16" target="_blank">Google Maps</a>  anzeigen</p>
 <div id="map"></div>
 <script>
 
       var map = L.map('map').setView([<?=$mapdata["gpslong"]?>, <?=$mapdata["gpslat"]?>], 15);
-//      L.tileLayer('http://{s}.tile.cloudmade.com/FBC89CE0CE3449A4B3BFDCC4A3D37AAB/117958/256/{z}/{x}/{y}.png', {
-
       L.tileLayer('/wp-content/tileproxy.php?s={s}&z={z}&x={x}&y={y}', {
         maxZoom: 18,
         attribution: 'CloudMade-Proxy for German Data Protection Act by <a href="http://mrbendig.com/?utm_source=osmmap" target="_blank">Rainer Bendig</a> <br /> Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
