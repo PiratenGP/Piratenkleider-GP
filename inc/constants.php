@@ -360,6 +360,7 @@ $default_fontstyles = array(
     'font-bebas.css'	=> __( 'Bebas Neue', 'piratenkleider' ),
     'font-bebas-politicshead.css'	=> __( 'Politics Head, Bebas Neue', 'piratenkleider' ),
     'font-bebas-politicshead-dejaweb.css'	=> __( 'DejaWeb, Politics Head, Bebas Neue', 'piratenkleider' ),
+    'font-politicshead-dejaweb.css'	=> __( 'Deja Web, Politics Head', 'piratenkleider' ),
     'font-droid.css'	=> __( 'Droid Sans', 'piratenkleider' ),
     'font-awesome.css'	=> __( 'Awesome', 'piratenkleider' ),
     'font-bebas-awesome.css'	=> __( 'Bebas &amp; Awesome', 'piratenkleider' ),
