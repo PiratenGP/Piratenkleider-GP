@@ -1,15 +1,15 @@
 /* 
-    Document   : font-bebas.css
-    Created on : 30.08.2012, 13:31:28
-    Author     : xwolf
+    Document   : font-bebas-politicshead.css
+    Created on : 11.02.2014
+    Author     : stoppegp
     Description:
-      Font-Face Definition: Font Bebas Neue
+      Font-Face Definition: Font Bebas Neue, Politics Head
 }
 */
 
 @font-face {
   font-family: 'FontPiratenkleiderHeadlines';
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype");  
+  src: url("../fonts/politicshead-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/politicshead-webfont.ttf") format("truetype");  
   font-weight: normal;
   font-style: normal; 
 }
@@ -24,6 +24,8 @@
   font-weight: normal;
   font-style: normal; 
 }
-
+h1,h2,h3,h4,h5,h6 {
+    letter-spacing: 0px;
+}
 
 

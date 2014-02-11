@@ -2,7 +2,7 @@ Piratenkleider-GP
 =================================================
 Bearbeitung des Themes "Piratenkleider" von xwolf für die Website der Göppinger Piraten
 
-Version 1.7.5, 16.01.2014
+Version 1.7.6, 11.02.2014
 
 Autor: @stoppegp
 Lizenz: CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -50,6 +50,8 @@ Features:
 Changelog:
 (Für eine vollständige Übersicht siehe https://github.com/piratengp/Piratenkleider-GP/commits/master )
 
+= 11.02.2014 - v1.7.6 =
+-- Neue Schriftarten: Politics Head und DejaWeb
 = 01.08.2013 - v1.7.5 =
 -- CSS Bugfixes
 = 01.08.2013 - v1.7.4 =
