@@ -1058,7 +1058,6 @@ display: inline-block;
 }
 .content ul li {
       margin-bottom: 5px;
-      list-style:  cross-fade;
 }
 .content ul li ul li {
     list-style: circle;
