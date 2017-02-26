@@ -575,7 +575,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
      * @param  array $args    Additional strings.
      * @return void
      */
-    public function start_el( &$output, $item, $depth, $args ) {
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0) {
         if ( '-' === $item->title )
         {
             // you may remove the <hr> here and use plain CSS.
